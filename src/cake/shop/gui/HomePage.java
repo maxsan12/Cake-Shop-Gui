@@ -48,7 +48,7 @@ public class HomePage extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Corbel", 1, 48)); // NOI18N
         jLabel1.setText("CC CAKES");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, -1, 85));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, -1, 85));
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -92,8 +92,8 @@ public class HomePage extends javax.swing.JFrame {
                 .addGap(63, 63, 63)
                 .addComponent(cakeShapeBttn)
                 .addGap(62, 62, 62)
-                .addComponent(cakeFlavourBttn)
-                .addContainerGap(196, Short.MAX_VALUE))
+                .addComponent(cakeFlavourBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(62, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -107,7 +107,7 @@ public class HomePage extends javax.swing.JFrame {
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 820, 60));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 710, 60));
 
         homePagePnl.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jTabbedPane1.addTab("Home Page", homePagePnl);
@@ -116,7 +116,7 @@ public class HomePage extends javax.swing.JFrame {
         cakeSizePnl.setLayout(cakeSizePnlLayout);
         cakeSizePnlLayout.setHorizontalGroup(
             cakeSizePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 670, Short.MAX_VALUE)
+            .addGap(0, 700, Short.MAX_VALUE)
         );
         cakeSizePnlLayout.setVerticalGroup(
             cakeSizePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,7 +132,7 @@ public class HomePage extends javax.swing.JFrame {
         cakeShapePnlLayout.setHorizontalGroup(
             cakeShapePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cakeShapePnlLayout.createSequentialGroup()
-                .addContainerGap(299, Short.MAX_VALUE)
+                .addContainerGap(329, Short.MAX_VALUE)
                 .addComponent(jCheckBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(284, 284, 284))
         );
@@ -150,7 +150,7 @@ public class HomePage extends javax.swing.JFrame {
         cakeFlavourPnl.setLayout(cakeFlavourPnlLayout);
         cakeFlavourPnlLayout.setHorizontalGroup(
             cakeFlavourPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 670, Short.MAX_VALUE)
+            .addGap(0, 700, Short.MAX_VALUE)
         );
         cakeFlavourPnlLayout.setVerticalGroup(
             cakeFlavourPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,9 +159,9 @@ public class HomePage extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Cake Flavours", cakeFlavourPnl);
 
-        jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 670, 420));
+        jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 700, 420));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, -2, 680, 600));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, -2, 710, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
