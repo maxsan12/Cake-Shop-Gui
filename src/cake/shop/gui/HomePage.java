@@ -26,166 +26,128 @@ public class HomePage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        panelForFrame = new javax.swing.JPanel();
+        titlePanel = new javax.swing.JPanel();
+        titleLabel = new javax.swing.JLabel();
+        tabsPanel = new javax.swing.JTabbedPane();
+        homePanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        homePageBttn = new javax.swing.JButton();
-        cakeSizeBttn = new javax.swing.JButton();
-        cakeShapeBttn = new javax.swing.JButton();
-        cakeFlavourBttn = new javax.swing.JButton();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        homePagePnl = new javax.swing.JPanel();
-        cakeSizePnl = new javax.swing.JPanel();
-        cakeShapePnl = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        orderingPanel = new javax.swing.JPanel();
+        loginPanel = new javax.swing.JPanel();
         jCheckBox2 = new javax.swing.JCheckBox();
-        cakeFlavourPnl = new javax.swing.JPanel();
+        customerDetailsPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("CC CAKES");
+        setBackground(new java.awt.Color(0, 102, 102));
+        setMinimumSize(new java.awt.Dimension(700, 600));
+        setResizable(false);
+        setSize(new java.awt.Dimension(700, 630));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBorder(new javax.swing.border.MatteBorder(null));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelForFrame.setBackground(new java.awt.Color(255, 255, 255));
+        panelForFrame.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
+        panelForFrame.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Corbel", 1, 48)); // NOI18N
-        jLabel1.setText("CC CAKES");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, -1, 85));
+        titlePanel.setBackground(new java.awt.Color(255, 255, 255));
+        titlePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+        titleLabel.setBackground(new java.awt.Color(255, 255, 255));
+        titleLabel.setFont(new java.awt.Font("Corbel", 1, 48)); // NOI18N
+        titleLabel.setForeground(new java.awt.Color(0, 102, 102));
+        titleLabel.setText("CC CAKES");
 
-        homePageBttn.setText("Home Page");
-        homePageBttn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                homePageBttnActionPerformed(evt);
-            }
-        });
-
-        cakeSizeBttn.setText("Cake Sizes");
-        cakeSizeBttn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cakeSizeBttnActionPerformed(evt);
-            }
-        });
-
-        cakeShapeBttn.setText("Cake Shapes");
-        cakeShapeBttn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cakeShapeBttnActionPerformed(evt);
-            }
-        });
-
-        cakeFlavourBttn.setText("Cake Flavours");
-        cakeFlavourBttn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cakeFlavourBttnActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addComponent(homePageBttn)
-                .addGap(54, 54, 54)
-                .addComponent(cakeSizeBttn)
-                .addGap(63, 63, 63)
-                .addComponent(cakeShapeBttn)
-                .addGap(62, 62, 62)
-                .addComponent(cakeFlavourBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(62, Short.MAX_VALUE))
+        javax.swing.GroupLayout titlePanelLayout = new javax.swing.GroupLayout(titlePanel);
+        titlePanel.setLayout(titlePanelLayout);
+        titlePanelLayout.setHorizontalGroup(
+            titlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(titlePanelLayout.createSequentialGroup()
+                .addGap(235, 235, 235)
+                .addComponent(titleLabel)
+                .addContainerGap(248, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(homePageBttn)
-                    .addComponent(cakeSizeBttn)
-                    .addComponent(cakeShapeBttn)
-                    .addComponent(cakeFlavourBttn))
-                .addContainerGap(17, Short.MAX_VALUE))
+        titlePanelLayout.setVerticalGroup(
+            titlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, titlePanelLayout.createSequentialGroup()
+                .addContainerGap(30, Short.MAX_VALUE)
+                .addComponent(titleLabel)
+                .addGap(15, 15, 15))
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 710, 60));
+        panelForFrame.add(titlePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 110));
 
-        homePagePnl.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jTabbedPane1.addTab("Home Page", homePagePnl);
+        tabsPanel.setBackground(new java.awt.Color(255, 255, 255));
+        tabsPanel.setBorder(null);
+        tabsPanel.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
 
-        javax.swing.GroupLayout cakeSizePnlLayout = new javax.swing.GroupLayout(cakeSizePnl);
-        cakeSizePnl.setLayout(cakeSizePnlLayout);
-        cakeSizePnlLayout.setHorizontalGroup(
-            cakeSizePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
+        homePanel.setBackground(new java.awt.Color(255, 255, 255));
+        homePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\maxin\\Desktop\\home page.jpg")); // NOI18N
+        homePanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 29, -1, -1));
+
+        jButton1.setBackground(new java.awt.Color(0, 51, 51));
+        jButton1.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("CONTINUE");
+        homePanel.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 411, -1, 38));
+
+        tabsPanel.addTab("Home", homePanel);
+
+        javax.swing.GroupLayout orderingPanelLayout = new javax.swing.GroupLayout(orderingPanel);
+        orderingPanel.setLayout(orderingPanelLayout);
+        orderingPanelLayout.setHorizontalGroup(
+            orderingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 680, Short.MAX_VALUE)
         );
-        cakeSizePnlLayout.setVerticalGroup(
-            cakeSizePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 390, Short.MAX_VALUE)
+        orderingPanelLayout.setVerticalGroup(
+            orderingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 470, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Cake Sizes", cakeSizePnl);
+        tabsPanel.addTab("Ordering", orderingPanel);
 
         jCheckBox2.setText("jCheckBox2");
 
-        javax.swing.GroupLayout cakeShapePnlLayout = new javax.swing.GroupLayout(cakeShapePnl);
-        cakeShapePnl.setLayout(cakeShapePnlLayout);
-        cakeShapePnlLayout.setHorizontalGroup(
-            cakeShapePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cakeShapePnlLayout.createSequentialGroup()
-                .addContainerGap(329, Short.MAX_VALUE)
+        javax.swing.GroupLayout loginPanelLayout = new javax.swing.GroupLayout(loginPanel);
+        loginPanel.setLayout(loginPanelLayout);
+        loginPanelLayout.setHorizontalGroup(
+            loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginPanelLayout.createSequentialGroup()
+                .addContainerGap(309, Short.MAX_VALUE)
                 .addComponent(jCheckBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(284, 284, 284))
         );
-        cakeShapePnlLayout.setVerticalGroup(
-            cakeShapePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cakeShapePnlLayout.createSequentialGroup()
+        loginPanelLayout.setVerticalGroup(
+            loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(loginPanelLayout.createSequentialGroup()
                 .addGap(159, 159, 159)
                 .addComponent(jCheckBox2)
-                .addContainerGap(213, Short.MAX_VALUE))
+                .addContainerGap(293, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Cake Shapes", cakeShapePnl);
+        tabsPanel.addTab("Login", loginPanel);
 
-        javax.swing.GroupLayout cakeFlavourPnlLayout = new javax.swing.GroupLayout(cakeFlavourPnl);
-        cakeFlavourPnl.setLayout(cakeFlavourPnlLayout);
-        cakeFlavourPnlLayout.setHorizontalGroup(
-            cakeFlavourPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
+        javax.swing.GroupLayout customerDetailsPanelLayout = new javax.swing.GroupLayout(customerDetailsPanel);
+        customerDetailsPanel.setLayout(customerDetailsPanelLayout);
+        customerDetailsPanelLayout.setHorizontalGroup(
+            customerDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 680, Short.MAX_VALUE)
         );
-        cakeFlavourPnlLayout.setVerticalGroup(
-            cakeFlavourPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 390, Short.MAX_VALUE)
+        customerDetailsPanelLayout.setVerticalGroup(
+            customerDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 470, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Cake Flavours", cakeFlavourPnl);
+        tabsPanel.addTab("Customer Details", customerDetailsPanel);
 
-        jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 700, 420));
+        panelForFrame.add(tabsPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 680, 500));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, -2, 710, 600));
+        getContentPane().add(panelForFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 630));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void cakeSizeBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cakeSizeBttnActionPerformed
-        // TODO add your handling code here:
-        jTabbedPane1.setSelectedIndex(1); // will access the cake size tab/panel
-        
-    }//GEN-LAST:event_cakeSizeBttnActionPerformed
-
-    private void homePageBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homePageBttnActionPerformed
-        // TODO add your handling code here:
-        jTabbedPane1.setSelectedIndex(0); // will access the home page tab/panel.
-    }//GEN-LAST:event_homePageBttnActionPerformed
-
-    private void cakeShapeBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cakeShapeBttnActionPerformed
-        // TODO add your handling code here: 
-        jTabbedPane1.setSelectedIndex(2); // will access the cake shape tab/panel.
-    }//GEN-LAST:event_cakeShapeBttnActionPerformed
-
-    private void cakeFlavourBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cakeFlavourBttnActionPerformed
-        // TODO add your handling code here:
-        jTabbedPane1.setSelectedIndex(3); // will access the cake flavour tab/panel
-    }//GEN-LAST:event_cakeFlavourBttnActionPerformed
 
     
     /**
@@ -227,18 +189,16 @@ public class HomePage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton cakeFlavourBttn;
-    private javax.swing.JPanel cakeFlavourPnl;
-    private javax.swing.JButton cakeShapeBttn;
-    private javax.swing.JPanel cakeShapePnl;
-    private javax.swing.JButton cakeSizeBttn;
-    private javax.swing.JPanel cakeSizePnl;
-    private javax.swing.JButton homePageBttn;
-    private javax.swing.JPanel homePagePnl;
+    private javax.swing.JPanel customerDetailsPanel;
+    private javax.swing.JPanel homePanel;
+    private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JPanel loginPanel;
+    private javax.swing.JPanel orderingPanel;
+    private javax.swing.JPanel panelForFrame;
+    private javax.swing.JTabbedPane tabsPanel;
+    private javax.swing.JLabel titleLabel;
+    private javax.swing.JPanel titlePanel;
     // End of variables declaration//GEN-END:variables
 }
