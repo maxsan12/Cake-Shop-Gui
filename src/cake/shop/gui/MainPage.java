@@ -6,7 +6,7 @@ package cake.shop.gui;
 
 /**
  *
- * @author maxin
+ * @author Maxinne Santico 1084694
  */
 public class MainPage extends javax.swing.JFrame {
 
@@ -50,8 +50,29 @@ public class MainPage extends javax.swing.JFrame {
         continueButton = new javax.swing.JButton();
         cartLabel = new javax.swing.JLabel();
         loginPanel = new javax.swing.JPanel();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        customerDetailsPanel = new javax.swing.JPanel();
+        usernameTextField = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        usernameLabel = new javax.swing.JLabel();
+        passwordLabel = new javax.swing.JLabel();
+        userPasswordField = new javax.swing.JPasswordField();
+        continueBttn = new javax.swing.JButton();
+        backBttn = new javax.swing.JButton();
+        detailsPanel = new javax.swing.JPanel();
+        firstNameLabel = new javax.swing.JLabel();
+        lastNameLabel = new javax.swing.JLabel();
+        addressLabel = new javax.swing.JLabel();
+        emailLabel = new javax.swing.JLabel();
+        phNoLabel = new javax.swing.JLabel();
+        firstNameTextField = new javax.swing.JTextField();
+        lastNameTextField = new javax.swing.JTextField();
+        emailTextField = new javax.swing.JTextField();
+        phNoTextField = new javax.swing.JTextField();
+        delOrPicComboBox = new javax.swing.JComboBox<>();
+        delOrPicLabel = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        addressTextArea = new javax.swing.JTextArea();
+        bkButton = new javax.swing.JButton();
+        conBtnDetails = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CC CAKES");
@@ -62,7 +83,6 @@ public class MainPage extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelForFrame.setBackground(new java.awt.Color(255, 255, 255));
-        panelForFrame.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
         panelForFrame.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         titlePanel.setBackground(new java.awt.Color(255, 255, 255));
@@ -97,6 +117,7 @@ public class MainPage extends javax.swing.JFrame {
         tabsPanel.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
 
         homePanel.setBackground(new java.awt.Color(255, 255, 255));
+        homePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
         homePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\maxin\\Desktop\\home page.jpg")); // NOI18N
@@ -111,6 +132,7 @@ public class MainPage extends javax.swing.JFrame {
         tabsPanel.addTab("Home", homePanel);
 
         orderingPanel.setBackground(new java.awt.Color(255, 255, 255));
+        orderingPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
         orderingPanel.setLayout(null);
 
         cakeSizesLabel.setBackground(new java.awt.Color(255, 255, 255));
@@ -149,36 +171,24 @@ public class MainPage extends javax.swing.JFrame {
 
         cakeSizeComboBox.setBackground(new java.awt.Color(0, 51, 51));
         cakeSizeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cakeSizeComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cakeSizeComboBoxActionPerformed(evt);
-            }
-        });
         orderingPanel.add(cakeSizeComboBox);
         cakeSizeComboBox.setBounds(60, 80, 160, 26);
 
         cakeShapesComboBox.setBackground(new java.awt.Color(0, 51, 51));
+        cakeShapesComboBox.setForeground(new java.awt.Color(255, 255, 255));
         cakeShapesComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cakeShapesComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cakeShapesComboBoxActionPerformed(evt);
-            }
-        });
         orderingPanel.add(cakeShapesComboBox);
         cakeShapesComboBox.setBounds(60, 170, 160, 26);
 
         cakeFlavoursComboBox.setBackground(new java.awt.Color(0, 51, 51));
+        cakeFlavoursComboBox.setForeground(new java.awt.Color(255, 255, 255));
         cakeFlavoursComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cakeFlavoursComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cakeFlavoursComboBoxActionPerformed(evt);
-            }
-        });
         orderingPanel.add(cakeFlavoursComboBox);
         cakeFlavoursComboBox.setBounds(60, 260, 160, 26);
 
         addButton.setBackground(new java.awt.Color(0, 51, 51));
         addButton.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
+        addButton.setForeground(new java.awt.Color(255, 255, 255));
         addButton.setText("+");
         orderingPanel.add(addButton);
         addButton.setBounds(170, 360, 40, 32);
@@ -220,58 +230,180 @@ public class MainPage extends javax.swing.JFrame {
 
         tabsPanel.addTab("Ordering", orderingPanel);
 
-        jCheckBox2.setText("jCheckBox2");
+        loginPanel.setBackground(new java.awt.Color(255, 255, 255));
+        loginPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
+        loginPanel.setLayout(null);
 
-        javax.swing.GroupLayout loginPanelLayout = new javax.swing.GroupLayout(loginPanel);
-        loginPanel.setLayout(loginPanelLayout);
-        loginPanelLayout.setHorizontalGroup(
-            loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginPanelLayout.createSequentialGroup()
-                .addContainerGap(309, Short.MAX_VALUE)
-                .addComponent(jCheckBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(284, 284, 284))
-        );
-        loginPanelLayout.setVerticalGroup(
-            loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(loginPanelLayout.createSequentialGroup()
-                .addGap(159, 159, 159)
-                .addComponent(jCheckBox2)
-                .addContainerGap(313, Short.MAX_VALUE))
-        );
+        usernameTextField.setBackground(new java.awt.Color(204, 204, 204));
+        usernameTextField.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        usernameTextField.setForeground(new java.awt.Color(0, 51, 51));
+        usernameTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                usernameTextFieldActionPerformed(evt);
+            }
+        });
+        loginPanel.add(usernameTextField);
+        usernameTextField.setBounds(310, 190, 200, 30);
+
+        jLabel2.setFont(new java.awt.Font("Corbel", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel2.setText("Login or create an account to proceed:");
+        loginPanel.add(jLabel2);
+        jLabel2.setBounds(170, 120, 397, 30);
+
+        usernameLabel.setBackground(new java.awt.Color(255, 255, 255));
+        usernameLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
+        usernameLabel.setForeground(new java.awt.Color(0, 102, 102));
+        usernameLabel.setText("Username:");
+        loginPanel.add(usernameLabel);
+        usernameLabel.setBounds(210, 200, 88, 20);
+
+        passwordLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
+        passwordLabel.setForeground(new java.awt.Color(0, 102, 102));
+        passwordLabel.setText("Password:");
+        loginPanel.add(passwordLabel);
+        passwordLabel.setBounds(210, 260, 80, 20);
+
+        userPasswordField.setBackground(new java.awt.Color(204, 204, 204));
+        userPasswordField.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        userPasswordField.setForeground(new java.awt.Color(0, 51, 51));
+        loginPanel.add(userPasswordField);
+        userPasswordField.setBounds(310, 250, 200, 30);
+
+        continueBttn.setBackground(new java.awt.Color(0, 51, 51));
+        continueBttn.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        continueBttn.setForeground(new java.awt.Color(255, 255, 255));
+        continueBttn.setText("Continue");
+        loginPanel.add(continueBttn);
+        continueBttn.setBounds(360, 350, 100, 30);
+
+        backBttn.setBackground(new java.awt.Color(0, 51, 51));
+        backBttn.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        backBttn.setText("Back");
+        backBttn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBttnActionPerformed(evt);
+            }
+        });
+        loginPanel.add(backBttn);
+        backBttn.setBounds(230, 350, 100, 30);
 
         tabsPanel.addTab("Login", loginPanel);
 
-        javax.swing.GroupLayout customerDetailsPanelLayout = new javax.swing.GroupLayout(customerDetailsPanel);
-        customerDetailsPanel.setLayout(customerDetailsPanelLayout);
-        customerDetailsPanelLayout.setHorizontalGroup(
-            customerDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 680, Short.MAX_VALUE)
-        );
-        customerDetailsPanelLayout.setVerticalGroup(
-            customerDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 490, Short.MAX_VALUE)
-        );
+        detailsPanel.setBackground(new java.awt.Color(255, 255, 255));
+        detailsPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
+        detailsPanel.setLayout(null);
 
-        tabsPanel.addTab("Customer Details", customerDetailsPanel);
+        firstNameLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
+        firstNameLabel.setForeground(new java.awt.Color(0, 102, 102));
+        firstNameLabel.setText("First Name:");
+        detailsPanel.add(firstNameLabel);
+        firstNameLabel.setBounds(60, 90, 79, 20);
 
-        panelForFrame.add(tabsPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 680, 520));
+        lastNameLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
+        lastNameLabel.setForeground(new java.awt.Color(0, 102, 102));
+        lastNameLabel.setText("Last Name:");
+        detailsPanel.add(lastNameLabel);
+        lastNameLabel.setBounds(60, 140, 80, 20);
+
+        addressLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
+        addressLabel.setForeground(new java.awt.Color(0, 102, 102));
+        addressLabel.setText("Address:");
+        detailsPanel.add(addressLabel);
+        addressLabel.setBounds(60, 190, 80, 20);
+
+        emailLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
+        emailLabel.setForeground(new java.awt.Color(0, 102, 102));
+        emailLabel.setText("Email Address:");
+        detailsPanel.add(emailLabel);
+        emailLabel.setBounds(60, 320, 120, 20);
+
+        phNoLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
+        phNoLabel.setForeground(new java.awt.Color(0, 102, 102));
+        phNoLabel.setText("Phone Number:");
+        detailsPanel.add(phNoLabel);
+        phNoLabel.setBounds(60, 370, 120, 20);
+
+        firstNameTextField.setBackground(new java.awt.Color(204, 204, 204));
+        firstNameTextField.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        firstNameTextField.setForeground(new java.awt.Color(0, 102, 102));
+        firstNameTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 2));
+        detailsPanel.add(firstNameTextField);
+        firstNameTextField.setBounds(190, 90, 240, 22);
+
+        lastNameTextField.setBackground(new java.awt.Color(204, 204, 204));
+        lastNameTextField.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        lastNameTextField.setForeground(new java.awt.Color(0, 102, 102));
+        lastNameTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 2));
+        detailsPanel.add(lastNameTextField);
+        lastNameTextField.setBounds(190, 140, 240, 22);
+
+        emailTextField.setBackground(new java.awt.Color(204, 204, 204));
+        emailTextField.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        emailTextField.setForeground(new java.awt.Color(0, 102, 102));
+        emailTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 2));
+        detailsPanel.add(emailTextField);
+        emailTextField.setBounds(190, 310, 240, 22);
+
+        phNoTextField.setBackground(new java.awt.Color(204, 204, 204));
+        phNoTextField.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        phNoTextField.setForeground(new java.awt.Color(0, 102, 102));
+        phNoTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 2));
+        detailsPanel.add(phNoTextField);
+        phNoTextField.setBounds(190, 360, 240, 22);
+
+        delOrPicComboBox.setBackground(new java.awt.Color(0, 51, 51));
+        delOrPicComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        detailsPanel.add(delOrPicComboBox);
+        delOrPicComboBox.setBounds(500, 230, 130, 26);
+
+        delOrPicLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
+        delOrPicLabel.setForeground(new java.awt.Color(0, 102, 102));
+        delOrPicLabel.setText("Delivery or Pick Up:");
+        detailsPanel.add(delOrPicLabel);
+        delOrPicLabel.setBounds(500, 200, 150, 20);
+
+        addressTextArea.setBackground(new java.awt.Color(204, 204, 204));
+        addressTextArea.setColumns(20);
+        addressTextArea.setFont(new java.awt.Font("Corbel", 1, 12)); // NOI18N
+        addressTextArea.setForeground(new java.awt.Color(0, 102, 102));
+        addressTextArea.setRows(5);
+        addressTextArea.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102)));
+        jScrollPane2.setViewportView(addressTextArea);
+
+        detailsPanel.add(jScrollPane2);
+        jScrollPane2.setBounds(190, 180, 240, 83);
+
+        bkButton.setBackground(new java.awt.Color(0, 51, 51));
+        bkButton.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
+        bkButton.setForeground(new java.awt.Color(255, 255, 255));
+        bkButton.setText("<");
+        detailsPanel.add(bkButton);
+        bkButton.setBounds(260, 450, 80, 30);
+
+        conBtnDetails.setBackground(new java.awt.Color(0, 51, 51));
+        conBtnDetails.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
+        conBtnDetails.setForeground(new java.awt.Color(255, 255, 255));
+        conBtnDetails.setText(">");
+        detailsPanel.add(conBtnDetails);
+        conBtnDetails.setBounds(360, 450, 73, 30);
+
+        tabsPanel.addTab("Customer Details", detailsPanel);
+
+        panelForFrame.add(tabsPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 700, 550));
 
         getContentPane().add(panelForFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 630));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cakeSizeComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cakeSizeComboBoxActionPerformed
+    private void usernameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cakeSizeComboBoxActionPerformed
+    }//GEN-LAST:event_usernameTextFieldActionPerformed
 
-    private void cakeShapesComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cakeShapesComboBoxActionPerformed
+    private void backBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBttnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cakeShapesComboBoxActionPerformed
-
-    private void cakeFlavoursComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cakeFlavoursComboBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cakeFlavoursComboBoxActionPerformed
+    }//GEN-LAST:event_backBttnActionPerformed
 
     
     /**
@@ -318,7 +450,11 @@ public class MainPage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
+    private javax.swing.JLabel addressLabel;
+    private javax.swing.JTextArea addressTextArea;
+    private javax.swing.JButton backBttn;
     private javax.swing.JButton backButton;
+    private javax.swing.JButton bkButton;
     private javax.swing.JComboBox<String> cakeFlavoursComboBox;
     private javax.swing.JLabel cakeFlavoursLabel;
     private javax.swing.JComboBox<String> cakeShapesComboBox;
@@ -328,20 +464,37 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JLabel cartLabel;
     private javax.swing.JScrollPane cartScrollPane;
     private javax.swing.JTextArea cartTextArea;
+    private javax.swing.JButton conBtnDetails;
+    private javax.swing.JButton continueBttn;
     private javax.swing.JButton continueButton;
-    private javax.swing.JPanel customerDetailsPanel;
+    private javax.swing.JComboBox<String> delOrPicComboBox;
+    private javax.swing.JLabel delOrPicLabel;
+    private javax.swing.JPanel detailsPanel;
+    private javax.swing.JLabel emailLabel;
+    private javax.swing.JTextField emailTextField;
+    private javax.swing.JLabel firstNameLabel;
+    private javax.swing.JTextField firstNameTextField;
     private javax.swing.JPanel homePanel;
     private javax.swing.JButton jButton1;
-    private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lastNameLabel;
+    private javax.swing.JTextField lastNameTextField;
     private javax.swing.JPanel loginPanel;
     private javax.swing.JPanel orderingPanel;
     private javax.swing.JPanel panelForFrame;
+    private javax.swing.JLabel passwordLabel;
+    private javax.swing.JLabel phNoLabel;
+    private javax.swing.JTextField phNoTextField;
     private javax.swing.JLabel quantityLabel;
     private javax.swing.JLabel quantityTrackerLabel;
     private javax.swing.JButton subtractButton;
     private javax.swing.JTabbedPane tabsPanel;
     private javax.swing.JLabel titleLabel;
     private javax.swing.JPanel titlePanel;
+    private javax.swing.JPasswordField userPasswordField;
+    private javax.swing.JLabel usernameLabel;
+    private javax.swing.JTextField usernameTextField;
     // End of variables declaration//GEN-END:variables
 }
