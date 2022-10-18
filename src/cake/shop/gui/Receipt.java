@@ -30,6 +30,11 @@ public class Receipt extends javax.swing.JFrame {
         receiptLabel = new javax.swing.JLabel();
         receiptExitButton = new javax.swing.JButton();
         oreceiptOrderAgainButton = new javax.swing.JButton();
+        receiptOrderPanel = new javax.swing.JPanel();
+        receiptOrderLabel = new javax.swing.JLabel();
+        receiptSizeLabel = new javax.swing.JLabel();
+        receiptDetailsPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,6 +57,50 @@ public class Receipt extends javax.swing.JFrame {
         oreceiptOrderAgainButton.setForeground(new java.awt.Color(255, 255, 255));
         oreceiptOrderAgainButton.setText("Order Again");
 
+        receiptOrderLabel.setText("Order Details:");
+
+        receiptSizeLabel.setText("Cake Size:");
+
+        javax.swing.GroupLayout receiptOrderPanelLayout = new javax.swing.GroupLayout(receiptOrderPanel);
+        receiptOrderPanel.setLayout(receiptOrderPanelLayout);
+        receiptOrderPanelLayout.setHorizontalGroup(
+            receiptOrderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(receiptOrderPanelLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(receiptOrderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(receiptOrderLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(receiptSizeLabel))
+                .addContainerGap(100, Short.MAX_VALUE))
+        );
+        receiptOrderPanelLayout.setVerticalGroup(
+            receiptOrderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(receiptOrderPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(receiptOrderLabel)
+                .addGap(18, 18, 18)
+                .addComponent(receiptSizeLabel)
+                .addContainerGap(294, Short.MAX_VALUE))
+        );
+
+        jLabel1.setText("jLabel1");
+
+        javax.swing.GroupLayout receiptDetailsPanelLayout = new javax.swing.GroupLayout(receiptDetailsPanel);
+        receiptDetailsPanel.setLayout(receiptDetailsPanelLayout);
+        receiptDetailsPanelLayout.setHorizontalGroup(
+            receiptDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(receiptDetailsPanelLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(145, Short.MAX_VALUE))
+        );
+        receiptDetailsPanelLayout.setVerticalGroup(
+            receiptDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(receiptDetailsPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout receiptPanelLayout = new javax.swing.GroupLayout(receiptPanel);
         receiptPanel.setLayout(receiptPanelLayout);
         receiptPanelLayout.setHorizontalGroup(
@@ -61,18 +110,29 @@ public class Receipt extends javax.swing.JFrame {
                 .addComponent(receiptLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, receiptPanelLayout.createSequentialGroup()
-                .addContainerGap(142, Short.MAX_VALUE)
-                .addComponent(oreceiptOrderAgainButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(receiptExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(140, 140, 140))
+                .addContainerGap(34, Short.MAX_VALUE)
+                .addGroup(receiptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, receiptPanelLayout.createSequentialGroup()
+                        .addComponent(oreceiptOrderAgainButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(receiptExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(140, 140, 140))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, receiptPanelLayout.createSequentialGroup()
+                        .addComponent(receiptOrderPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(receiptDetailsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31))))
         );
         receiptPanelLayout.setVerticalGroup(
             receiptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(receiptPanelLayout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addComponent(receiptLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 431, Short.MAX_VALUE)
+                .addGap(7, 7, 7)
+                .addGroup(receiptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(receiptOrderPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(receiptDetailsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
                 .addGroup(receiptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(oreceiptOrderAgainButton)
                     .addComponent(receiptExitButton))
@@ -129,9 +189,14 @@ public class Receipt extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton oreceiptOrderAgainButton;
+    private javax.swing.JPanel receiptDetailsPanel;
     private javax.swing.JButton receiptExitButton;
     private javax.swing.JLabel receiptLabel;
+    private javax.swing.JLabel receiptOrderLabel;
+    private javax.swing.JPanel receiptOrderPanel;
     private javax.swing.JPanel receiptPanel;
+    private javax.swing.JLabel receiptSizeLabel;
     // End of variables declaration//GEN-END:variables
 }

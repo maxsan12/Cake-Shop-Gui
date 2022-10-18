@@ -3,10 +3,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package cake.shop.gui;
+import cake.shop.mvc.CakeSizes;
+import javax.swing.DefaultComboBoxModel;
 
 /**
  *
- * @author Maxinne Santico 1084694
+ * @author Maxinne Santico 19084694
+ * COMP603/50 - Group 27
+ * Assignment 2
+ * 
+ * JFrame form class created to design GUI format - the code below will be 
+ * used in the other package to fit the MVC pattern design
  */
 public class MainPage extends javax.swing.JFrame {
 
@@ -170,7 +177,6 @@ public class MainPage extends javax.swing.JFrame {
         orderingCartScrollPane.setBounds(370, 70, 270, 340);
 
         orderingSizesComboBox.setBackground(new java.awt.Color(0, 51, 51));
-        orderingSizesComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         orderingPanel.add(orderingSizesComboBox);
         orderingSizesComboBox.setBounds(60, 80, 160, 26);
 
@@ -239,7 +245,7 @@ public class MainPage extends javax.swing.JFrame {
         loginUserTextField.setForeground(new java.awt.Color(0, 51, 51));
         loginUserTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginUserTextFieldActionPerformed(evt);
+                none(evt);
             }
         });
         loginPanel.add(loginUserTextField);
@@ -279,12 +285,8 @@ public class MainPage extends javax.swing.JFrame {
 
         loginBackButton.setBackground(new java.awt.Color(0, 51, 51));
         loginBackButton.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        loginBackButton.setForeground(new java.awt.Color(255, 255, 255));
         loginBackButton.setText("Back");
-        loginBackButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginBackButtonActionPerformed(evt);
-            }
-        });
         loginPanel.add(loginBackButton);
         loginBackButton.setBounds(230, 350, 100, 30);
 
@@ -390,22 +392,17 @@ public class MainPage extends javax.swing.JFrame {
 
         tabsPanel.addTab("Customer Details", detailsPanel);
 
-        panelForFrame.add(tabsPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 700, 560));
+        panelForFrame.add(tabsPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 700, 540));
 
         getContentPane().add(panelForFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 630));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void loginUserTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginUserTextFieldActionPerformed
+    private void none(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_none
         // TODO add your handling code here:
-    }//GEN-LAST:event_loginUserTextFieldActionPerformed
+    }//GEN-LAST:event_none
 
-    private void loginBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBackButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_loginBackButtonActionPerformed
-
-    
     /**
      * @param args the command line arguments
      */
@@ -447,6 +444,7 @@ public class MainPage extends javax.swing.JFrame {
             }
         });
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel detailsAddressLabel;
@@ -489,7 +487,7 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JLabel orderingQuantityLabel;
     private javax.swing.JComboBox<String> orderingShapesComboBox;
     private javax.swing.JLabel orderingShapesLabel;
-    private javax.swing.JComboBox<String> orderingSizesComboBox;
+    private javax.swing.JComboBox<CakeSizes> orderingSizesComboBox;
     private javax.swing.JLabel orderingSizesLabel;
     private javax.swing.JButton orderingSubtractButton;
     private javax.swing.JPanel panelForFrame;
