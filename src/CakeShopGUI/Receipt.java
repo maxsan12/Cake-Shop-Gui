@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package cake.shop.gui;
+package CakeShopGUI;
 
 /**
  *
@@ -28,7 +28,7 @@ public class Receipt extends javax.swing.JFrame {
 
         receiptPanel = new javax.swing.JPanel();
         receiptLabel = new javax.swing.JLabel();
-        receiptExitButton = new javax.swing.JButton();
+        receiptConfirmButton = new javax.swing.JButton();
         oreceiptOrderAgainButton = new javax.swing.JButton();
         receiptOrderPanel = new javax.swing.JPanel();
         receiptOrderLabel = new javax.swing.JLabel();
@@ -47,10 +47,10 @@ public class Receipt extends javax.swing.JFrame {
         receiptLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         receiptLabel.setText("RECEIPT:");
 
-        receiptExitButton.setBackground(new java.awt.Color(0, 51, 51));
-        receiptExitButton.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
-        receiptExitButton.setForeground(new java.awt.Color(255, 255, 255));
-        receiptExitButton.setText("Exit");
+        receiptConfirmButton.setBackground(new java.awt.Color(0, 51, 51));
+        receiptConfirmButton.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        receiptConfirmButton.setForeground(new java.awt.Color(255, 255, 255));
+        receiptConfirmButton.setText("Confirm");
 
         oreceiptOrderAgainButton.setBackground(new java.awt.Color(0, 51, 51));
         oreceiptOrderAgainButton.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
@@ -115,7 +115,7 @@ public class Receipt extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, receiptPanelLayout.createSequentialGroup()
                         .addComponent(oreceiptOrderAgainButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(receiptExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(receiptConfirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(140, 140, 140))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, receiptPanelLayout.createSequentialGroup()
                         .addComponent(receiptOrderPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -135,7 +135,7 @@ public class Receipt extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
                 .addGroup(receiptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(oreceiptOrderAgainButton)
-                    .addComponent(receiptExitButton))
+                    .addComponent(receiptConfirmButton))
                 .addGap(35, 35, 35))
         );
 
@@ -191,8 +191,8 @@ public class Receipt extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton oreceiptOrderAgainButton;
+    private javax.swing.JButton receiptConfirmButton;
     private javax.swing.JPanel receiptDetailsPanel;
-    private javax.swing.JButton receiptExitButton;
     private javax.swing.JLabel receiptLabel;
     private javax.swing.JLabel receiptOrderLabel;
     private javax.swing.JPanel receiptOrderPanel;

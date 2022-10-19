@@ -1,4 +1,4 @@
-package cake.shop.gui;
+package CakeShopGUI;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
