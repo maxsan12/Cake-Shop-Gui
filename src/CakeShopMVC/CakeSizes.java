@@ -13,16 +13,10 @@ package CakeShopMVC;
  * 
  * Enum class for cake size and its prices
  */
-public enum CakeSizes {
+public class CakeSizes {
     
     
-    FOURINCH("4 inch cake"),
-    SIXINCH("6 inch cake"),
-    EIGHTINCH("8 inch cake"),
-    TENINCH("10 inch cake"),
-    TWELVEINCH("12 inch cake"),
-    FOURTEENINCH("14 inch cake");
-
+    
     
     private final String sizeName;
     //private final double sizeCost;
@@ -42,7 +36,7 @@ public enum CakeSizes {
     
     @Override
     public String toString() {
-        return sizeName + " = $" + String.format("%.2f");
+        return sizeName;
     }
     
 

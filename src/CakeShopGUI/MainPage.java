@@ -13,7 +13,8 @@ import javax.swing.DefaultComboBoxModel;
  * Assignment 2
  * 
  * JFrame form class created to design GUI format - the code below will be 
- * used in the other package to fit the MVC pattern design
+ * used in the other package to fit the MVC pattern design - merely created
+ * to design how my gui will look. 
  */
 public class MainPage extends javax.swing.JFrame {
 

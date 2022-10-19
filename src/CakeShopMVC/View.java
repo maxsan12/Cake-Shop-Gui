@@ -97,14 +97,129 @@ public class View extends JFrame implements Observer {
      * 
      */
     
-    
-    @Override
-    public void update(Observable o, Object o1) {
-        
-    }
+    // Creating a class in order to allow image from resources to be added into home panel later
+    public class imagePanel extends
     
     
     private void mainPageGui() {
+        
+        // Instantiating Main Page gui components
+        panelForFrame = new javax.swing.JPanel();
+        titlePanel = new javax.swing.JPanel();
+        titleLabel = new javax.swing.JLabel();
+        tabsPanel = new javax.swing.JTabbedPane();
+        
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("CC CAKES");
+        setBackground(new java.awt.Color(0, 102, 102));
+        setMinimumSize(new java.awt.Dimension(700, 600));
+        setResizable(false);
+        setSize(new java.awt.Dimension(700, 630));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        panelForFrame.setBackground(new java.awt.Color(255, 255, 255));
+        panelForFrame.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        titlePanel.setBackground(new java.awt.Color(255, 255, 255));
+        titlePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
+
+        titleLabel.setBackground(new java.awt.Color(255, 255, 255));
+        titleLabel.setFont(new java.awt.Font("Corbel", 1, 48)); // NOI18N
+        titleLabel.setForeground(new java.awt.Color(0, 102, 102));
+        titleLabel.setText("CC CAKES");
+
+        javax.swing.GroupLayout titlePanelLayout = new javax.swing.GroupLayout(titlePanel);
+        titlePanel.setLayout(titlePanelLayout);
+        titlePanelLayout.setHorizontalGroup(
+            titlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(titlePanelLayout.createSequentialGroup()
+                .addGap(235, 235, 235)
+                .addComponent(titleLabel)
+                .addContainerGap(248, Short.MAX_VALUE))
+        );
+        titlePanelLayout.setVerticalGroup(
+            titlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, titlePanelLayout.createSequentialGroup()
+                .addContainerGap(30, Short.MAX_VALUE)
+                .addComponent(titleLabel)
+                .addGap(15, 15, 15))
+        );
+
+        panelForFrame.add(titlePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 110));
+        tabsPanel.setBackground(new java.awt.Color(255, 255, 255));
+        tabsPanel.setBorder(null);
+        tabsPanel.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
+
+        
+        // Instantiating home panel gui components 
+        homePanel = new javax.swing.JPanel();
+        homeIconLabel = new javax.swing.JLabel();
+        homeContinueBttn = new javax.swing.JButton();
+      
+        homePanel.setBackground(new java.awt.Color(255, 255, 255));
+        homePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
+        homePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        
+        homeIconLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\maxin\\Desktop\\home page.jpg")); // NOI18N
+        homePanel.add(homeIconLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 29, -1, -1));
+
+        homeContinueBttn.setBackground(new java.awt.Color(0, 51, 51));
+        homeContinueBttn.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        homeContinueBttn.setForeground(new java.awt.Color(255, 255, 255));
+        homeContinueBttn.setText("CONTINUE");
+        homePanel.add(homeContinueBttn, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 411, -1, 38));
+        
+        
+        // Instantiating ordering panel gui components
+        
+        
+        
+        orderingPanel = new javax.swing.JPanel();
+        orderingSizesLabel = new javax.swing.JLabel();
+        orderingShapesLabel = new javax.swing.JLabel();
+        orderingFlavoursLabel = new javax.swing.JLabel();
+        orderingQuantityLabel = new javax.swing.JLabel();
+        orderingCartScrollPane = new javax.swing.JScrollPane();
+        orderingCartTextArea = new javax.swing.JTextArea();
+        orderingSizesComboBox = new javax.swing.JComboBox<>();
+        orderingShapesComboBox = new javax.swing.JComboBox<>();
+        orderingFlavoursComboBox = new javax.swing.JComboBox<>();
+        orderingAddButton = new javax.swing.JButton();
+        orderingSubtractButton = new javax.swing.JButton();
+        orderingQtyNoLabel = new javax.swing.JLabel();
+        orderingBackButton = new javax.swing.JButton();
+        orderingContinueButton = new javax.swing.JButton();
+        orderingCartLabel = new javax.swing.JLabel();
+        loginPanel = new javax.swing.JPanel();
+        loginUserTextField = new javax.swing.JTextField();
+        loginTextLabel = new javax.swing.JLabel();
+        loginUsernameLabel = new javax.swing.JLabel();
+        loginPasswordLabel = new javax.swing.JLabel();
+        loginUserPasswordField = new javax.swing.JPasswordField();
+        loginContinueButton = new javax.swing.JButton();
+        loginBackButton = new javax.swing.JButton();
+        detailsPanel = new javax.swing.JPanel();
+        detailsFNLabel = new javax.swing.JLabel();
+        detailsLNLabel = new javax.swing.JLabel();
+        detailsAddressLabel = new javax.swing.JLabel();
+        detailsEmailLabel = new javax.swing.JLabel();
+        detailsPhNoLabel = new javax.swing.JLabel();
+        detailsFNTextField = new javax.swing.JTextField();
+        detailsLNTextField = new javax.swing.JTextField();
+        detailsEmailTextField = new javax.swing.JTextField();
+        detailsPhNoTextField = new javax.swing.JTextField();
+        detailsDelOrPicComboBox = new javax.swing.JComboBox<>();
+        detailsDelOrPicLabel = new javax.swing.JLabel();
+        detailsAddressScrollPane = new javax.swing.JScrollPane();
+        detailsAddressTextArea = new javax.swing.JTextArea();
+        detailsBackButton = new javax.swing.JButton();
+        detailsContinueButton = new javax.swing.JButton();
+
+    }
+    
+    @Override
+    public void update(Observable o, Object o1) {
         
     }
     
