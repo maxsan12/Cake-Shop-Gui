@@ -390,7 +390,7 @@ public class MainPage extends javax.swing.JFrame {
 
         tabsPanel.addTab("Customer Details", detailsPanel);
 
-        panelForFrame.add(tabsPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 700, 540));
+        panelForFrame.add(tabsPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 700, 559));
 
         getContentPane().add(panelForFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 630));
 
@@ -496,7 +496,7 @@ public class MainPage extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
 
-    // Creating method to test whether jcomboboxes work
+    // Creating test method to test whether jcomboboxes work
     private void loadBoxes() {
         orderingSizesComboBox.setModel(new DefaultComboBoxModel<>(CakeSizes.values()));
         orderingShapesComboBox.setModel(new DefaultComboBoxModel<>(CakeShapes.values()));

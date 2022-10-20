@@ -235,18 +235,18 @@ public class View extends JFrame implements Observer {
 
         orderingSizesComboBox.setBackground(new java.awt.Color(0, 51, 51));
         orderingPanel.add(orderingSizesComboBox);
-        
+        orderingSizesComboBox.setModel(new DefaultComboBoxModel<>(CakeSizes.values()));
         orderingSizesComboBox.setBounds(60, 80, 160, 26);
 
         orderingShapesComboBox.setBackground(new java.awt.Color(0, 51, 51));
         orderingShapesComboBox.setForeground(new java.awt.Color(255, 255, 255));
-        orderingShapesComboBox.setModel(new javax.swing.DefaultComboBoxModel<>());
+        orderingShapesComboBox.setModel(new DefaultComboBoxModel<>(CakeShapes.values()));
+        //orderingShapesComboBox.setModel(new javax.swing.DefaultComboBoxModel<>());
         orderingPanel.add(orderingShapesComboBox);
         orderingShapesComboBox.setBounds(60, 170, 160, 26);
 
         orderingFlavoursComboBox.setBackground(new java.awt.Color(0, 51, 51));
         orderingFlavoursComboBox.setForeground(new java.awt.Color(255, 255, 255));
-        // using DefaultComboBox
         orderingFlavoursComboBox.setModel(new DefaultComboBoxModel<>(CakeFlavours.values()));
         //orderingFlavoursComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         orderingPanel.add(orderingFlavoursComboBox);
