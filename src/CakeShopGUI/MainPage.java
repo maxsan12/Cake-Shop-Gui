@@ -26,6 +26,7 @@ public class MainPage extends javax.swing.JFrame {
      */
     public MainPage() {
         initComponents();
+        loadBoxes();
     }
 
     /**
