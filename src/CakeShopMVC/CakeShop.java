@@ -6,12 +6,15 @@ package CakeShopMVC;
 
 /**
  *
- * @author Maxinne Santico 19084694
+ * @author Maxinne Santico
  * COMP603/50 - 19084694
  * Group 27 - Assignment 2
  * 
- * Model class to hold 
+ * Main class that will start program
  */
-public class Model {
+public class CakeShop {
     
+    public static void main(String[] args) {
+        
+    }
 }

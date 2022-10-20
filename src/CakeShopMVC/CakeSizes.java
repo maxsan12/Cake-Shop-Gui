@@ -12,32 +12,38 @@ package CakeShopMVC;
  * Assignment 2
  * 
  * Enum class for cake size and its prices
+ * will be used for orderComboBox
  */
-public class CakeSizes {
+public enum CakeSizes {
     
     
-    
+    FOURINCH("4 inch cake", 45.0),
+    SIXINCH("6 inch cake", 55.0),
+    EIGHTINCH("8 inch cake", 65.0),
+    TENINCH("10 inch cake", 85.0 ),
+    TWELVEINCH("12 inch cake", 95.0),
+    FOURTEENINCH("14 inch cake", 115.0);
+
     
     private final String sizeName;
-    //private final double sizeCost;
+    private final double sizeCost;
     
-    CakeSizes(String sizeName) {
+    CakeSizes(String sizeName, double sizeCost) {
         this.sizeName = sizeName;
-        //this.sizeCost = sizeCost;
+        this.sizeCost = sizeCost;
     }
     
     public String getSizeName() {
         return sizeName;
     }
     
-    //public double getSizeCost() {
-    //    return sizeCost;
-    //}
+    public double getSizeCost() {
+        return sizeCost;
+    }
     
     @Override
     public String toString() {
-        return sizeName;
+        return sizeName + " = $" + String.format("%.2f", sizeCost);
     }
-    
 
 }

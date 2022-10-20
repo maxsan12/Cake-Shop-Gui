@@ -4,7 +4,10 @@
  */
 package CakeShopGUI;
 import CakeShopMVC.CakeSizes;
+import CakeShopMVC.CakeShapes;
+import CakeShopMVC.CakeFlavours;
 import javax.swing.DefaultComboBoxModel;
+
 
 /**
  *
@@ -128,8 +131,8 @@ public class MainPage extends javax.swing.JFrame {
         homePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
         homePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        homeIconLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\maxin\\Desktop\\home page.jpg")); // NOI18N
-        homePanel.add(homeIconLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 29, -1, -1));
+        homeIconLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\maxin\\Desktop\\homepage.jpg")); // NOI18N
+        homePanel.add(homeIconLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, -1, -1));
 
         homeContinueBttn.setBackground(new java.awt.Color(0, 51, 51));
         homeContinueBttn.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
@@ -183,13 +186,11 @@ public class MainPage extends javax.swing.JFrame {
 
         orderingShapesComboBox.setBackground(new java.awt.Color(0, 51, 51));
         orderingShapesComboBox.setForeground(new java.awt.Color(255, 255, 255));
-        orderingShapesComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         orderingPanel.add(orderingShapesComboBox);
         orderingShapesComboBox.setBounds(60, 170, 160, 26);
 
         orderingFlavoursComboBox.setBackground(new java.awt.Color(0, 51, 51));
         orderingFlavoursComboBox.setForeground(new java.awt.Color(255, 255, 255));
-        orderingFlavoursComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         orderingPanel.add(orderingFlavoursComboBox);
         orderingFlavoursComboBox.setBounds(60, 260, 160, 26);
 
@@ -244,11 +245,6 @@ public class MainPage extends javax.swing.JFrame {
         loginUserTextField.setBackground(new java.awt.Color(204, 204, 204));
         loginUserTextField.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         loginUserTextField.setForeground(new java.awt.Color(0, 51, 51));
-        loginUserTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                none(evt);
-            }
-        });
         loginPanel.add(loginUserTextField);
         loginUserTextField.setBounds(310, 190, 200, 30);
 
@@ -400,10 +396,11 @@ public class MainPage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void none(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_none
-        // TODO add your handling code here:
-    }//GEN-LAST:event_none
-
+    
+    
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -481,12 +478,12 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JScrollPane orderingCartScrollPane;
     private javax.swing.JTextArea orderingCartTextArea;
     private javax.swing.JButton orderingContinueButton;
-    private javax.swing.JComboBox<String> orderingFlavoursComboBox;
+    private javax.swing.JComboBox<CakeFlavours> orderingFlavoursComboBox;
     private javax.swing.JLabel orderingFlavoursLabel;
     private javax.swing.JPanel orderingPanel;
     private javax.swing.JLabel orderingQtyNoLabel;
     private javax.swing.JLabel orderingQuantityLabel;
-    private javax.swing.JComboBox<String> orderingShapesComboBox;
+    private javax.swing.JComboBox<CakeShapes> orderingShapesComboBox;
     private javax.swing.JLabel orderingShapesLabel;
     private javax.swing.JComboBox<CakeSizes> orderingSizesComboBox;
     private javax.swing.JLabel orderingSizesLabel;
@@ -496,4 +493,13 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JLabel titleLabel;
     private javax.swing.JPanel titlePanel;
     // End of variables declaration//GEN-END:variables
+
+
+    // Creating method to test whether jcomboboxes work
+    private void loadBoxes() {
+        orderingSizesComboBox.setModel(new DefaultComboBoxModel<>(CakeSizes.values()));
+        orderingShapesComboBox.setModel(new DefaultComboBoxModel<>(CakeShapes.values()));
+        orderingFlavoursComboBox.setModel(new DefaultComboBoxModel<>(CakeFlavours.values()));
+    }
 }
+
