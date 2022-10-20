@@ -29,125 +29,235 @@ public class Receipt extends javax.swing.JFrame {
         receiptPanel = new javax.swing.JPanel();
         receiptLabel = new javax.swing.JLabel();
         receiptConfirmButton = new javax.swing.JButton();
-        oreceiptOrderAgainButton = new javax.swing.JButton();
+        receiptOrderAgainButton = new javax.swing.JButton();
         receiptOrderPanel = new javax.swing.JPanel();
         receiptOrderLabel = new javax.swing.JLabel();
         receiptSizeLabel = new javax.swing.JLabel();
+        receiptShapesLabel = new javax.swing.JLabel();
+        receiptFlavourLabel = new javax.swing.JLabel();
+        receiptQuantityLabel = new javax.swing.JLabel();
         receiptDetailsPanel = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        receiptDetailsLabel = new javax.swing.JLabel();
+        receiptFNameLabel = new javax.swing.JLabel();
+        receiptLNameLabel = new javax.swing.JLabel();
+        receiptAddressLabel = new javax.swing.JLabel();
+        receiptEmailLabel = new javax.swing.JLabel();
+        receiptPhLabel = new javax.swing.JLabel();
+        receipTotalPanel = new javax.swing.JPanel();
+        receiptSubTotalLabel = new javax.swing.JLabel();
+        receiptTotalLabel = new javax.swing.JLabel();
+        receiptDelOrPicPanel = new javax.swing.JPanel();
+        receiptDelOrPicLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         receiptPanel.setBackground(new java.awt.Color(255, 255, 255));
         receiptPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
+        receiptPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         receiptLabel.setBackground(new java.awt.Color(255, 255, 255));
-        receiptLabel.setFont(new java.awt.Font("Corbel", 1, 36)); // NOI18N
+        receiptLabel.setFont(new java.awt.Font("Corbel", 1, 40)); // NOI18N
         receiptLabel.setForeground(new java.awt.Color(0, 102, 102));
         receiptLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         receiptLabel.setText("RECEIPT:");
+        receiptPanel.add(receiptLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, 171, 78));
 
         receiptConfirmButton.setBackground(new java.awt.Color(0, 51, 51));
         receiptConfirmButton.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         receiptConfirmButton.setForeground(new java.awt.Color(255, 255, 255));
         receiptConfirmButton.setText("Confirm");
+        receiptPanel.add(receiptConfirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 570, 100, -1));
 
-        oreceiptOrderAgainButton.setBackground(new java.awt.Color(0, 51, 51));
-        oreceiptOrderAgainButton.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
-        oreceiptOrderAgainButton.setForeground(new java.awt.Color(255, 255, 255));
-        oreceiptOrderAgainButton.setText("Order Again");
+        receiptOrderAgainButton.setBackground(new java.awt.Color(0, 51, 51));
+        receiptOrderAgainButton.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        receiptOrderAgainButton.setForeground(new java.awt.Color(255, 255, 255));
+        receiptOrderAgainButton.setText("Order Again");
+        receiptPanel.add(receiptOrderAgainButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 570, -1, -1));
 
+        receiptOrderLabel.setBackground(new java.awt.Color(255, 255, 255));
+        receiptOrderLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
+        receiptOrderLabel.setForeground(new java.awt.Color(0, 102, 102));
         receiptOrderLabel.setText("Order Details:");
 
+        receiptSizeLabel.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        receiptSizeLabel.setForeground(new java.awt.Color(0, 102, 102));
         receiptSizeLabel.setText("Cake Size:");
+
+        receiptShapesLabel.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        receiptShapesLabel.setForeground(new java.awt.Color(0, 102, 102));
+        receiptShapesLabel.setText("Cake Shape:");
+
+        receiptFlavourLabel.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        receiptFlavourLabel.setForeground(new java.awt.Color(0, 102, 102));
+        receiptFlavourLabel.setText("Cake Flavour:");
+
+        receiptQuantityLabel.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        receiptQuantityLabel.setForeground(new java.awt.Color(0, 102, 102));
+        receiptQuantityLabel.setText("Quantity:");
 
         javax.swing.GroupLayout receiptOrderPanelLayout = new javax.swing.GroupLayout(receiptOrderPanel);
         receiptOrderPanel.setLayout(receiptOrderPanelLayout);
         receiptOrderPanelLayout.setHorizontalGroup(
             receiptOrderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(receiptOrderPanelLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
                 .addGroup(receiptOrderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(receiptOrderLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(receiptSizeLabel))
-                .addContainerGap(100, Short.MAX_VALUE))
+                    .addGroup(receiptOrderPanelLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(receiptOrderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(receiptSizeLabel)
+                            .addComponent(receiptShapesLabel)
+                            .addComponent(receiptFlavourLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(receiptQuantityLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(receiptOrderPanelLayout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(receiptOrderLabel)))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
         receiptOrderPanelLayout.setVerticalGroup(
             receiptOrderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(receiptOrderPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(receiptOrderLabel)
-                .addGap(18, 18, 18)
+                .addGap(44, 44, 44)
                 .addComponent(receiptSizeLabel)
-                .addContainerGap(294, Short.MAX_VALUE))
+                .addGap(48, 48, 48)
+                .addComponent(receiptShapesLabel)
+                .addGap(46, 46, 46)
+                .addComponent(receiptFlavourLabel)
+                .addGap(61, 61, 61)
+                .addComponent(receiptQuantityLabel)
+                .addContainerGap(123, Short.MAX_VALUE))
         );
 
-        jLabel1.setText("jLabel1");
+        receiptPanel.add(receiptOrderPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, 420));
+
+        receiptDetailsLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
+        receiptDetailsLabel.setForeground(new java.awt.Color(0, 102, 102));
+        receiptDetailsLabel.setText("Customer Details:");
+
+        receiptFNameLabel.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        receiptFNameLabel.setForeground(new java.awt.Color(0, 102, 102));
+        receiptFNameLabel.setText("First Name:");
+
+        receiptLNameLabel.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        receiptLNameLabel.setForeground(new java.awt.Color(0, 102, 102));
+        receiptLNameLabel.setText("Last Name:");
+
+        receiptAddressLabel.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        receiptAddressLabel.setForeground(new java.awt.Color(0, 102, 102));
+        receiptAddressLabel.setText("Address:");
+
+        receiptEmailLabel.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        receiptEmailLabel.setForeground(new java.awt.Color(0, 102, 102));
+        receiptEmailLabel.setText("Email Address:");
+
+        receiptPhLabel.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        receiptPhLabel.setForeground(new java.awt.Color(0, 102, 102));
+        receiptPhLabel.setText("Phone Number:");
 
         javax.swing.GroupLayout receiptDetailsPanelLayout = new javax.swing.GroupLayout(receiptDetailsPanel);
         receiptDetailsPanel.setLayout(receiptDetailsPanelLayout);
         receiptDetailsPanelLayout.setHorizontalGroup(
             receiptDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(receiptDetailsPanelLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(145, Short.MAX_VALUE))
+                .addGroup(receiptDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(receiptDetailsPanelLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(receiptDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(receiptDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(receiptFNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
+                                .addComponent(receiptLNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(receiptAddressLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(receiptPhLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(receiptEmailLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(receiptDetailsPanelLayout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(receiptDetailsLabel)))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         receiptDetailsPanelLayout.setVerticalGroup(
             receiptDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(receiptDetailsPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(receiptDetailsLabel)
+                .addGap(24, 24, 24)
+                .addComponent(receiptFNameLabel)
+                .addGap(31, 31, 31)
+                .addComponent(receiptLNameLabel)
+                .addGap(58, 58, 58)
+                .addComponent(receiptAddressLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                .addComponent(receiptEmailLabel)
+                .addGap(47, 47, 47)
+                .addComponent(receiptPhLabel)
+                .addGap(53, 53, 53))
         );
 
-        javax.swing.GroupLayout receiptPanelLayout = new javax.swing.GroupLayout(receiptPanel);
-        receiptPanel.setLayout(receiptPanelLayout);
-        receiptPanelLayout.setHorizontalGroup(
-            receiptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(receiptPanelLayout.createSequentialGroup()
-                .addGap(161, 161, 161)
-                .addComponent(receiptLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, receiptPanelLayout.createSequentialGroup()
-                .addContainerGap(34, Short.MAX_VALUE)
-                .addGroup(receiptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, receiptPanelLayout.createSequentialGroup()
-                        .addComponent(oreceiptOrderAgainButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(receiptConfirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(140, 140, 140))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, receiptPanelLayout.createSequentialGroup()
-                        .addComponent(receiptOrderPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(receiptDetailsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31))))
+        receiptPanel.add(receiptDetailsPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, -1, 420));
+
+        receiptSubTotalLabel.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        receiptSubTotalLabel.setForeground(new java.awt.Color(0, 102, 102));
+        receiptSubTotalLabel.setText("Sub Total:");
+
+        receiptTotalLabel.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        receiptTotalLabel.setForeground(new java.awt.Color(0, 102, 102));
+        receiptTotalLabel.setText("TOTAL:");
+
+        javax.swing.GroupLayout receipTotalPanelLayout = new javax.swing.GroupLayout(receipTotalPanel);
+        receipTotalPanel.setLayout(receipTotalPanelLayout);
+        receipTotalPanelLayout.setHorizontalGroup(
+            receipTotalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(receipTotalPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(receipTotalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(receiptSubTotalLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(receiptTotalLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
-        receiptPanelLayout.setVerticalGroup(
-            receiptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(receiptPanelLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(receiptLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
-                .addGroup(receiptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(receiptOrderPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(receiptDetailsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
-                .addGroup(receiptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(oreceiptOrderAgainButton)
-                    .addComponent(receiptConfirmButton))
-                .addGap(35, 35, 35))
+        receipTotalPanelLayout.setVerticalGroup(
+            receipTotalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(receipTotalPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(receiptSubTotalLabel)
+                .addGap(60, 60, 60)
+                .addComponent(receiptTotalLabel)
+                .addContainerGap(78, Short.MAX_VALUE))
         );
+
+        receiptPanel.add(receipTotalPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, 160, 180));
+
+        receiptDelOrPicLabel.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        receiptDelOrPicLabel.setForeground(new java.awt.Color(0, 102, 102));
+        receiptDelOrPicLabel.setText("Delivery or Pickup:");
+
+        javax.swing.GroupLayout receiptDelOrPicPanelLayout = new javax.swing.GroupLayout(receiptDelOrPicPanel);
+        receiptDelOrPicPanel.setLayout(receiptDelOrPicPanelLayout);
+        receiptDelOrPicPanelLayout.setHorizontalGroup(
+            receiptDelOrPicPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(receiptDelOrPicPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(receiptDelOrPicLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(41, Short.MAX_VALUE))
+        );
+        receiptDelOrPicPanelLayout.setVerticalGroup(
+            receiptDelOrPicPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(receiptDelOrPicPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(receiptDelOrPicLabel)
+                .addContainerGap(56, Short.MAX_VALUE))
+        );
+
+        receiptPanel.add(receiptDelOrPicPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 180, 160, 80));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(receiptPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(receiptPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 663, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(receiptPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(receiptPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 635, Short.MAX_VALUE)
         );
 
         pack();
@@ -189,14 +299,27 @@ public class Receipt extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JButton oreceiptOrderAgainButton;
+    private javax.swing.JPanel receipTotalPanel;
+    private javax.swing.JLabel receiptAddressLabel;
     private javax.swing.JButton receiptConfirmButton;
+    private javax.swing.JLabel receiptDelOrPicLabel;
+    private javax.swing.JPanel receiptDelOrPicPanel;
+    private javax.swing.JLabel receiptDetailsLabel;
     private javax.swing.JPanel receiptDetailsPanel;
+    private javax.swing.JLabel receiptEmailLabel;
+    private javax.swing.JLabel receiptFNameLabel;
+    private javax.swing.JLabel receiptFlavourLabel;
+    private javax.swing.JLabel receiptLNameLabel;
     private javax.swing.JLabel receiptLabel;
+    private javax.swing.JButton receiptOrderAgainButton;
     private javax.swing.JLabel receiptOrderLabel;
     private javax.swing.JPanel receiptOrderPanel;
     private javax.swing.JPanel receiptPanel;
+    private javax.swing.JLabel receiptPhLabel;
+    private javax.swing.JLabel receiptQuantityLabel;
+    private javax.swing.JLabel receiptShapesLabel;
     private javax.swing.JLabel receiptSizeLabel;
+    private javax.swing.JLabel receiptSubTotalLabel;
+    private javax.swing.JLabel receiptTotalLabel;
     // End of variables declaration//GEN-END:variables
 }
