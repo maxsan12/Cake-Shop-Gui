@@ -46,21 +46,28 @@ public class MainPage extends javax.swing.JFrame {
         homeIconLabel = new javax.swing.JLabel();
         homeContinueBttn = new javax.swing.JButton();
         orderingPanel = new javax.swing.JPanel();
+        orderingSizesComboBox = new javax.swing.JComboBox<>();
+        orderingShapesComboBox = new javax.swing.JComboBox<>();
+        orderingFlavoursComboBox = new javax.swing.JComboBox<>();
+        orderingQtyAddButton = new javax.swing.JButton();
+        orderingQtySubtractButton = new javax.swing.JButton();
+        orderingQtyNoLabel = new javax.swing.JLabel();
+        orderingBackButton = new javax.swing.JButton();
+        orderingContinueButton = new javax.swing.JButton();
         orderingSizesLabel = new javax.swing.JLabel();
         orderingShapesLabel = new javax.swing.JLabel();
         orderingFlavoursLabel = new javax.swing.JLabel();
         orderingQuantityLabel = new javax.swing.JLabel();
-        orderingCartScrollPane = new javax.swing.JScrollPane();
-        orderingCartTextArea = new javax.swing.JTextArea();
-        orderingSizesComboBox = new javax.swing.JComboBox<>();
-        orderingShapesComboBox = new javax.swing.JComboBox<>();
-        orderingFlavoursComboBox = new javax.swing.JComboBox<>();
-        orderingAddButton = new javax.swing.JButton();
-        orderingSubtractButton = new javax.swing.JButton();
-        orderingQtyNoLabel = new javax.swing.JLabel();
-        orderingBackButton = new javax.swing.JButton();
-        orderingContinueButton = new javax.swing.JButton();
         orderingCartLabel = new javax.swing.JLabel();
+        orderingCartPanel = new javax.swing.JPanel();
+        orderingCartSizesLabel = new javax.swing.JLabel();
+        orderingCartShapesLabel = new javax.swing.JLabel();
+        orderingCartFlavoursLabel = new javax.swing.JLabel();
+        orderingCartQuantityLabel = new javax.swing.JLabel();
+        orderingCartSizesTextField = new javax.swing.JTextField();
+        orderingCartShapesTextField = new javax.swing.JTextField();
+        orderingCartFlavoursTextField = new javax.swing.JTextField();
+        orderingCartQuantityTextField = new javax.swing.JTextField();
         loginPanel = new javax.swing.JPanel();
         loginUserTextField = new javax.swing.JTextField();
         loginTextLabel = new javax.swing.JLabel();
@@ -147,6 +154,56 @@ public class MainPage extends javax.swing.JFrame {
         orderingPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
         orderingPanel.setLayout(null);
 
+        orderingSizesComboBox.setBackground(new java.awt.Color(0, 51, 51));
+        orderingPanel.add(orderingSizesComboBox);
+        orderingSizesComboBox.setBounds(60, 80, 160, 26);
+
+        orderingShapesComboBox.setBackground(new java.awt.Color(0, 51, 51));
+        orderingShapesComboBox.setForeground(new java.awt.Color(255, 255, 255));
+        orderingPanel.add(orderingShapesComboBox);
+        orderingShapesComboBox.setBounds(60, 170, 160, 26);
+
+        orderingFlavoursComboBox.setBackground(new java.awt.Color(0, 51, 51));
+        orderingFlavoursComboBox.setForeground(new java.awt.Color(255, 255, 255));
+        orderingPanel.add(orderingFlavoursComboBox);
+        orderingFlavoursComboBox.setBounds(60, 260, 160, 26);
+
+        orderingQtyAddButton.setBackground(new java.awt.Color(0, 51, 51));
+        orderingQtyAddButton.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
+        orderingQtyAddButton.setForeground(new java.awt.Color(255, 255, 255));
+        orderingQtyAddButton.setText("+");
+        orderingPanel.add(orderingQtyAddButton);
+        orderingQtyAddButton.setBounds(170, 360, 40, 32);
+
+        orderingQtySubtractButton.setBackground(new java.awt.Color(0, 51, 51));
+        orderingQtySubtractButton.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
+        orderingQtySubtractButton.setForeground(new java.awt.Color(255, 255, 255));
+        orderingQtySubtractButton.setText("-");
+        orderingPanel.add(orderingQtySubtractButton);
+        orderingQtySubtractButton.setBounds(70, 360, 40, 32);
+
+        orderingQtyNoLabel.setBackground(new java.awt.Color(255, 255, 255));
+        orderingQtyNoLabel.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        orderingQtyNoLabel.setForeground(new java.awt.Color(0, 102, 102));
+        orderingQtyNoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        orderingQtyNoLabel.setText("1");
+        orderingPanel.add(orderingQtyNoLabel);
+        orderingQtyNoLabel.setBounds(110, 360, 60, 30);
+
+        orderingBackButton.setBackground(new java.awt.Color(0, 51, 51));
+        orderingBackButton.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
+        orderingBackButton.setForeground(new java.awt.Color(255, 255, 255));
+        orderingBackButton.setText("<");
+        orderingPanel.add(orderingBackButton);
+        orderingBackButton.setBounds(240, 460, 70, 30);
+
+        orderingContinueButton.setBackground(new java.awt.Color(0, 51, 51));
+        orderingContinueButton.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
+        orderingContinueButton.setForeground(new java.awt.Color(255, 255, 255));
+        orderingContinueButton.setText(">");
+        orderingPanel.add(orderingContinueButton);
+        orderingContinueButton.setBounds(330, 460, 70, 30);
+
         orderingSizesLabel.setBackground(new java.awt.Color(255, 255, 255));
         orderingSizesLabel.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         orderingSizesLabel.setForeground(new java.awt.Color(0, 102, 102));
@@ -172,70 +229,93 @@ public class MainPage extends javax.swing.JFrame {
         orderingPanel.add(orderingQuantityLabel);
         orderingQuantityLabel.setBounds(100, 330, 90, 30);
 
-        orderingCartTextArea.setBackground(new java.awt.Color(255, 255, 255));
-        orderingCartTextArea.setColumns(20);
-        orderingCartTextArea.setRows(5);
-        orderingCartTextArea.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
-        orderingCartScrollPane.setViewportView(orderingCartTextArea);
-
-        orderingPanel.add(orderingCartScrollPane);
-        orderingCartScrollPane.setBounds(370, 70, 270, 340);
-
-        orderingSizesComboBox.setBackground(new java.awt.Color(0, 51, 51));
-        orderingPanel.add(orderingSizesComboBox);
-        orderingSizesComboBox.setBounds(60, 80, 160, 26);
-
-        orderingShapesComboBox.setBackground(new java.awt.Color(0, 51, 51));
-        orderingShapesComboBox.setForeground(new java.awt.Color(255, 255, 255));
-        orderingPanel.add(orderingShapesComboBox);
-        orderingShapesComboBox.setBounds(60, 170, 160, 26);
-
-        orderingFlavoursComboBox.setBackground(new java.awt.Color(0, 51, 51));
-        orderingFlavoursComboBox.setForeground(new java.awt.Color(255, 255, 255));
-        orderingPanel.add(orderingFlavoursComboBox);
-        orderingFlavoursComboBox.setBounds(60, 260, 160, 26);
-
-        orderingAddButton.setBackground(new java.awt.Color(0, 51, 51));
-        orderingAddButton.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
-        orderingAddButton.setForeground(new java.awt.Color(255, 255, 255));
-        orderingAddButton.setText("+");
-        orderingPanel.add(orderingAddButton);
-        orderingAddButton.setBounds(170, 360, 40, 32);
-
-        orderingSubtractButton.setBackground(new java.awt.Color(0, 51, 51));
-        orderingSubtractButton.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
-        orderingSubtractButton.setForeground(new java.awt.Color(255, 255, 255));
-        orderingSubtractButton.setText("-");
-        orderingPanel.add(orderingSubtractButton);
-        orderingSubtractButton.setBounds(70, 360, 40, 32);
-
-        orderingQtyNoLabel.setBackground(new java.awt.Color(255, 255, 255));
-        orderingQtyNoLabel.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        orderingQtyNoLabel.setForeground(new java.awt.Color(0, 102, 102));
-        orderingQtyNoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        orderingQtyNoLabel.setText("1");
-        orderingPanel.add(orderingQtyNoLabel);
-        orderingQtyNoLabel.setBounds(110, 360, 60, 30);
-
-        orderingBackButton.setBackground(new java.awt.Color(0, 51, 51));
-        orderingBackButton.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
-        orderingBackButton.setForeground(new java.awt.Color(255, 255, 255));
-        orderingBackButton.setText("<");
-        orderingPanel.add(orderingBackButton);
-        orderingBackButton.setBounds(240, 440, 70, 30);
-
-        orderingContinueButton.setBackground(new java.awt.Color(0, 51, 51));
-        orderingContinueButton.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
-        orderingContinueButton.setForeground(new java.awt.Color(255, 255, 255));
-        orderingContinueButton.setText(">");
-        orderingPanel.add(orderingContinueButton);
-        orderingContinueButton.setBounds(330, 440, 70, 30);
-
         orderingCartLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
         orderingCartLabel.setForeground(new java.awt.Color(0, 102, 102));
         orderingCartLabel.setText("Your Cart:");
         orderingPanel.add(orderingCartLabel);
         orderingCartLabel.setBounds(370, 50, 80, 20);
+
+        orderingCartPanel.setBackground(new java.awt.Color(255, 255, 255));
+        orderingCartPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
+
+        orderingCartSizesLabel.setBackground(new java.awt.Color(255, 255, 255));
+        orderingCartSizesLabel.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
+        orderingCartSizesLabel.setForeground(new java.awt.Color(0, 102, 102));
+        orderingCartSizesLabel.setText("Cake Sizes:");
+
+        orderingCartShapesLabel.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
+        orderingCartShapesLabel.setForeground(new java.awt.Color(0, 102, 102));
+        orderingCartShapesLabel.setText("Cake Shapes:");
+
+        orderingCartFlavoursLabel.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
+        orderingCartFlavoursLabel.setForeground(new java.awt.Color(0, 102, 102));
+        orderingCartFlavoursLabel.setText("Cake Flavours:");
+
+        orderingCartQuantityLabel.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
+        orderingCartQuantityLabel.setForeground(new java.awt.Color(0, 102, 102));
+        orderingCartQuantityLabel.setText("Quantity:");
+
+        orderingCartSizesTextField.setEditable(false);
+        orderingCartSizesTextField.setBackground(new java.awt.Color(255, 255, 255));
+        orderingCartSizesTextField.setFont(new java.awt.Font("Corbel", 0, 12)); // NOI18N
+        orderingCartSizesTextField.setForeground(new java.awt.Color(0, 102, 102));
+
+        orderingCartShapesTextField.setEditable(false);
+        orderingCartShapesTextField.setBackground(new java.awt.Color(255, 255, 255));
+        orderingCartShapesTextField.setFont(new java.awt.Font("Corbel", 0, 12)); // NOI18N
+        orderingCartShapesTextField.setForeground(new java.awt.Color(0, 102, 102));
+
+        orderingCartFlavoursTextField.setEditable(false);
+        orderingCartFlavoursTextField.setBackground(new java.awt.Color(255, 255, 255));
+        orderingCartFlavoursTextField.setFont(new java.awt.Font("Corbel", 0, 12)); // NOI18N
+        orderingCartFlavoursTextField.setForeground(new java.awt.Color(0, 102, 102));
+
+        orderingCartQuantityTextField.setEditable(false);
+        orderingCartQuantityTextField.setBackground(new java.awt.Color(255, 255, 255));
+        orderingCartQuantityTextField.setFont(new java.awt.Font("Corbel", 0, 14)); // NOI18N
+        orderingCartQuantityTextField.setForeground(new java.awt.Color(0, 102, 102));
+
+        javax.swing.GroupLayout orderingCartPanelLayout = new javax.swing.GroupLayout(orderingCartPanel);
+        orderingCartPanel.setLayout(orderingCartPanelLayout);
+        orderingCartPanelLayout.setHorizontalGroup(
+            orderingCartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(orderingCartPanelLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(orderingCartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(orderingCartFlavoursLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(orderingCartShapesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(orderingCartSizesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(orderingCartSizesTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
+                    .addComponent(orderingCartShapesTextField)
+                    .addComponent(orderingCartQuantityLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(orderingCartFlavoursTextField)
+                    .addComponent(orderingCartQuantityTextField))
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+        orderingCartPanelLayout.setVerticalGroup(
+            orderingCartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(orderingCartPanelLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(orderingCartSizesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(orderingCartSizesTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(orderingCartShapesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(orderingCartShapesTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(orderingCartFlavoursLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(orderingCartFlavoursTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(orderingCartQuantityLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(orderingCartQuantityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+
+        orderingPanel.add(orderingCartPanel);
+        orderingCartPanel.setBounds(350, 70, 260, 340);
 
         tabsPanel.addTab("Ordering", orderingPanel);
 
@@ -324,28 +404,28 @@ public class MainPage extends javax.swing.JFrame {
         detailsPanel.add(detailsPhNoLabel);
         detailsPhNoLabel.setBounds(60, 370, 120, 20);
 
-        detailsFNTextField.setBackground(new java.awt.Color(204, 204, 204));
+        detailsFNTextField.setBackground(new java.awt.Color(255, 255, 255));
         detailsFNTextField.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         detailsFNTextField.setForeground(new java.awt.Color(0, 102, 102));
         detailsFNTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 2));
         detailsPanel.add(detailsFNTextField);
         detailsFNTextField.setBounds(190, 90, 240, 22);
 
-        detailsLNTextField.setBackground(new java.awt.Color(204, 204, 204));
+        detailsLNTextField.setBackground(new java.awt.Color(255, 255, 255));
         detailsLNTextField.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         detailsLNTextField.setForeground(new java.awt.Color(0, 102, 102));
         detailsLNTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 2));
         detailsPanel.add(detailsLNTextField);
         detailsLNTextField.setBounds(190, 140, 240, 22);
 
-        detailsEmailTextField.setBackground(new java.awt.Color(204, 204, 204));
+        detailsEmailTextField.setBackground(new java.awt.Color(255, 255, 255));
         detailsEmailTextField.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         detailsEmailTextField.setForeground(new java.awt.Color(0, 102, 102));
         detailsEmailTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 2));
         detailsPanel.add(detailsEmailTextField);
         detailsEmailTextField.setBounds(190, 310, 240, 22);
 
-        detailsPhNoTextField.setBackground(new java.awt.Color(204, 204, 204));
+        detailsPhNoTextField.setBackground(new java.awt.Color(255, 255, 255));
         detailsPhNoTextField.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         detailsPhNoTextField.setForeground(new java.awt.Color(0, 102, 102));
         detailsPhNoTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 2));
@@ -353,7 +433,6 @@ public class MainPage extends javax.swing.JFrame {
         detailsPhNoTextField.setBounds(190, 360, 240, 22);
 
         detailsDelOrPicComboBox.setBackground(new java.awt.Color(0, 51, 51));
-        detailsDelOrPicComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         detailsPanel.add(detailsDelOrPicComboBox);
         detailsDelOrPicComboBox.setBounds(500, 230, 130, 26);
 
@@ -363,7 +442,7 @@ public class MainPage extends javax.swing.JFrame {
         detailsPanel.add(detailsDelOrPicLabel);
         detailsDelOrPicLabel.setBounds(500, 200, 150, 20);
 
-        detailsAddressTextArea.setBackground(new java.awt.Color(204, 204, 204));
+        detailsAddressTextArea.setBackground(new java.awt.Color(255, 255, 255));
         detailsAddressTextArea.setColumns(20);
         detailsAddressTextArea.setFont(new java.awt.Font("Corbel", 1, 12)); // NOI18N
         detailsAddressTextArea.setForeground(new java.awt.Color(0, 102, 102));
@@ -372,7 +451,7 @@ public class MainPage extends javax.swing.JFrame {
         detailsAddressScrollPane.setViewportView(detailsAddressTextArea);
 
         detailsPanel.add(detailsAddressScrollPane);
-        detailsAddressScrollPane.setBounds(190, 180, 240, 83);
+        detailsAddressScrollPane.setBounds(190, 180, 240, 100);
 
         detailsBackButton.setBackground(new java.awt.Color(0, 51, 51));
         detailsBackButton.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
@@ -473,22 +552,29 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JPasswordField loginUserPasswordField;
     private javax.swing.JTextField loginUserTextField;
     private javax.swing.JLabel loginUsernameLabel;
-    private javax.swing.JButton orderingAddButton;
     private javax.swing.JButton orderingBackButton;
+    private javax.swing.JLabel orderingCartFlavoursLabel;
+    private javax.swing.JTextField orderingCartFlavoursTextField;
     private javax.swing.JLabel orderingCartLabel;
-    private javax.swing.JScrollPane orderingCartScrollPane;
-    private javax.swing.JTextArea orderingCartTextArea;
+    private javax.swing.JPanel orderingCartPanel;
+    private javax.swing.JLabel orderingCartQuantityLabel;
+    private javax.swing.JTextField orderingCartQuantityTextField;
+    private javax.swing.JLabel orderingCartShapesLabel;
+    private javax.swing.JTextField orderingCartShapesTextField;
+    private javax.swing.JLabel orderingCartSizesLabel;
+    private javax.swing.JTextField orderingCartSizesTextField;
     private javax.swing.JButton orderingContinueButton;
     private javax.swing.JComboBox<CakeFlavours> orderingFlavoursComboBox;
     private javax.swing.JLabel orderingFlavoursLabel;
     private javax.swing.JPanel orderingPanel;
+    private javax.swing.JButton orderingQtyAddButton;
     private javax.swing.JLabel orderingQtyNoLabel;
+    private javax.swing.JButton orderingQtySubtractButton;
     private javax.swing.JLabel orderingQuantityLabel;
     private javax.swing.JComboBox<CakeShapes> orderingShapesComboBox;
     private javax.swing.JLabel orderingShapesLabel;
     private javax.swing.JComboBox<CakeSizes> orderingSizesComboBox;
     private javax.swing.JLabel orderingSizesLabel;
-    private javax.swing.JButton orderingSubtractButton;
     private javax.swing.JPanel panelForFrame;
     private javax.swing.JTabbedPane tabsPanel;
     private javax.swing.JLabel titleLabel;
