@@ -99,10 +99,8 @@ public class MainPage extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(700, 600));
         setResizable(false);
         setSize(new java.awt.Dimension(700, 630));
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelForFrame.setBackground(new java.awt.Color(255, 255, 255));
-        panelForFrame.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         titlePanel.setBackground(new java.awt.Color(255, 255, 255));
         titlePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
@@ -129,111 +127,99 @@ public class MainPage extends javax.swing.JFrame {
                 .addGap(15, 15, 15))
         );
 
-        panelForFrame.add(titlePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 110));
-
         tabsPanel.setBackground(new java.awt.Color(255, 255, 255));
         tabsPanel.setBorder(null);
         tabsPanel.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
 
         homePanel.setBackground(new java.awt.Color(255, 255, 255));
         homePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
-        homePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         homeIconLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\maxin\\Desktop\\homepage.jpg")); // NOI18N
-        homePanel.add(homeIconLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, -1, -1));
 
         homeContinueBttn.setBackground(new java.awt.Color(0, 51, 51));
         homeContinueBttn.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         homeContinueBttn.setForeground(new java.awt.Color(255, 255, 255));
         homeContinueBttn.setText("CONTINUE");
-        homePanel.add(homeContinueBttn, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 411, -1, 38));
+
+        javax.swing.GroupLayout homePanelLayout = new javax.swing.GroupLayout(homePanel);
+        homePanel.setLayout(homePanelLayout);
+        homePanelLayout.setHorizontalGroup(
+            homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(homePanelLayout.createSequentialGroup()
+                .addGap(167, 167, 167)
+                .addComponent(homeIconLabel))
+            .addGroup(homePanelLayout.createSequentialGroup()
+                .addGap(281, 281, 281)
+                .addComponent(homeContinueBttn))
+        );
+        homePanelLayout.setVerticalGroup(
+            homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(homePanelLayout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addComponent(homeIconLabel)
+                .addGap(45, 45, 45)
+                .addComponent(homeContinueBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         tabsPanel.addTab("Home", homePanel);
 
         orderingPanel.setBackground(new java.awt.Color(255, 255, 255));
         orderingPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
-        orderingPanel.setLayout(null);
 
         orderingSizesComboBox.setBackground(new java.awt.Color(0, 51, 51));
-        orderingPanel.add(orderingSizesComboBox);
-        orderingSizesComboBox.setBounds(60, 80, 160, 26);
 
         orderingShapesComboBox.setBackground(new java.awt.Color(0, 51, 51));
         orderingShapesComboBox.setForeground(new java.awt.Color(255, 255, 255));
-        orderingPanel.add(orderingShapesComboBox);
-        orderingShapesComboBox.setBounds(60, 170, 160, 26);
 
         orderingFlavoursComboBox.setBackground(new java.awt.Color(0, 51, 51));
         orderingFlavoursComboBox.setForeground(new java.awt.Color(255, 255, 255));
-        orderingPanel.add(orderingFlavoursComboBox);
-        orderingFlavoursComboBox.setBounds(60, 260, 160, 26);
 
         orderingQtyAddButton.setBackground(new java.awt.Color(0, 51, 51));
         orderingQtyAddButton.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         orderingQtyAddButton.setForeground(new java.awt.Color(255, 255, 255));
         orderingQtyAddButton.setText("+");
-        orderingPanel.add(orderingQtyAddButton);
-        orderingQtyAddButton.setBounds(170, 360, 40, 32);
 
         orderingQtySubtractButton.setBackground(new java.awt.Color(0, 51, 51));
         orderingQtySubtractButton.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         orderingQtySubtractButton.setForeground(new java.awt.Color(255, 255, 255));
         orderingQtySubtractButton.setText("-");
-        orderingPanel.add(orderingQtySubtractButton);
-        orderingQtySubtractButton.setBounds(70, 360, 40, 32);
 
         orderingQtyNoLabel.setBackground(new java.awt.Color(255, 255, 255));
         orderingQtyNoLabel.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         orderingQtyNoLabel.setForeground(new java.awt.Color(0, 102, 102));
         orderingQtyNoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         orderingQtyNoLabel.setText("1");
-        orderingPanel.add(orderingQtyNoLabel);
-        orderingQtyNoLabel.setBounds(110, 360, 60, 30);
 
         orderingBackButton.setBackground(new java.awt.Color(0, 51, 51));
         orderingBackButton.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         orderingBackButton.setForeground(new java.awt.Color(255, 255, 255));
         orderingBackButton.setText("<");
-        orderingPanel.add(orderingBackButton);
-        orderingBackButton.setBounds(240, 460, 70, 30);
 
         orderingContinueButton.setBackground(new java.awt.Color(0, 51, 51));
         orderingContinueButton.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         orderingContinueButton.setForeground(new java.awt.Color(255, 255, 255));
         orderingContinueButton.setText(">");
-        orderingPanel.add(orderingContinueButton);
-        orderingContinueButton.setBounds(330, 460, 70, 30);
 
         orderingSizesLabel.setBackground(new java.awt.Color(255, 255, 255));
         orderingSizesLabel.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         orderingSizesLabel.setForeground(new java.awt.Color(0, 102, 102));
         orderingSizesLabel.setText("Cake Sizes:");
-        orderingPanel.add(orderingSizesLabel);
-        orderingSizesLabel.setBounds(90, 50, 96, 30);
 
         orderingShapesLabel.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         orderingShapesLabel.setForeground(new java.awt.Color(0, 102, 102));
         orderingShapesLabel.setText("Cake Shapes:");
-        orderingPanel.add(orderingShapesLabel);
-        orderingShapesLabel.setBounds(80, 140, 120, 30);
 
         orderingFlavoursLabel.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         orderingFlavoursLabel.setForeground(new java.awt.Color(0, 102, 102));
         orderingFlavoursLabel.setText("Cake Flavours:");
-        orderingPanel.add(orderingFlavoursLabel);
-        orderingFlavoursLabel.setBounds(80, 230, 130, 30);
 
         orderingQuantityLabel.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         orderingQuantityLabel.setForeground(new java.awt.Color(0, 102, 102));
         orderingQuantityLabel.setText("Quantity:");
-        orderingPanel.add(orderingQuantityLabel);
-        orderingQuantityLabel.setBounds(100, 330, 90, 30);
 
         orderingCartLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
         orderingCartLabel.setForeground(new java.awt.Color(0, 102, 102));
         orderingCartLabel.setText("Your Cart:");
-        orderingPanel.add(orderingCartLabel);
-        orderingCartLabel.setBounds(370, 50, 80, 20);
 
         orderingCartPanel.setBackground(new java.awt.Color(255, 255, 255));
         orderingCartPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
@@ -314,133 +300,212 @@ public class MainPage extends javax.swing.JFrame {
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
-        orderingPanel.add(orderingCartPanel);
-        orderingCartPanel.setBounds(350, 70, 260, 340);
+        javax.swing.GroupLayout orderingPanelLayout = new javax.swing.GroupLayout(orderingPanel);
+        orderingPanel.setLayout(orderingPanelLayout);
+        orderingPanelLayout.setHorizontalGroup(
+            orderingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(orderingPanelLayout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addGroup(orderingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(orderingPanelLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(orderingSizesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(orderingSizesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(orderingPanelLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(orderingShapesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(orderingShapesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(orderingPanelLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(orderingFlavoursLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(orderingFlavoursComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(orderingPanelLayout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(orderingQuantityLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(orderingPanelLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(orderingQtySubtractButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(orderingQtyNoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(orderingQtyAddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(130, 130, 130)
+                .addGroup(orderingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(orderingPanelLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(orderingCartLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(orderingCartPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(orderingPanelLayout.createSequentialGroup()
+                .addGap(237, 237, 237)
+                .addComponent(orderingBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(orderingContinueButton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        orderingPanelLayout.setVerticalGroup(
+            orderingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(orderingPanelLayout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addGroup(orderingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(orderingPanelLayout.createSequentialGroup()
+                        .addComponent(orderingSizesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(orderingSizesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
+                        .addComponent(orderingShapesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(orderingShapesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
+                        .addComponent(orderingFlavoursLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(orderingFlavoursComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44)
+                        .addComponent(orderingQuantityLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(orderingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(orderingQtySubtractButton)
+                            .addComponent(orderingQtyNoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(orderingQtyAddButton)))
+                    .addGroup(orderingPanelLayout.createSequentialGroup()
+                        .addComponent(orderingCartLabel)
+                        .addGap(0, 0, 0)
+                        .addComponent(orderingCartPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(50, 50, 50)
+                .addGroup(orderingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(orderingBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(orderingContinueButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
 
         tabsPanel.addTab("Ordering", orderingPanel);
 
         loginPanel.setBackground(new java.awt.Color(255, 255, 255));
         loginPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
-        loginPanel.setLayout(null);
 
         loginUserTextField.setBackground(new java.awt.Color(204, 204, 204));
         loginUserTextField.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         loginUserTextField.setForeground(new java.awt.Color(0, 51, 51));
-        loginPanel.add(loginUserTextField);
-        loginUserTextField.setBounds(310, 190, 200, 30);
 
         loginTextLabel.setFont(new java.awt.Font("Corbel", 1, 24)); // NOI18N
         loginTextLabel.setForeground(new java.awt.Color(0, 102, 102));
         loginTextLabel.setText("Login or create an account to proceed:");
-        loginPanel.add(loginTextLabel);
-        loginTextLabel.setBounds(170, 120, 397, 30);
 
         loginUsernameLabel.setBackground(new java.awt.Color(255, 255, 255));
         loginUsernameLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
         loginUsernameLabel.setForeground(new java.awt.Color(0, 102, 102));
         loginUsernameLabel.setText("Username:");
-        loginPanel.add(loginUsernameLabel);
-        loginUsernameLabel.setBounds(210, 200, 88, 20);
 
         loginPasswordLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
         loginPasswordLabel.setForeground(new java.awt.Color(0, 102, 102));
         loginPasswordLabel.setText("Password:");
-        loginPanel.add(loginPasswordLabel);
-        loginPasswordLabel.setBounds(210, 260, 80, 20);
 
         loginUserPasswordField.setBackground(new java.awt.Color(204, 204, 204));
         loginUserPasswordField.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         loginUserPasswordField.setForeground(new java.awt.Color(0, 51, 51));
-        loginPanel.add(loginUserPasswordField);
-        loginUserPasswordField.setBounds(310, 250, 200, 30);
 
         loginContinueButton.setBackground(new java.awt.Color(0, 51, 51));
         loginContinueButton.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         loginContinueButton.setForeground(new java.awt.Color(255, 255, 255));
         loginContinueButton.setText("Continue");
-        loginPanel.add(loginContinueButton);
-        loginContinueButton.setBounds(360, 350, 100, 30);
 
         loginBackButton.setBackground(new java.awt.Color(0, 51, 51));
         loginBackButton.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         loginBackButton.setForeground(new java.awt.Color(255, 255, 255));
         loginBackButton.setText("Back");
-        loginPanel.add(loginBackButton);
-        loginBackButton.setBounds(230, 350, 100, 30);
+
+        javax.swing.GroupLayout loginPanelLayout = new javax.swing.GroupLayout(loginPanel);
+        loginPanel.setLayout(loginPanelLayout);
+        loginPanelLayout.setHorizontalGroup(
+            loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(loginPanelLayout.createSequentialGroup()
+                .addGap(167, 167, 167)
+                .addComponent(loginTextLabel))
+            .addGroup(loginPanelLayout.createSequentialGroup()
+                .addGap(207, 207, 207)
+                .addComponent(loginUsernameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(loginUserTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(loginPanelLayout.createSequentialGroup()
+                .addGap(207, 207, 207)
+                .addComponent(loginPasswordLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(loginUserPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(loginPanelLayout.createSequentialGroup()
+                .addGap(227, 227, 227)
+                .addComponent(loginBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(loginContinueButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        loginPanelLayout.setVerticalGroup(
+            loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(loginPanelLayout.createSequentialGroup()
+                .addGap(117, 117, 117)
+                .addComponent(loginTextLabel)
+                .addGap(40, 40, 40)
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(loginPanelLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(loginUsernameLabel))
+                    .addComponent(loginUserTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(loginPanelLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(loginPasswordLabel))
+                    .addComponent(loginUserPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(70, 70, 70)
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(loginBackButton)
+                    .addComponent(loginContinueButton)))
+        );
 
         tabsPanel.addTab("Login", loginPanel);
 
         detailsPanel.setBackground(new java.awt.Color(255, 255, 255));
         detailsPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
-        detailsPanel.setLayout(null);
 
         detailsFNLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
         detailsFNLabel.setForeground(new java.awt.Color(0, 102, 102));
         detailsFNLabel.setText("First Name:");
-        detailsPanel.add(detailsFNLabel);
-        detailsFNLabel.setBounds(60, 90, 79, 20);
 
         detailsLNLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
         detailsLNLabel.setForeground(new java.awt.Color(0, 102, 102));
         detailsLNLabel.setText("Last Name:");
-        detailsPanel.add(detailsLNLabel);
-        detailsLNLabel.setBounds(60, 140, 80, 20);
 
         detailsAddressLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
         detailsAddressLabel.setForeground(new java.awt.Color(0, 102, 102));
         detailsAddressLabel.setText("Address:");
-        detailsPanel.add(detailsAddressLabel);
-        detailsAddressLabel.setBounds(60, 190, 80, 20);
 
         detailsEmailLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
         detailsEmailLabel.setForeground(new java.awt.Color(0, 102, 102));
         detailsEmailLabel.setText("Email Address:");
-        detailsPanel.add(detailsEmailLabel);
-        detailsEmailLabel.setBounds(60, 310, 120, 30);
 
         detailsPhNoLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
         detailsPhNoLabel.setForeground(new java.awt.Color(0, 102, 102));
         detailsPhNoLabel.setText("Phone Number:");
-        detailsPanel.add(detailsPhNoLabel);
-        detailsPhNoLabel.setBounds(60, 370, 120, 20);
 
         detailsFNTextField.setBackground(new java.awt.Color(255, 255, 255));
         detailsFNTextField.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         detailsFNTextField.setForeground(new java.awt.Color(0, 102, 102));
         detailsFNTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 2));
-        detailsPanel.add(detailsFNTextField);
-        detailsFNTextField.setBounds(190, 90, 240, 22);
 
         detailsLNTextField.setBackground(new java.awt.Color(255, 255, 255));
         detailsLNTextField.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         detailsLNTextField.setForeground(new java.awt.Color(0, 102, 102));
         detailsLNTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 2));
-        detailsPanel.add(detailsLNTextField);
-        detailsLNTextField.setBounds(190, 140, 240, 22);
 
         detailsEmailTextField.setBackground(new java.awt.Color(255, 255, 255));
         detailsEmailTextField.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         detailsEmailTextField.setForeground(new java.awt.Color(0, 102, 102));
         detailsEmailTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 2));
-        detailsPanel.add(detailsEmailTextField);
-        detailsEmailTextField.setBounds(190, 310, 240, 22);
 
         detailsPhNoTextField.setBackground(new java.awt.Color(255, 255, 255));
         detailsPhNoTextField.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         detailsPhNoTextField.setForeground(new java.awt.Color(0, 102, 102));
         detailsPhNoTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 2));
-        detailsPanel.add(detailsPhNoTextField);
-        detailsPhNoTextField.setBounds(190, 360, 240, 22);
 
         detailsDelOrPicComboBox.setBackground(new java.awt.Color(0, 51, 51));
-        detailsPanel.add(detailsDelOrPicComboBox);
-        detailsDelOrPicComboBox.setBounds(500, 230, 130, 26);
 
         detailsDelOrPicLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
         detailsDelOrPicLabel.setForeground(new java.awt.Color(0, 102, 102));
         detailsDelOrPicLabel.setText("Delivery or Pick Up:");
-        detailsPanel.add(detailsDelOrPicLabel);
-        detailsDelOrPicLabel.setBounds(500, 200, 150, 20);
 
         detailsAddressTextArea.setBackground(new java.awt.Color(255, 255, 255));
         detailsAddressTextArea.setColumns(20);
@@ -450,28 +515,120 @@ public class MainPage extends javax.swing.JFrame {
         detailsAddressTextArea.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102)));
         detailsAddressScrollPane.setViewportView(detailsAddressTextArea);
 
-        detailsPanel.add(detailsAddressScrollPane);
-        detailsAddressScrollPane.setBounds(190, 180, 240, 100);
-
         detailsBackButton.setBackground(new java.awt.Color(0, 51, 51));
         detailsBackButton.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         detailsBackButton.setForeground(new java.awt.Color(255, 255, 255));
         detailsBackButton.setText("<");
-        detailsPanel.add(detailsBackButton);
-        detailsBackButton.setBounds(260, 450, 80, 30);
 
         detailsContinueButton.setBackground(new java.awt.Color(0, 51, 51));
         detailsContinueButton.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         detailsContinueButton.setForeground(new java.awt.Color(255, 255, 255));
         detailsContinueButton.setText(">");
-        detailsPanel.add(detailsContinueButton);
-        detailsContinueButton.setBounds(360, 450, 73, 30);
+
+        javax.swing.GroupLayout detailsPanelLayout = new javax.swing.GroupLayout(detailsPanel);
+        detailsPanel.setLayout(detailsPanelLayout);
+        detailsPanelLayout.setHorizontalGroup(
+            detailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(detailsPanelLayout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addComponent(detailsFNLabel)
+                .addGap(49, 49, 49)
+                .addComponent(detailsFNTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(detailsPanelLayout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addComponent(detailsLNLabel)
+                .addGap(50, 50, 50)
+                .addComponent(detailsLNTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(detailsPanelLayout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addComponent(detailsAddressLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(detailsAddressScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70)
+                .addGroup(detailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(detailsDelOrPicLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(detailsDelOrPicComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(detailsPanelLayout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addComponent(detailsEmailLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(detailsEmailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(detailsPanelLayout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addComponent(detailsPhNoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(detailsPhNoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(detailsPanelLayout.createSequentialGroup()
+                .addGap(257, 257, 257)
+                .addComponent(detailsBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(detailsContinueButton, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        detailsPanelLayout.setVerticalGroup(
+            detailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(detailsPanelLayout.createSequentialGroup()
+                .addGap(87, 87, 87)
+                .addGroup(detailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(detailsFNLabel)
+                    .addComponent(detailsFNTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addGroup(detailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(detailsLNLabel)
+                    .addComponent(detailsLNTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(detailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(detailsPanelLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(detailsAddressLabel))
+                    .addComponent(detailsAddressScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(detailsPanelLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(detailsDelOrPicLabel)
+                        .addGap(10, 10, 10)
+                        .addComponent(detailsDelOrPicComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(30, 30, 30)
+                .addGroup(detailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(detailsEmailLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(detailsEmailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(detailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(detailsPanelLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(detailsPhNoLabel))
+                    .addComponent(detailsPhNoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(60, 60, 60)
+                .addGroup(detailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(detailsBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(detailsContinueButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
 
         tabsPanel.addTab("Customer Details", detailsPanel);
 
-        panelForFrame.add(tabsPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 700, 559));
+        javax.swing.GroupLayout panelForFrameLayout = new javax.swing.GroupLayout(panelForFrame);
+        panelForFrame.setLayout(panelForFrameLayout);
+        panelForFrameLayout.setHorizontalGroup(
+            panelForFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(titlePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(tabsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        panelForFrameLayout.setVerticalGroup(
+            panelForFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(titlePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(panelForFrameLayout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addComponent(tabsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 559, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
-        getContentPane().add(panelForFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 630));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panelForFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panelForFrame, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -21,7 +21,7 @@ import javax.swing.JFrame;
  * 
  * 
  */
-public class View extends JFrame implements Observer {
+public class View extends JFrame  {
     
     // Declare ActionListnener for addActionListener method later for components below
     private ActionListener actionListener; 
@@ -121,10 +121,10 @@ public class View extends JFrame implements Observer {
         setMinimumSize(new java.awt.Dimension(700, 600));
         setResizable(false);
         setSize(new java.awt.Dimension(700, 630));
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        //getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelForFrame.setBackground(new java.awt.Color(255, 255, 255));
-        panelForFrame.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        //panelForFrame.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         titlePanel.setBackground(new java.awt.Color(255, 255, 255));
         titlePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
@@ -151,7 +151,7 @@ public class View extends JFrame implements Observer {
                 .addGap(15, 15, 15))
         );
 
-        panelForFrame.add(titlePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 110));
+        //panelForFrame.add(titlePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 110));
         tabsPanel.setBackground(new java.awt.Color(255, 255, 255));
         tabsPanel.setBorder(null);
         tabsPanel.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
@@ -165,8 +165,7 @@ public class View extends JFrame implements Observer {
       
         homePanel.setBackground(new java.awt.Color(255, 255, 255));
         homePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
-        homePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
+        // homePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         // Creating an instance of HomePageImage class, which holds the image we need for home page panel
         HomePageImage hpi = new HomePageImage();
         this.add(hpi, BorderLayout.CENTER); // setting image to the center
@@ -179,9 +178,29 @@ public class View extends JFrame implements Observer {
         homeContinueBttn.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         homeContinueBttn.setForeground(new java.awt.Color(255, 255, 255));
         homeContinueBttn.setText("CONTINUE");
-        homePanel.add(homeContinueBttn, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 411, -1, 38));
+        //homePanel.add(homeContinueBttn, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 411, -1, 38));
         
-        tabsPanel.addTab("Home", homePanel);
+        javax.swing.GroupLayout homePanelLayout = new javax.swing.GroupLayout(homePanel);
+        homePanel.setLayout(homePanelLayout);
+        homePanelLayout.setHorizontalGroup(
+            homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(homePanelLayout.createSequentialGroup()
+                .addGap(167, 167, 167)
+                .addComponent(homeIconLabel))
+            .addGroup(homePanelLayout.createSequentialGroup()
+                .addGap(281, 281, 281)
+                .addComponent(homeContinueBttn))
+        );
+        homePanelLayout.setVerticalGroup(
+            homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(homePanelLayout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addComponent(homeIconLabel)
+                .addGap(45, 45, 45)
+                .addComponent(homeContinueBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        
+        tabsPanel.addTab("Home", homePanel);  
         
         
         // Instantiating ordering panel gui components
@@ -213,77 +232,79 @@ public class View extends JFrame implements Observer {
         // Setting and adding elements to ordering components
         orderingPanel.setBackground(new java.awt.Color(255, 255, 255));
         orderingPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
-        orderingPanel.setLayout(null);
+        //orderingPanel.setLayout(null);
 
         orderingSizesLabel.setBackground(new java.awt.Color(255, 255, 255));
         orderingSizesLabel.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         orderingSizesLabel.setForeground(new java.awt.Color(0, 102, 102));
         orderingSizesLabel.setText("Cake Sizes:");
-        orderingPanel.add(orderingSizesLabel);
-        orderingSizesLabel.setBounds(90, 50, 96, 30);
+        //orderingPanel.add(orderingSizesLabel);
+        //orderingSizesLabel.setBounds(90, 50, 96, 30);
         
         orderingSizesComboBox.setBackground(new java.awt.Color(0, 51, 51));
-        orderingPanel.add(orderingSizesComboBox);
-        orderingSizesComboBox.setBounds(60, 80, 160, 26);
+        //orderingPanel.add(orderingSizesComboBox);
+        //orderingSizesComboBox.setBounds(60, 80, 160, 26);
 
         orderingShapesLabel.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         orderingShapesLabel.setForeground(new java.awt.Color(0, 102, 102));
         orderingShapesLabel.setText("Cake Shapes:");
-        orderingPanel.add(orderingShapesLabel);
-        orderingShapesLabel.setBounds(80, 140, 120, 30);
+        //orderingPanel.add(orderingShapesLabel);
+        //orderingShapesLabel.setBounds(80, 140, 120, 30);
         
         orderingShapesComboBox.setBackground(new java.awt.Color(0, 51, 51));
         orderingShapesComboBox.setForeground(new java.awt.Color(255, 255, 255));
-        orderingPanel.add(orderingShapesComboBox);
-        orderingShapesComboBox.setBounds(60, 170, 160, 26);
+        //orderingPanel.add(orderingShapesComboBox);
+        //orderingShapesComboBox.setBounds(60, 170, 160, 26);
         
         orderingFlavoursLabel.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         orderingFlavoursLabel.setForeground(new java.awt.Color(0, 102, 102));
         orderingFlavoursLabel.setText("Cake Flavours:");
-        orderingPanel.add(orderingFlavoursLabel);
-        orderingFlavoursLabel.setBounds(80, 230, 130, 30);
+        //orderingPanel.add(orderingFlavoursLabel);
+        //orderingFlavoursLabel.setBounds(80, 230, 130, 30);
 
         orderingFlavoursComboBox.setBackground(new java.awt.Color(0, 51, 51));
         orderingFlavoursComboBox.setForeground(new java.awt.Color(255, 255, 255));
-        orderingPanel.add(orderingFlavoursComboBox);
-        orderingFlavoursComboBox.setBounds(60, 260, 160, 26);
+        //orderingPanel.add(orderingFlavoursComboBox);
+        //orderingFlavoursComboBox.setBounds(60, 260, 160, 26);
         
         orderingQuantityLabel.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         orderingQuantityLabel.setForeground(new java.awt.Color(0, 102, 102));
         orderingQuantityLabel.setText("Quantity:");
-        orderingPanel.add(orderingQuantityLabel);
-        orderingQuantityLabel.setBounds(100, 330, 90, 30);
+        //orderingPanel.add(orderingQuantityLabel);
+        //orderingQuantityLabel.setBounds(100, 330, 90, 30);
         
         orderingQtySubtractButton.setBackground(new java.awt.Color(0, 51, 51));
         orderingQtySubtractButton.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         orderingQtySubtractButton.setForeground(new java.awt.Color(255, 255, 255));
         orderingQtySubtractButton.setText("-");
-        orderingPanel.add(orderingQtySubtractButton);
-        orderingQtySubtractButton.setBounds(70, 360, 40, 32);
+        //orderingPanel.add(orderingQtySubtractButton);
+        //orderingQtySubtractButton.setBounds(70, 360, 40, 32);
         
         orderingQtyNoLabel.setBackground(new java.awt.Color(255, 255, 255));
         orderingQtyNoLabel.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         orderingQtyNoLabel.setForeground(new java.awt.Color(0, 102, 102));
         orderingQtyNoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         orderingQtyNoLabel.setText("1");
-        orderingPanel.add(orderingQtyNoLabel);
-        orderingQtyNoLabel.setBounds(110, 360, 60, 30);
+        //orderingPanel.add(orderingQtyNoLabel);
+        //orderingQtyNoLabel.setBounds(110, 360, 60, 30);
         
         orderingQtyAddButton.setBackground(new java.awt.Color(0, 51, 51));
         orderingQtyAddButton.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         orderingQtyAddButton.setForeground(new java.awt.Color(255, 255, 255));
         orderingQtyAddButton.setText("+");
-        orderingPanel.add(orderingQtyAddButton);
-        orderingQtyAddButton.setBounds(170, 360, 40, 32);
+        //orderingPanel.add(orderingQtyAddButton);
+        //orderingQtyAddButton.setBounds(170, 360, 40, 32);
         
-        orderingCartPanel.setBackground(new java.awt.Color(255, 255, 255));
-        orderingCartPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
         
+        // Creating cart panel and components inside it for ordering page
         orderingCartLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
         orderingCartLabel.setForeground(new java.awt.Color(0, 102, 102));
         orderingCartLabel.setText("Your Cart:");
-        orderingPanel.add(orderingCartLabel);
-        orderingCartLabel.setBounds(370, 50, 80, 20);
+        //orderingPanel.add(orderingCartLabel);
+        //orderingCartLabel.setBounds(370, 50, 80, 20);
+        
+        orderingCartPanel.setBackground(new java.awt.Color(255, 255, 255));
+        orderingCartPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
        
         orderingCartSizesLabel.setBackground(new java.awt.Color(255, 255, 255));
         orderingCartSizesLabel.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
@@ -326,15 +347,15 @@ public class View extends JFrame implements Observer {
         orderingBackButton.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         orderingBackButton.setForeground(new java.awt.Color(255, 255, 255));
         orderingBackButton.setText("<");
-        orderingPanel.add(orderingBackButton);
-        orderingBackButton.setBounds(240, 460, 70, 30);
+        //orderingPanel.add(orderingBackButton);
+        //orderingBackButton.setBounds(240, 460, 70, 30);
 
         orderingContinueButton.setBackground(new java.awt.Color(0, 51, 51));
         orderingContinueButton.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         orderingContinueButton.setForeground(new java.awt.Color(255, 255, 255));
         orderingContinueButton.setText(">");
-        orderingPanel.add(orderingContinueButton);
-        orderingContinueButton.setBounds(330, 460, 70, 30);
+        //orderingPanel.add(orderingContinueButton);
+        //orderingContinueButton.setBounds(330, 460, 70, 30);
         
         javax.swing.GroupLayout orderingCartPanelLayout = new javax.swing.GroupLayout(orderingCartPanel);
         orderingCartPanel.setLayout(orderingCartPanelLayout);
@@ -392,7 +413,7 @@ public class View extends JFrame implements Observer {
         // Setting and adding elements to login components
         loginPanel.setBackground(new java.awt.Color(255, 255, 255));
         loginPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
-        loginPanel.setLayout(null);
+        //loginPanel.setLayout(null);
 
         loginUserTextField.setBackground(new java.awt.Color(204, 204, 204));
         loginUserTextField.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
@@ -583,13 +604,13 @@ public class View extends JFrame implements Observer {
         this.actionListener = actionListener;
         
         mainPageGui();
-        setVisible(true);
+        this.setVisible(true);
     }
     
-    @Override
+    /**@Override
     public void update(Observable o, Object o1) {
        
-    }
+    } */
     
     
 }
