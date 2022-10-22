@@ -493,47 +493,93 @@ public class View extends JFrame  {
         loginUserTextField.setBackground(new java.awt.Color(204, 204, 204));
         loginUserTextField.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         loginUserTextField.setForeground(new java.awt.Color(0, 51, 51));
-        loginPanel.add(loginUserTextField);
-        loginUserTextField.setBounds(310, 190, 200, 30);
+        //loginPanel.add(loginUserTextField);
+        //loginUserTextField.setBounds(310, 190, 200, 30);
 
         loginTextLabel.setFont(new java.awt.Font("Corbel", 1, 24)); // NOI18N
         loginTextLabel.setForeground(new java.awt.Color(0, 102, 102));
         loginTextLabel.setText("Login or create an account to proceed:");
-        loginPanel.add(loginTextLabel);
-        loginTextLabel.setBounds(170, 120, 397, 30);
+        //loginPanel.add(loginTextLabel);
+        //loginTextLabel.setBounds(170, 120, 397, 30);
 
         loginUsernameLabel.setBackground(new java.awt.Color(255, 255, 255));
         loginUsernameLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
         loginUsernameLabel.setForeground(new java.awt.Color(0, 102, 102));
         loginUsernameLabel.setText("Username:");
-        loginPanel.add(loginUsernameLabel);
-        loginUsernameLabel.setBounds(210, 200, 88, 20);
+        //loginPanel.add(loginUsernameLabel);
+        //loginUsernameLabel.setBounds(210, 200, 88, 20);
 
         loginPasswordLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
         loginPasswordLabel.setForeground(new java.awt.Color(0, 102, 102));
         loginPasswordLabel.setText("Password:");
-        loginPanel.add(loginPasswordLabel);
-        loginPasswordLabel.setBounds(210, 260, 80, 20);
+        //loginPanel.add(loginPasswordLabel);
+        //loginPasswordLabel.setBounds(210, 260, 80, 20);
 
         loginUserPasswordField.setBackground(new java.awt.Color(204, 204, 204));
         loginUserPasswordField.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         loginUserPasswordField.setForeground(new java.awt.Color(0, 51, 51));
-        loginPanel.add(loginUserPasswordField);
-        loginUserPasswordField.setBounds(310, 250, 200, 30);
+        //loginPanel.add(loginUserPasswordField);
+        //loginUserPasswordField.setBounds(310, 250, 200, 30);
 
         loginContinueButton.setBackground(new java.awt.Color(0, 51, 51));
         loginContinueButton.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         loginContinueButton.setForeground(new java.awt.Color(255, 255, 255));
         loginContinueButton.setText("Continue");
-        loginPanel.add(loginContinueButton);
-        loginContinueButton.setBounds(360, 350, 100, 30);
+        //loginPanel.add(loginContinueButton);
+        //loginContinueButton.setBounds(360, 350, 100, 30);
 
         loginBackButton.setBackground(new java.awt.Color(0, 51, 51));
         loginBackButton.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         loginBackButton.setForeground(new java.awt.Color(255, 255, 255));
         loginBackButton.setText("Back");
-        loginPanel.add(loginBackButton);
-        loginBackButton.setBounds(230, 350, 100, 30);
+        //loginPanel.add(loginBackButton);
+        //loginBackButton.setBounds(230, 350, 100, 30);
+        
+        javax.swing.GroupLayout loginPanelLayout = new javax.swing.GroupLayout(loginPanel);
+        loginPanel.setLayout(loginPanelLayout);
+        loginPanelLayout.setHorizontalGroup(
+            loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(loginPanelLayout.createSequentialGroup()
+                .addGap(167, 167, 167)
+                .addComponent(loginTextLabel))
+            .addGroup(loginPanelLayout.createSequentialGroup()
+                .addGap(207, 207, 207)
+                .addComponent(loginUsernameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(loginUserTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(loginPanelLayout.createSequentialGroup()
+                .addGap(207, 207, 207)
+                .addComponent(loginPasswordLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(loginUserPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(loginPanelLayout.createSequentialGroup()
+                .addGap(227, 227, 227)
+                .addComponent(loginBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(loginContinueButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        loginPanelLayout.setVerticalGroup(
+            loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(loginPanelLayout.createSequentialGroup()
+                .addGap(117, 117, 117)
+                .addComponent(loginTextLabel)
+                .addGap(40, 40, 40)
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(loginPanelLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(loginUsernameLabel))
+                    .addComponent(loginUserTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(loginPanelLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(loginPasswordLabel))
+                    .addComponent(loginUserPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(70, 70, 70)
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(loginBackButton)
+                    .addComponent(loginContinueButton)))
+        );
 
         tabsPanel.addTab("Login", loginPanel);
         
