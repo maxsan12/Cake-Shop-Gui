@@ -23,7 +23,7 @@ import javax.swing.JFrame;
  */
 public class View extends JFrame implements Observer {
     
-    // Declare ActionListnener to perform actionPerformed later for components below
+    // Declare ActionListnener for addActionListener method later for components below
     private ActionListener actionListener; 
     
     /** COMPONENTS FOR MAIN PAGE GUI 
@@ -98,8 +98,7 @@ public class View extends JFrame implements Observer {
     public javax.swing.JComboBox<String> detailsDelOrPicComboBox;
     public javax.swing.JButton detailsBackButton;
     public javax.swing.JButton detailsContinueButton;
-    
-  
+
     /** COMPONENTS FOR RECEIPT GUI 
      * 
      * 
@@ -115,6 +114,7 @@ public class View extends JFrame implements Observer {
         titleLabel = new javax.swing.JLabel();
         tabsPanel = new javax.swing.JTabbedPane();
         
+        // Setting and adding elements to main page components
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CC CAKES");
         setBackground(new java.awt.Color(0, 102, 102));
@@ -158,7 +158,6 @@ public class View extends JFrame implements Observer {
         tabsPanel.setSize(700, 559); // setting tabsPanel/JTabbedPanel to this specific size so that the panel can stay hidden when executed
 
         
-        
         // Instantiating home panel gui components 
         homePanel = new javax.swing.JPanel();
         homeIconLabel = new javax.swing.JLabel();
@@ -168,6 +167,7 @@ public class View extends JFrame implements Observer {
         homePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
         homePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        // Creating an instance of HomePageImage class, which holds the image we need for home page panel
         HomePageImage hpi = new HomePageImage();
         this.add(hpi, BorderLayout.CENTER); // setting image to the center
         homePanel.add(hpi); // adding image from HomePageImage class 
@@ -182,7 +182,6 @@ public class View extends JFrame implements Observer {
         homePanel.add(homeContinueBttn, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 411, -1, 38));
         
         tabsPanel.addTab("Home", homePanel);
-        
         
         
         // Instantiating ordering panel gui components
@@ -210,6 +209,8 @@ public class View extends JFrame implements Observer {
         orderingBackButton = new javax.swing.JButton();
         orderingContinueButton = new javax.swing.JButton();
         
+        
+        // Setting and adding elements to ordering components
         orderingPanel.setBackground(new java.awt.Color(255, 255, 255));
         orderingPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
         orderingPanel.setLayout(null);
@@ -335,7 +336,7 @@ public class View extends JFrame implements Observer {
         orderingPanel.add(orderingContinueButton);
         orderingContinueButton.setBounds(330, 460, 70, 30);
         
-           javax.swing.GroupLayout orderingCartPanelLayout = new javax.swing.GroupLayout(orderingCartPanel);
+        javax.swing.GroupLayout orderingCartPanelLayout = new javax.swing.GroupLayout(orderingCartPanel);
         orderingCartPanel.setLayout(orderingCartPanelLayout);
         orderingCartPanelLayout.setHorizontalGroup(
             orderingCartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -378,7 +379,6 @@ public class View extends JFrame implements Observer {
         orderingCartPanel.setBounds(350, 70, 260, 340);
         
         
-        
         // Instantiating login panel gui components
         loginPanel = new javax.swing.JPanel();
         loginUserTextField = new javax.swing.JTextField();
@@ -389,6 +389,7 @@ public class View extends JFrame implements Observer {
         loginContinueButton = new javax.swing.JButton();
         loginBackButton = new javax.swing.JButton();
         
+        // Setting and adding elements to login components
         loginPanel.setBackground(new java.awt.Color(255, 255, 255));
         loginPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
         loginPanel.setLayout(null);
@@ -440,8 +441,6 @@ public class View extends JFrame implements Observer {
 
         tabsPanel.addTab("Login", loginPanel);
         
-        
-        
         // Instantiating details panel gui components
         detailsPanel = new javax.swing.JPanel();
         detailsFNLabel = new javax.swing.JLabel();
@@ -460,6 +459,7 @@ public class View extends JFrame implements Observer {
         detailsBackButton = new javax.swing.JButton();
         detailsContinueButton = new javax.swing.JButton();
         
+        // setting and adding elements to details components
         detailsPanel.setBackground(new java.awt.Color(255, 255, 255));
         detailsPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
         detailsPanel.setLayout(null);
@@ -567,12 +567,28 @@ public class View extends JFrame implements Observer {
         pack();
         
         // Implement actionlistener here
-
+        this.homeContinueBttn.addActionListener(this.actionListener);
+        this.orderingQtyAddButton.addActionListener(this.actionListener);
+        this.orderingQtySubtractButton.addActionListener(this.actionListener);
+        this.orderingBackButton.addActionListener(this.actionListener);
+        this.orderingContinueButton.addActionListener(this.actionListener);
+        this.loginBackButton.addActionListener(this.actionListener);
+        this.loginContinueButton.addActionListener(this.actionListener);  
+        this.detailsBackButton.addActionListener(this.actionListener);
+        this.detailsContinueButton.addActionListener(this.actionListener);
+    }
+    
+    // Method to initialize action listener 
+    public void addActionListener(ActionListener actionListener) {
+        this.actionListener = actionListener;
+        
+        mainPageGui();
+        setVisible(true);
     }
     
     @Override
     public void update(Observable o, Object o1) {
-        
+       
     }
     
     
