@@ -20,11 +20,6 @@ public class CakeShop {
         View view = new View();
         Model model = new Model();
         model.addObserver(view);
-        
-          java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MainPage().setVisible(true);
-            }
-        });
+       
     }
 }

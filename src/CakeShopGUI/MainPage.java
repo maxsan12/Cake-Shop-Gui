@@ -6,6 +6,8 @@ package CakeShopGUI;
 import CakeShopMVC.CakeSizes;
 import CakeShopMVC.CakeShapes;
 import CakeShopMVC.CakeFlavours;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.DefaultComboBoxModel;
 
 
@@ -19,7 +21,7 @@ import javax.swing.DefaultComboBoxModel;
  * used in the other package to fit the MVC pattern design - merely created
  * to design how my gui will look. 
  */
-public class MainPage extends javax.swing.JFrame {
+public class MainPage extends javax.swing.JFrame implements ActionListener{
 
     /**
      * Creates new form NewJFrame
@@ -754,6 +756,28 @@ public class MainPage extends javax.swing.JFrame {
         orderingSizesComboBox.setModel(new DefaultComboBoxModel<>(CakeSizes.values()));
         orderingShapesComboBox.setModel(new DefaultComboBoxModel<>(CakeShapes.values()));
         orderingFlavoursComboBox.setModel(new DefaultComboBoxModel<>(CakeFlavours.values()));
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        
+        Object obj = e.getActionCommand();
+        
+        if(obj == this.homeContinueBttn.getActionCommand()) {
+            this.tabsPanel.setSelectedIndex(1);
+            
+             
+        }
+        else if (obj == this.orderingContinueButton.getActionCommand()) {
+            this.tabsPanel.setSelectedIndex(2);
+        }
+        
+        else if (obj == this.loginContinueButton.getActionCommand()) {
+            this.tabsPanel.setSelectedIndex(3);
+        }
+        else if (obj == this.detailsContinueButton.getActionCommand()) {
+            this.tabsPanel.setSelectedIndex(0);
+        }
     }
 }
 

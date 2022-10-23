@@ -41,19 +41,5 @@ public enum CakeFlavours {
     public String toString() {
         return flavourName + " = $" + String.format("%.2f", flavourCost);
     }
-    
-    /**
-    // Method to print flavour user chooses
-    public String addFlavour() {
-        return "\n" + flavourName + " flavour";
-    }
-    
-     // Print out cake flavours list
-    public static void printFlavourList() {
-        
-        for (CakeFlavours flavour : CakeFlavours.values()) {
-            System.out.println(flavour);
-        }
-    } */
-    
+
 }

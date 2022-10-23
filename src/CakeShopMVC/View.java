@@ -750,8 +750,10 @@ public class View extends JFrame implements Observer {
     // Method to initialize action listener 
     public void addActionListener(ActionListener actionListener) {
         this.actionListener = actionListener;
-      
         
+        mainPageGui();
+        this.setVisible(true);
+     
         
     }
     

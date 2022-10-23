@@ -66,26 +66,22 @@ public class Receipt extends javax.swing.JFrame {
 
         receiptPanel.setBackground(new java.awt.Color(255, 255, 255));
         receiptPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
-        receiptPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         receiptLabel.setBackground(new java.awt.Color(255, 255, 255));
         receiptLabel.setFont(new java.awt.Font("Corbel", 1, 40)); // NOI18N
         receiptLabel.setForeground(new java.awt.Color(0, 102, 102));
         receiptLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         receiptLabel.setText("RECEIPT:");
-        receiptPanel.add(receiptLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, 171, 78));
 
         receiptConfirmButton.setBackground(new java.awt.Color(0, 51, 51));
         receiptConfirmButton.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         receiptConfirmButton.setForeground(new java.awt.Color(255, 255, 255));
         receiptConfirmButton.setText("Confirm");
-        receiptPanel.add(receiptConfirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 580, 100, -1));
 
         receiptOrderAgainButton.setBackground(new java.awt.Color(0, 51, 51));
         receiptOrderAgainButton.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         receiptOrderAgainButton.setForeground(new java.awt.Color(255, 255, 255));
         receiptOrderAgainButton.setText("Order Again");
-        receiptPanel.add(receiptOrderAgainButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 580, -1, -1));
 
         receiptOrderPanel.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -175,8 +171,6 @@ public class Receipt extends javax.swing.JFrame {
                 .addComponent(receiptOtyTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(75, Short.MAX_VALUE))
         );
-
-        receiptPanel.add(receiptOrderPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, 420));
 
         receiptDetailsPanel.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -285,8 +279,6 @@ public class Receipt extends javax.swing.JFrame {
                 .addGap(82, 82, 82))
         );
 
-        receiptPanel.add(receiptDetailsPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 200, 430));
-
         receiptDelOrPicPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         receiptDelOrPicLabel.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
@@ -318,8 +310,6 @@ public class Receipt extends javax.swing.JFrame {
                 .addComponent(receiptDelOrPicTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(20, Short.MAX_VALUE))
         );
-
-        receiptPanel.add(receiptDelOrPicPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 220, 160, 80));
 
         receipTotalPanel.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -371,7 +361,49 @@ public class Receipt extends javax.swing.JFrame {
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
-        receiptPanel.add(receipTotalPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 350, 160, 180));
+        javax.swing.GroupLayout receiptPanelLayout = new javax.swing.GroupLayout(receiptPanel);
+        receiptPanel.setLayout(receiptPanelLayout);
+        receiptPanelLayout.setHorizontalGroup(
+            receiptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(receiptPanelLayout.createSequentialGroup()
+                .addGap(247, 247, 247)
+                .addComponent(receiptLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(receiptPanelLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(receiptOrderPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(receiptDetailsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addGroup(receiptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(receiptDelOrPicPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(receipTotalPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(receiptPanelLayout.createSequentialGroup()
+                .addGap(207, 207, 207)
+                .addComponent(receiptOrderAgainButton)
+                .addGap(29, 29, 29)
+                .addComponent(receiptConfirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        receiptPanelLayout.setVerticalGroup(
+            receiptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(receiptPanelLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(receiptLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addGroup(receiptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(receiptPanelLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(receiptOrderPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(receiptDetailsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(receiptPanelLayout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(receiptDelOrPicPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addComponent(receipTotalPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(40, 40, 40)
+                .addGroup(receiptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(receiptOrderAgainButton)
+                    .addComponent(receiptConfirmButton)))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

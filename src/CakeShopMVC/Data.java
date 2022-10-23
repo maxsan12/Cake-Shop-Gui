@@ -18,5 +18,6 @@ public class Data {
     boolean quitTrack = false; // Checks if user quit the system
     
     // Storing data needed for model and view class
+    String username = "";
     
 }

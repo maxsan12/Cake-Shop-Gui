@@ -21,11 +21,11 @@ import java.awt.event.ActionListener;
 public class Controller implements ActionListener {
     
     public View view; 
-    //public Model model;
+    public Model model;
     
-    public Controller (View view) {
+    public Controller (View view, Model model) {
         this.view = view;
-        //this.model = model;
+        this.model = model;
         
     }
 
@@ -38,21 +38,20 @@ public class Controller implements ActionListener {
         if(obj == this.view.homeContinueBttn.getActionCommand()) {
             this.view.tabsPanel.setSelectedIndex(1);
             
-                if (obj == this.view.orderingContinueButton.getActionCommand()) {
-                this.view.tabsPanel.setSelectedIndex(2);
-            }
+             
+        }
+        else if (obj == this.view.orderingContinueButton.getActionCommand()) {
+            this.view.tabsPanel.setSelectedIndex(2);
         }
         
         else if (obj == this.view.loginContinueButton.getActionCommand()) {
-            this.view.tabsPanel.setSelectedIndex(2);
+            this.view.tabsPanel.setSelectedIndex(3);
         }
         else if (obj == this.view.detailsContinueButton.getActionCommand()) {
             this.view.tabsPanel.setSelectedIndex(0);
         }
     }
     
-    public void actionPerformed2(ActionEvent ae) {
-        
-    }
+  
     
 }
