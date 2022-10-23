@@ -7,6 +7,7 @@ package CakeShopMVC;
 import CakeShopChoices.CakeSizes;
 import CakeShopChoices.CakeShapes;
 import CakeShopChoices.CakeFlavours;
+import CakeShopChoices.DeliveryOrPickup;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.DefaultComboBoxModel;
@@ -99,7 +100,7 @@ public final class OrderingView extends JFrame {
     private javax.swing.JLabel detailsPhNoLabel;
     public javax.swing.JTextField detailsPhNoTextField;
     private javax.swing.JLabel detailsDelOrPicLabel;
-    public javax.swing.JComboBox<String> detailsDelOrPicComboBox;
+    public javax.swing.JComboBox<DeliveryOrPickup> detailsDelOrPicComboBox;
     public javax.swing.JButton detailsBackButton;
     public javax.swing.JButton detailsContinueButton;
     
@@ -248,6 +249,15 @@ public final class OrderingView extends JFrame {
         
         orderingSizesComboBox.setBackground(new java.awt.Color(0, 51, 51));
         orderingSizesComboBox.setForeground(new java.awt.Color(255, 255, 255));
+        orderingSizesComboBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                // ggetting selected option from sizes combobox
+                String selected = orderingSizesComboBox.getSelectedItem().toString();
+                // placing selected size option into the textfield
+                orderingCartSizesTextField.setText(selected);
+            }
+        });
 
         orderingShapesLabel.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         orderingShapesLabel.setForeground(new java.awt.Color(0, 102, 102));
@@ -255,6 +265,15 @@ public final class OrderingView extends JFrame {
         
         orderingShapesComboBox.setBackground(new java.awt.Color(0, 51, 51));
         orderingShapesComboBox.setForeground(new java.awt.Color(255, 255, 255));
+        orderingShapesComboBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                // ggetting selected option from sizes combobox
+                String selected = orderingShapesComboBox.getSelectedItem().toString();
+                // placing selected size option into the textfield
+                orderingCartShapesTextField.setText(selected);
+            }
+        });
         
         orderingFlavoursLabel.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         orderingFlavoursLabel.setForeground(new java.awt.Color(0, 102, 102));
@@ -262,6 +281,15 @@ public final class OrderingView extends JFrame {
 
         orderingFlavoursComboBox.setBackground(new java.awt.Color(0, 51, 51));
         orderingFlavoursComboBox.setForeground(new java.awt.Color(255, 255, 255));
+        orderingFlavoursComboBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                // ggetting selected option from sizes combobox
+                String selected = orderingFlavoursComboBox.getSelectedItem().toString();
+                // placing selected size option into the textfield
+                orderingCartFlavoursTextField.setText(selected);
+            }
+        });
         
         orderingQuantityLabel.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         orderingQuantityLabel.setForeground(new java.awt.Color(0, 102, 102));
@@ -278,6 +306,7 @@ public final class OrderingView extends JFrame {
                 // Note: value will only decrement if quantity is greater than 1.
                 orderingQuantity = orderingQuantity > 1 ? --orderingQuantity : 1;
                 orderingQtyNoLabel.setText(String.valueOf(orderingQuantity));
+                orderingCartQuantityTextField.setText(String.valueOf(orderingQuantity));
             }
         });
 
@@ -285,7 +314,7 @@ public final class OrderingView extends JFrame {
         orderingQtyNoLabel.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         orderingQtyNoLabel.setForeground(new java.awt.Color(0, 102, 102));
         orderingQtyNoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        orderingQtyNoLabel.setText("1");
+        orderingQtyNoLabel.setText(Integer.toString(orderingQuantity));
         
         orderingQtyAddButton.setBackground(new java.awt.Color(0, 51, 51));
         orderingQtyAddButton.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
@@ -294,10 +323,12 @@ public final class OrderingView extends JFrame {
         orderingQtyAddButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
+        
                 // Incrementing quantity that user chooses when they click this button
                 orderingQuantity++;
                 // Setting the value to the orderingQtyNoLabel based on how many times this button is clicked.
-                orderingQtyNoLabel.setText(String.valueOf(orderingQuantity)); 
+                orderingQtyNoLabel.setText(String.valueOf(orderingQuantity));
+                orderingCartQuantityTextField.setText(String.valueOf(orderingQuantity));
             }
         });
         
@@ -316,7 +347,7 @@ public final class OrderingView extends JFrame {
         
         orderingCartSizesTextField.setEditable(false);
         orderingCartSizesTextField.setBackground(new java.awt.Color(255, 255, 255));
-        orderingCartSizesTextField.setFont(new java.awt.Font("Corbel", 0, 12)); // NOI18N
+        orderingCartSizesTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         orderingCartSizesTextField.setForeground(new java.awt.Color(0, 102, 102));
         
         orderingCartShapesLabel.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
@@ -325,7 +356,7 @@ public final class OrderingView extends JFrame {
         
         orderingCartShapesTextField.setEditable(false);
         orderingCartShapesTextField.setBackground(new java.awt.Color(255, 255, 255));
-        orderingCartShapesTextField.setFont(new java.awt.Font("Corbel", 0, 12)); // NOI18N
+        orderingCartShapesTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         orderingCartShapesTextField.setForeground(new java.awt.Color(0, 102, 102));
         
         orderingCartFlavoursLabel.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
@@ -334,7 +365,7 @@ public final class OrderingView extends JFrame {
         
         orderingCartFlavoursTextField.setEditable(false);
         orderingCartFlavoursTextField.setBackground(new java.awt.Color(255, 255, 255));
-        orderingCartFlavoursTextField.setFont(new java.awt.Font("Corbel", 0, 12)); // NOI18N
+        orderingCartFlavoursTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         orderingCartFlavoursTextField.setForeground(new java.awt.Color(0, 102, 102));
 
         orderingCartQuantityLabel.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
@@ -343,8 +374,9 @@ public final class OrderingView extends JFrame {
         
         orderingCartQuantityTextField.setEditable(false);
         orderingCartQuantityTextField.setBackground(new java.awt.Color(255, 255, 255));
-        orderingCartQuantityTextField.setFont(new java.awt.Font("Corbel", 0, 14)); // NOI18N
+        orderingCartQuantityTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         orderingCartQuantityTextField.setForeground(new java.awt.Color(0, 102, 102));
+        orderingCartQuantityTextField.setText("1"); // setting it to 1 as that is the default value
 
         orderingBackButton.setBackground(new java.awt.Color(0, 51, 51));
         orderingBackButton.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
@@ -663,7 +695,14 @@ public final class OrderingView extends JFrame {
         
         detailsDelOrPicComboBox.setBackground(new java.awt.Color(0, 51, 51));
         detailsDelOrPicComboBox.setForeground(new java.awt.Color(255, 255, 255));
-        detailsDelOrPicComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Delivery", "Pick Up" }));
+        detailsDelOrPicComboBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                // ggetting selected option from sizes combobox
+                String selected = detailsDelOrPicComboBox.getSelectedItem().toString();
+                // placing selected size option into the textfield - will be added in receipt class
+            }
+        });
 
         detailsAddressTextArea.setBackground(new java.awt.Color(255, 255, 255));
         detailsAddressTextArea.setColumns(20);
@@ -812,7 +851,7 @@ public final class OrderingView extends JFrame {
         orderingSizesComboBox.setModel(new DefaultComboBoxModel<>(CakeSizes.values()));
         orderingShapesComboBox.setModel(new DefaultComboBoxModel<>(CakeShapes.values()));
         orderingFlavoursComboBox.setModel(new DefaultComboBoxModel<>(CakeFlavours.values()));
+        detailsDelOrPicComboBox.setModel(new DefaultComboBoxModel<>(DeliveryOrPickup.values()));
     }
 
-    
 }

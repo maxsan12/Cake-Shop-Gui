@@ -6,6 +6,7 @@ package CakeShopGUI;
 import CakeShopChoices.CakeSizes;
 import CakeShopChoices.CakeShapes;
 import CakeShopChoices.CakeFlavours;
+import CakeShopChoices.DeliveryOrPickup;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.DefaultComboBoxModel;
@@ -685,6 +686,7 @@ public class MainPage extends javax.swing.JFrame {
 
     private void homeContinueBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeContinueBttnActionPerformed
         // TODO add your handling code here:
+        tabsPanel.setSelectedIndex(3);
         
     }//GEN-LAST:event_homeContinueBttnActionPerformed
 
@@ -774,7 +776,7 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JTextArea detailsAddressTextArea;
     private javax.swing.JButton detailsBackButton;
     private javax.swing.JButton detailsContinueButton;
-    private javax.swing.JComboBox<String> detailsDelOrPicComboBox;
+    private javax.swing.JComboBox<DeliveryOrPickup> detailsDelOrPicComboBox;
     private javax.swing.JLabel detailsDelOrPicLabel;
     private javax.swing.JLabel detailsEmailLabel;
     private javax.swing.JTextField detailsEmailTextField;

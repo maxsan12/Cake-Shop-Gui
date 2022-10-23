@@ -17,6 +17,15 @@ public class CalculatePrice {
     
     private double getSubTotalPrice() {
         double subTotal = 0;
+        
+        orderingSizesComboBox.getSelectionModel().getSelectedItem();
+        
+    }
+    
+    private double getTotalPrice() {
+        
+        return 0;
+        
     }
     
 }
