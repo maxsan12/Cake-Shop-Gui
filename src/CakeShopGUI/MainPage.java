@@ -686,7 +686,7 @@ public class MainPage extends javax.swing.JFrame {
 
     private void homeContinueBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeContinueBttnActionPerformed
         // TODO add your handling code here:
-        tabsPanel.setSelectedIndex(3);
+        
         
     }//GEN-LAST:event_homeContinueBttnActionPerformed
 

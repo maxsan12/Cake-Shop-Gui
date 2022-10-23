@@ -53,15 +53,15 @@ public final class OrderingView extends JFrame {
     // Components for Ordering Panel
     private javax.swing.JPanel orderingPanel;
     private javax.swing.JLabel orderingSizesLabel;
-    public javax.swing.JComboBox<CakeSizes> orderingSizesComboBox; // using Cake Sizes enum class for the sizes combo box
+    public static javax.swing.JComboBox<CakeSizes> orderingSizesComboBox; // using Cake Sizes enum class for the sizes combo box
     private javax.swing.JLabel orderingShapesLabel;
-    public javax.swing.JComboBox<CakeShapes> orderingShapesComboBox; // using Cake Shapes enum class for the shape combo box
+    public static javax.swing.JComboBox<CakeShapes> orderingShapesComboBox; // using Cake Shapes enum class for the shape combo box
     private javax.swing.JLabel orderingFlavoursLabel;
-    public javax.swing.JComboBox<CakeFlavours> orderingFlavoursComboBox; // using Cake Flavours enum class for the flavours combo box
+    public static javax.swing.JComboBox<CakeFlavours> orderingFlavoursComboBox; // using Cake Flavours enum class for the flavours combo box
     private javax.swing.JLabel orderingQuantityLabel;
     private javax.swing.JLabel orderingQtyNoLabel;
     public javax.swing.JButton orderingQtyAddButton;
-    private int orderingQuantity = 1; // declare as 1 so that the quantity is 1 in ording QtyNoLabel.
+    private static int orderingQuantity = 1; // declare as 1 so that the quantity is 1 in ording QtyNoLabel.
     public javax.swing.JButton orderingQtySubtractButton;
     private javax.swing.JPanel orderingCartPanel;
     private javax.swing.JLabel orderingCartLabel;
@@ -100,7 +100,7 @@ public final class OrderingView extends JFrame {
     private javax.swing.JLabel detailsPhNoLabel;
     public javax.swing.JTextField detailsPhNoTextField;
     private javax.swing.JLabel detailsDelOrPicLabel;
-    public javax.swing.JComboBox<DeliveryOrPickup> detailsDelOrPicComboBox;
+    public static javax.swing.JComboBox<DeliveryOrPickup> detailsDelOrPicComboBox;
     public javax.swing.JButton detailsBackButton;
     public javax.swing.JButton detailsContinueButton;
     
@@ -732,6 +732,8 @@ public final class OrderingView extends JFrame {
             @Override
             public void actionPerformed(ActionEvent evt) {
                 // Go to the next JFrame which is the receiptt, which displays the users final order
+                ReceiptView receipt = new ReceiptView();
+                receipt.setVisible(true);
                
             }
         });
