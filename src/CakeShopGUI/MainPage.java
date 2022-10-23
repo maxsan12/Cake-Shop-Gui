@@ -140,6 +140,11 @@ public class MainPage extends javax.swing.JFrame {
         homeContinueBttn.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         homeContinueBttn.setForeground(new java.awt.Color(255, 255, 255));
         homeContinueBttn.setText("CONTINUE");
+        homeContinueBttn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                homeContinueBttnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout homePanelLayout = new javax.swing.GroupLayout(homePanel);
         homePanel.setLayout(homePanelLayout);
@@ -632,6 +637,11 @@ public class MainPage extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void homeContinueBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeContinueBttnActionPerformed
+        // TODO add your handling code here:
+        tabsPanel.setSelectedIndex(1);
+    }//GEN-LAST:event_homeContinueBttnActionPerformed
 
     
     

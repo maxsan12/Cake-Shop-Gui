@@ -4,6 +4,8 @@
  */
 package CakeShopMVC;
 
+import CakeShopGUI.MainPage;
+
 /**
  *
  * @author Maxinne Santico
@@ -16,5 +18,13 @@ public class CakeShop {
     
     public static void main(String[] args) {
         View view = new View();
+        Model model = new Model();
+        model.addObserver(view);
+        
+          java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new MainPage().setVisible(true);
+            }
+        });
     }
 }
