@@ -3,9 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package CakeShopGUI;
-import CakeShopMVC.CakeSizes;
-import CakeShopMVC.CakeShapes;
-import CakeShopMVC.CakeFlavours;
+import CakeShopChoices.CakeSizes;
+import CakeShopChoices.CakeShapes;
+import CakeShopChoices.CakeFlavours;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.DefaultComboBoxModel;

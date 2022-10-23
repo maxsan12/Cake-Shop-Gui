@@ -4,6 +4,9 @@
  */
 package CakeShopMVC;
 
+import CakeShopChoices.CakeSizes;
+import CakeShopChoices.CakeShapes;
+import CakeShopChoices.CakeFlavours;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.DefaultComboBoxModel;
@@ -12,16 +15,16 @@ import javax.swing.JFrame;
 /**
  *
  * @author Maxinne Santico 19084694
- * COMP603/50 - 19084694
- * 
- * This class is designed as the 'View' class inspired by the MVC design pattern
- * The view class should contain what the user will be seeing - the full gui. 
- * NOTE: class is long since there are multiple tabs inside a JTabbedPane. 
- * I decided to go with this route instead of creating multiple new JFrames and
- * Instantiating them as this could potential slow down the process. 
+ COMP603/50 - 19084694
+ 
+ This class is designed as the 'OrderingView' class inspired by the MVC design pattern
+ The view class should contain what the user will be seeing - the full gui. 
+ NOTE: class is long since there are multiple tabs inside a JTabbedPane. 
+ I decided to go with this route instead of creating multiple new JFrames and
+ Instantiating them as this could potential slow down the process. 
  * 
  */
-public final class View extends JFrame implements ActionListener {
+public final class OrderingView extends JFrame {
     
     // Declare ActionListnener for addActionListener method later for components below
     private ActionListener actionListener; 
@@ -100,7 +103,7 @@ public final class View extends JFrame implements ActionListener {
     public javax.swing.JButton detailsBackButton;
     public javax.swing.JButton detailsContinueButton;
     
-    public View() {
+    public OrderingView() {
         initMainPageGui();
         loadBoxes();
         //initActionListener();
@@ -177,10 +180,10 @@ public final class View extends JFrame implements ActionListener {
         homeContinueBttn.setForeground(new java.awt.Color(255, 255, 255));
         homeContinueBttn.setText("CONTINUE");
         homeContinueBttn.addActionListener(new ActionListener() {
+            
             @Override
             public void actionPerformed(ActionEvent evt) {
-                Object obj = evt.getActionCommand();
-                
+                // Go to the next page which is the ordering panel
                 tabsPanel.setSelectedIndex(1);
             }
         });
@@ -268,10 +271,13 @@ public final class View extends JFrame implements ActionListener {
         orderingQtySubtractButton.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         orderingQtySubtractButton.setForeground(new java.awt.Color(255, 255, 255));
         orderingQtySubtractButton.setText("-");
-        orderingQtySubtractButton.addActionListener(new java.awt.event.ActionListener() {
+        orderingQtySubtractButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                orderingQtySubtractButtonActionPerformed(evt);
+            public void actionPerformed(ActionEvent evt) {
+                // Decrementing quantity that user chooses when they click this button
+                // Note: value will only decrement if quantity is greater than 1.
+                orderingQuantity = orderingQuantity > 1 ? --orderingQuantity : 1;
+                orderingQtyNoLabel.setText(String.valueOf(orderingQuantity));
             }
         });
 
@@ -285,10 +291,13 @@ public final class View extends JFrame implements ActionListener {
         orderingQtyAddButton.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         orderingQtyAddButton.setForeground(new java.awt.Color(255, 255, 255));
         orderingQtyAddButton.setText("+");
-        orderingQtyAddButton.addActionListener(new java.awt.event.ActionListener() {
+        orderingQtyAddButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                orderingQtyAddButtonActionPerformed(evt);
+            public void actionPerformed(ActionEvent evt) {
+                // Incrementing quantity that user chooses when they click this button
+                orderingQuantity++;
+                // Setting the value to the orderingQtyNoLabel based on how many times this button is clicked.
+                orderingQtyNoLabel.setText(String.valueOf(orderingQuantity)); 
             }
         });
         
@@ -344,7 +353,8 @@ public final class View extends JFrame implements ActionListener {
          orderingBackButton.addActionListener(new java.awt.event.ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                orderingBackButtonActionPerformed(evt);
+                // Go back to the previous page which is the home panel
+                tabsPanel.setSelectedIndex(0);
             }
         });
 
@@ -355,7 +365,8 @@ public final class View extends JFrame implements ActionListener {
         orderingContinueButton.addActionListener(new java.awt.event.ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                orderingContinueButtonActionPerformed(evt);
+                // Go to the next Panel which is the login panel
+                tabsPanel.setSelectedIndex(2);
             }
         });
         
@@ -516,10 +527,11 @@ public final class View extends JFrame implements ActionListener {
         loginContinueButton.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         loginContinueButton.setForeground(new java.awt.Color(255, 255, 255));
         loginContinueButton.setText("Continue");
-        loginContinueButton.addActionListener(new java.awt.event.ActionListener() {
+        loginContinueButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginContinueButtonActionPerformed(evt);
+            public void actionPerformed(ActionEvent evt) {
+                 // Go the next Panel which is the details panel
+                tabsPanel.setSelectedIndex(3);
             }
         });
 
@@ -527,14 +539,11 @@ public final class View extends JFrame implements ActionListener {
         loginBackButton.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         loginBackButton.setForeground(new java.awt.Color(255, 255, 255));
         loginBackButton.setText("Back");
-        loginBackButton.addActionListener(new java.awt.event.ActionListener() {
+        loginBackButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Object obj = evt.getActionCommand();
-                
-                if(obj == loginBackButton.getActionCommand()) {
-                    tabsPanel.setSelectedIndex(1);
-                }
+                // Go back to the previous panel which is the ordering panel
+                tabsPanel.setSelectedIndex(1);
             }
         });
         
@@ -668,11 +677,25 @@ public final class View extends JFrame implements ActionListener {
         detailsBackButton.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         detailsBackButton.setForeground(new java.awt.Color(255, 255, 255));
         detailsBackButton.setText("<");
+        detailsBackButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                // Go back to the previous panel which is the login panel
+                tabsPanel.setSelectedIndex(2);
+            }
+        });
 
         detailsContinueButton.setBackground(new java.awt.Color(0, 51, 51));
         detailsContinueButton.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         detailsContinueButton.setForeground(new java.awt.Color(255, 255, 255));
         detailsContinueButton.setText(">");
+        detailsContinueButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                // Go to the next JFrame which is the receiptt, which displays the users final order
+               
+            }
+        });
         
         javax.swing.GroupLayout detailsPanelLayout = new javax.swing.GroupLayout(detailsPanel);
         detailsPanel.setLayout(detailsPanelLayout);
@@ -784,50 +807,6 @@ public final class View extends JFrame implements ActionListener {
         pack();
     }
 
-    // Action Event methods for each button
-    private void homeContinueBttnActionPerformed(ActionEvent evt) {                                                 
-        
-    }
-    
-     private void orderingQtySubtractButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                          
-        // Decrementing quantity that user chooses when they click this button
-        orderingQuantity--;
-        orderingQtyNoLabel.setText(String.valueOf(orderingQuantity));
-        
-    }                                                         
-
-    private void orderingQtyAddButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                     
-        // Incrementing quantity that user chooses when they click this button
-        orderingQuantity++;
-        // Setting the value to the orderingQtyNoLabel based on how many times this button is clicked.
-        orderingQtyNoLabel.setText(String.valueOf(orderingQuantity)); 
-    }                                                    
-
-    private void orderingBackButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                   
-        // Go back to the previous page which is the home panel
-        tabsPanel.setSelectedIndex(0);
-    }                                                  
-
-    private void orderingContinueButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                       
-        // Go to the next Panel which is the login panel
-        tabsPanel.setSelectedIndex(2);
-    }
-
-    private void loginContinueButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                    
-        // Go the next Panel which is the details panel
-        tabsPanel.setSelectedIndex(3);
-    }
-    
-     private void detailsBackButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                  
-        // Go to the next 
-    }                                                 
-
-    private void detailsContinueButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                      
-        // TODO add your handling code here:
-    }         
-    
-    
-    
     // Method to load combo boxes which hold the values from the CakeSizes, CakeShapes and CakeFlavours classes
     private void loadBoxes() {
         orderingSizesComboBox.setModel(new DefaultComboBoxModel<>(CakeSizes.values()));

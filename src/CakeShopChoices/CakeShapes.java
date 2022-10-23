@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package CakeShopMVC;
+package CakeShopChoices;
 
 /**
  *
@@ -36,11 +36,7 @@ public enum CakeShapes {
     public double getShapeCost() {
         return this.shapeCost;
     }
-    
-    public void setShapeCost(double shapeCost) {
-        
-    }
-    
+
     @Override
     public String toString() {
         return shapeName + " = $" + String.format("%.2f", shapeCost);

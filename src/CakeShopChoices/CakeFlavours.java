@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package CakeShopMVC;
+package CakeShopChoices;
 
 /**
  *
@@ -22,9 +22,9 @@ public enum CakeFlavours {
     FUNFETTI("Funfetti", 2.0);
     
     private final String flavourName;
-    private final Double flavourCost;
+    private final double flavourCost;
     
-    CakeFlavours(String flavourName, Double flavourCost) {
+    CakeFlavours(String flavourName, double flavourCost) {
         this.flavourName = flavourName;
         this.flavourCost = flavourCost;
     }
@@ -33,7 +33,7 @@ public enum CakeFlavours {
         return this.flavourName;
     }
     
-    public Double getFlavourCost() {
+    public double getFlavourCost() {
         return this.flavourCost;
     }
     

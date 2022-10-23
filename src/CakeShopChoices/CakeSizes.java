@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package CakeShopMVC;
+package CakeShopChoices;
 
 
 /**
@@ -34,11 +34,11 @@ public enum CakeSizes {
     }
     
     public String getSizeName() {
-        return sizeName;
+        return this.sizeName;
     }
     
     public double getSizeCost() {
-        return sizeCost;
+        return this.sizeCost;
     }
     
     @Override

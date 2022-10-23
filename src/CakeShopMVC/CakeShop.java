@@ -21,7 +21,7 @@ public class CakeShop {
        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                View view = new View();
+                OrderingView view = new OrderingView();
         
                 
                 view.setVisible(true);
