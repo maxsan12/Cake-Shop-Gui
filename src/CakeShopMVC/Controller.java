@@ -52,6 +52,22 @@ public class Controller implements ActionListener {
         }
     }
     
+       /* // Method to initialize action listener 
+    public void initActionListener() {
+          // Implement actionlistener here
+        this.homeContinueBttn.addActionListener(this.actionListener);
+        this.orderingQtyAddButton.addActionListener(this.actionListener);
+        this.orderingQtySubtractButton.addActionListener(this.actionListener);
+        this.orderingBackButton.addActionListener(this.actionListener);
+        this.orderingContinueButton.addActionListener(this.actionListener);
+        this.loginBackButton.addActionListener(this.actionListener);
+        this.loginContinueButton.addActionListener(this.actionListener);  
+        this.detailsBackButton.addActionListener(this.actionListener);
+        this.detailsContinueButton.addActionListener(this.actionListener);
+        
+        
+    }*/
+    
   
     
 }

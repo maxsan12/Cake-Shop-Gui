@@ -15,6 +15,9 @@ import com.sun.jdi.connect.spi.Connection;
  * Database class used to build connection
  */
 public class Database {
+    
+    Connection conn = null; 
+    //String url =
 
     
     

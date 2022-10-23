@@ -17,9 +17,15 @@ import CakeShopGUI.MainPage;
 public class CakeShop {
     
     public static void main(String[] args) {
-        View view = new View();
-        Model model = new Model();
-        model.addObserver(view);
+        
        
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                View view = new View();
+        
+                
+                view.setVisible(true);
+            }
+        });
     }
 }

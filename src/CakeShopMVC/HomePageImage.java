@@ -29,7 +29,7 @@ public class HomePageImage extends JPanel {
     @Override 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.drawImage(this.image, 0, 0, null); // setting to 0 and null, which will then use the actual size of the jpg image.
+        g.drawImage(this.image, 327, 316, null); // setting to 0 and null, which will then use the actual size of the jpg image.
     }
     
 }

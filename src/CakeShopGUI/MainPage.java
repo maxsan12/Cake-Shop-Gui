@@ -21,7 +21,7 @@ import javax.swing.DefaultComboBoxModel;
  * used in the other package to fit the MVC pattern design - merely created
  * to design how my gui will look. 
  */
-public class MainPage extends javax.swing.JFrame implements ActionListener{
+public class MainPage extends javax.swing.JFrame {
 
     /**
      * Creates new form NewJFrame
@@ -185,11 +185,21 @@ public class MainPage extends javax.swing.JFrame implements ActionListener{
         orderingQtyAddButton.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         orderingQtyAddButton.setForeground(new java.awt.Color(255, 255, 255));
         orderingQtyAddButton.setText("+");
+        orderingQtyAddButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                orderingQtyAddButtonActionPerformed(evt);
+            }
+        });
 
         orderingQtySubtractButton.setBackground(new java.awt.Color(0, 51, 51));
         orderingQtySubtractButton.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         orderingQtySubtractButton.setForeground(new java.awt.Color(255, 255, 255));
         orderingQtySubtractButton.setText("-");
+        orderingQtySubtractButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                orderingQtySubtractButtonActionPerformed(evt);
+            }
+        });
 
         orderingQtyNoLabel.setBackground(new java.awt.Color(255, 255, 255));
         orderingQtyNoLabel.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
@@ -201,11 +211,21 @@ public class MainPage extends javax.swing.JFrame implements ActionListener{
         orderingBackButton.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         orderingBackButton.setForeground(new java.awt.Color(255, 255, 255));
         orderingBackButton.setText("<");
+        orderingBackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                orderingBackButtonActionPerformed(evt);
+            }
+        });
 
         orderingContinueButton.setBackground(new java.awt.Color(0, 51, 51));
         orderingContinueButton.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         orderingContinueButton.setForeground(new java.awt.Color(255, 255, 255));
         orderingContinueButton.setText(">");
+        orderingContinueButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                orderingContinueButtonActionPerformed(evt);
+            }
+        });
 
         orderingSizesLabel.setBackground(new java.awt.Color(255, 255, 255));
         orderingSizesLabel.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
@@ -279,10 +299,10 @@ public class MainPage extends javax.swing.JFrame implements ActionListener{
                     .addComponent(orderingCartShapesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(orderingCartSizesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(orderingCartSizesTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
-                    .addComponent(orderingCartShapesTextField)
+                    .addComponent(orderingCartShapesTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                     .addComponent(orderingCartQuantityLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(orderingCartFlavoursTextField)
-                    .addComponent(orderingCartQuantityTextField))
+                    .addComponent(orderingCartFlavoursTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                    .addComponent(orderingCartQuantityTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
         orderingCartPanelLayout.setVerticalGroup(
@@ -291,19 +311,19 @@ public class MainPage extends javax.swing.JFrame implements ActionListener{
                 .addGap(23, 23, 23)
                 .addComponent(orderingCartSizesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(orderingCartSizesTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(orderingCartSizesTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(orderingCartShapesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(orderingCartShapesTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(orderingCartShapesTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(orderingCartFlavoursLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(orderingCartFlavoursTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(orderingCartFlavoursTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(orderingCartQuantityLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(orderingCartQuantityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(orderingCartQuantityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
@@ -312,31 +332,33 @@ public class MainPage extends javax.swing.JFrame implements ActionListener{
         orderingPanelLayout.setHorizontalGroup(
             orderingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(orderingPanelLayout.createSequentialGroup()
-                .addGap(57, 57, 57)
                 .addGroup(orderingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(orderingPanelLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(orderingSizesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(orderingSizesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(57, 57, 57)
+                        .addGroup(orderingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(orderingPanelLayout.createSequentialGroup()
+                                .addGap(30, 30, 30)
+                                .addComponent(orderingSizesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(orderingSizesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(orderingPanelLayout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(orderingShapesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(orderingShapesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(orderingPanelLayout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(orderingFlavoursLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(orderingFlavoursComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(orderingPanelLayout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addComponent(orderingQuantityLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(orderingPanelLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(orderingShapesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(orderingShapesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(orderingPanelLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(orderingFlavoursLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(orderingFlavoursComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(orderingPanelLayout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(orderingQuantityLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(orderingPanelLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(orderingQtySubtractButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
+                        .addGap(55, 55, 55)
+                        .addComponent(orderingQtySubtractButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(orderingQtyNoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(orderingQtyAddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(130, 130, 130)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(orderingQtyAddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(162, 162, 162)
                 .addGroup(orderingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(orderingPanelLayout.createSequentialGroup()
                         .addGap(20, 20, 20)
@@ -367,10 +389,10 @@ public class MainPage extends javax.swing.JFrame implements ActionListener{
                         .addComponent(orderingFlavoursComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(44, 44, 44)
                         .addComponent(orderingQuantityLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(orderingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(orderingQtySubtractButton)
+                        .addGroup(orderingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(orderingQtyNoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(orderingQtyAddButton)))
+                            .addComponent(orderingQtyAddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(orderingQtySubtractButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(orderingPanelLayout.createSequentialGroup()
                         .addComponent(orderingCartLabel)
                         .addGap(0, 0, 0)
@@ -411,11 +433,21 @@ public class MainPage extends javax.swing.JFrame implements ActionListener{
         loginContinueButton.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         loginContinueButton.setForeground(new java.awt.Color(255, 255, 255));
         loginContinueButton.setText("Continue");
+        loginContinueButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginContinueButtonActionPerformed(evt);
+            }
+        });
 
         loginBackButton.setBackground(new java.awt.Color(0, 51, 51));
         loginBackButton.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         loginBackButton.setForeground(new java.awt.Color(255, 255, 255));
         loginBackButton.setText("Back");
+        loginBackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginBackButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout loginPanelLayout = new javax.swing.GroupLayout(loginPanel);
         loginPanel.setLayout(loginPanelLayout);
@@ -509,6 +541,7 @@ public class MainPage extends javax.swing.JFrame implements ActionListener{
         detailsPhNoTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 2));
 
         detailsDelOrPicComboBox.setBackground(new java.awt.Color(0, 51, 51));
+        detailsDelOrPicComboBox.setForeground(new java.awt.Color(255, 255, 255));
 
         detailsDelOrPicLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
         detailsDelOrPicLabel.setForeground(new java.awt.Color(0, 102, 102));
@@ -526,11 +559,21 @@ public class MainPage extends javax.swing.JFrame implements ActionListener{
         detailsBackButton.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         detailsBackButton.setForeground(new java.awt.Color(255, 255, 255));
         detailsBackButton.setText("<");
+        detailsBackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                detailsBackButtonActionPerformed(evt);
+            }
+        });
 
         detailsContinueButton.setBackground(new java.awt.Color(0, 51, 51));
         detailsContinueButton.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         detailsContinueButton.setForeground(new java.awt.Color(255, 255, 255));
         detailsContinueButton.setText(">");
+        detailsContinueButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                detailsContinueButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout detailsPanelLayout = new javax.swing.GroupLayout(detailsPanel);
         detailsPanel.setLayout(detailsPanelLayout);
@@ -642,8 +685,40 @@ public class MainPage extends javax.swing.JFrame implements ActionListener{
 
     private void homeContinueBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeContinueBttnActionPerformed
         // TODO add your handling code here:
-        tabsPanel.setSelectedIndex(1);
+        
     }//GEN-LAST:event_homeContinueBttnActionPerformed
+
+    private void orderingQtySubtractButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderingQtySubtractButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_orderingQtySubtractButtonActionPerformed
+
+    private void orderingQtyAddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderingQtyAddButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_orderingQtyAddButtonActionPerformed
+
+    private void orderingBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderingBackButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_orderingBackButtonActionPerformed
+
+    private void orderingContinueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderingContinueButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_orderingContinueButtonActionPerformed
+
+    private void loginBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBackButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_loginBackButtonActionPerformed
+
+    private void loginContinueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginContinueButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_loginContinueButtonActionPerformed
+
+    private void detailsBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_detailsBackButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_detailsBackButtonActionPerformed
+
+    private void detailsContinueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_detailsContinueButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_detailsContinueButtonActionPerformed
 
     
     
@@ -758,7 +833,7 @@ public class MainPage extends javax.swing.JFrame implements ActionListener{
         orderingFlavoursComboBox.setModel(new DefaultComboBoxModel<>(CakeFlavours.values()));
     }
 
-    @Override
+    /*@Override
     public void actionPerformed(ActionEvent e) {
         
         Object obj = e.getActionCommand();
@@ -778,6 +853,6 @@ public class MainPage extends javax.swing.JFrame implements ActionListener{
         else if (obj == this.detailsContinueButton.getActionCommand()) {
             this.tabsPanel.setSelectedIndex(0);
         }
-    }
+    }*/
 }
 

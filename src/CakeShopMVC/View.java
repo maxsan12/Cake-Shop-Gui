@@ -4,11 +4,9 @@
  */
 package CakeShopMVC;
 
-import CakeShopGUI.MainPage;
-import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Observable;
-import java.util.Observer;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 
 /**
@@ -17,10 +15,13 @@ import javax.swing.JFrame;
  * COMP603/50 - 19084694
  * 
  * This class is designed as the 'View' class inspired by the MVC design pattern
- * The view class should contain what the user will be seeing.
+ * The view class should contain what the user will be seeing - the full gui. 
+ * NOTE: class is long since there are multiple tabs inside a JTabbedPane. 
+ * I decided to go with this route instead of creating multiple new JFrames and
+ * Instantiating them as this could potential slow down the process. 
  * 
  */
-public class View extends JFrame implements Observer {
+public final class View extends JFrame implements ActionListener {
     
     // Declare ActionListnener for addActionListener method later for components below
     private ActionListener actionListener; 
@@ -56,6 +57,7 @@ public class View extends JFrame implements Observer {
     private javax.swing.JLabel orderingQuantityLabel;
     private javax.swing.JLabel orderingQtyNoLabel;
     public javax.swing.JButton orderingQtyAddButton;
+    private int orderingQuantity = 1; // declare as 1 so that the quantity is 1 in ording QtyNoLabel.
     public javax.swing.JButton orderingQtySubtractButton;
     private javax.swing.JPanel orderingCartPanel;
     private javax.swing.JLabel orderingCartLabel;
@@ -97,18 +99,15 @@ public class View extends JFrame implements Observer {
     public javax.swing.JComboBox<String> detailsDelOrPicComboBox;
     public javax.swing.JButton detailsBackButton;
     public javax.swing.JButton detailsContinueButton;
-
-    /** COMPONENTS FOR RECEIPT GUI 
-     * 
-     * 
-     * 
-     */
     
     public View() {
-        
+        initMainPageGui();
+        loadBoxes();
+        //initActionListener();
+
     }
     
-    private void mainPageGui() {
+    private void initMainPageGui() {
         
         // Instantiating Main Page gui components
         panelForFrame = new javax.swing.JPanel();
@@ -151,6 +150,7 @@ public class View extends JFrame implements Observer {
                 .addGap(15, 15, 15))
         );
 
+        
         tabsPanel.setBackground(new java.awt.Color(255, 255, 255));
         tabsPanel.setBorder(null);
         tabsPanel.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
@@ -166,17 +166,24 @@ public class View extends JFrame implements Observer {
         homePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
       
         // Creating an instance of HomePageImage class, which holds the image we need for home page panel
-        HomePageImage hpi = new HomePageImage();
-        this.add(hpi, BorderLayout.CENTER); // setting image to the center
-        homePanel.add(hpi); // adding image from HomePageImage class 
+        //HomePageImage hpi = new HomePageImage();
+        //this.add(hpi, BorderLayout.CENTER); // setting image to the center
+        //homePanel.add(hpi); // adding image from HomePageImage class 
         
-        //homeIconLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\maxin\\Desktop\\home page.jpg")); // NOI18N
-        //homePanel.add(homeIconLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 29, -1, -1));
+        homeIconLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\maxin\\Desktop\\homepage.jpg")); // NOI18N
 
         homeContinueBttn.setBackground(new java.awt.Color(0, 51, 51));
         homeContinueBttn.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         homeContinueBttn.setForeground(new java.awt.Color(255, 255, 255));
         homeContinueBttn.setText("CONTINUE");
+        homeContinueBttn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                Object obj = evt.getActionCommand();
+                
+                tabsPanel.setSelectedIndex(1);
+            }
+        });
         
         javax.swing.GroupLayout homePanelLayout = new javax.swing.GroupLayout(homePanel);
         homePanel.setLayout(homePanelLayout);
@@ -261,7 +268,13 @@ public class View extends JFrame implements Observer {
         orderingQtySubtractButton.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         orderingQtySubtractButton.setForeground(new java.awt.Color(255, 255, 255));
         orderingQtySubtractButton.setText("-");
-        
+        orderingQtySubtractButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                orderingQtySubtractButtonActionPerformed(evt);
+            }
+        });
+
         orderingQtyNoLabel.setBackground(new java.awt.Color(255, 255, 255));
         orderingQtyNoLabel.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         orderingQtyNoLabel.setForeground(new java.awt.Color(0, 102, 102));
@@ -272,6 +285,12 @@ public class View extends JFrame implements Observer {
         orderingQtyAddButton.setFont(new java.awt.Font("Calibri", 1, 16)); // NOI18N
         orderingQtyAddButton.setForeground(new java.awt.Color(255, 255, 255));
         orderingQtyAddButton.setText("+");
+        orderingQtyAddButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                orderingQtyAddButtonActionPerformed(evt);
+            }
+        });
         
         // Creating cart panel and components inside it for ordering page
         orderingCartLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
@@ -322,13 +341,25 @@ public class View extends JFrame implements Observer {
         orderingBackButton.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         orderingBackButton.setForeground(new java.awt.Color(255, 255, 255));
         orderingBackButton.setText("<");
+         orderingBackButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                orderingBackButtonActionPerformed(evt);
+            }
+        });
 
         orderingContinueButton.setBackground(new java.awt.Color(0, 51, 51));
         orderingContinueButton.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         orderingContinueButton.setForeground(new java.awt.Color(255, 255, 255));
         orderingContinueButton.setText(">");
+        orderingContinueButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                orderingContinueButtonActionPerformed(evt);
+            }
+        });
         
-              javax.swing.GroupLayout orderingCartPanelLayout = new javax.swing.GroupLayout(orderingCartPanel);
+        javax.swing.GroupLayout orderingCartPanelLayout = new javax.swing.GroupLayout(orderingCartPanel);
         orderingCartPanel.setLayout(orderingCartPanelLayout);
         orderingCartPanelLayout.setHorizontalGroup(
             orderingCartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -339,10 +370,10 @@ public class View extends JFrame implements Observer {
                     .addComponent(orderingCartShapesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(orderingCartSizesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(orderingCartSizesTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
-                    .addComponent(orderingCartShapesTextField)
+                    .addComponent(orderingCartShapesTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                     .addComponent(orderingCartQuantityLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(orderingCartFlavoursTextField)
-                    .addComponent(orderingCartQuantityTextField))
+                    .addComponent(orderingCartFlavoursTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                    .addComponent(orderingCartQuantityTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
         orderingCartPanelLayout.setVerticalGroup(
@@ -351,19 +382,19 @@ public class View extends JFrame implements Observer {
                 .addGap(23, 23, 23)
                 .addComponent(orderingCartSizesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(orderingCartSizesTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(orderingCartSizesTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(orderingCartShapesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(orderingCartShapesTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(orderingCartShapesTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(orderingCartFlavoursLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(orderingCartFlavoursTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(orderingCartFlavoursTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(orderingCartQuantityLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(orderingCartQuantityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(orderingCartQuantityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
@@ -372,31 +403,33 @@ public class View extends JFrame implements Observer {
         orderingPanelLayout.setHorizontalGroup(
             orderingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(orderingPanelLayout.createSequentialGroup()
-                .addGap(57, 57, 57)
                 .addGroup(orderingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(orderingPanelLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(orderingSizesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(orderingSizesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(57, 57, 57)
+                        .addGroup(orderingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(orderingPanelLayout.createSequentialGroup()
+                                .addGap(30, 30, 30)
+                                .addComponent(orderingSizesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(orderingSizesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(orderingPanelLayout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(orderingShapesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(orderingShapesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(orderingPanelLayout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(orderingFlavoursLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(orderingFlavoursComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(orderingPanelLayout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addComponent(orderingQuantityLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(orderingPanelLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(orderingShapesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(orderingShapesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(orderingPanelLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(orderingFlavoursLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(orderingFlavoursComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(orderingPanelLayout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(orderingQuantityLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(orderingPanelLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(orderingQtySubtractButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
+                        .addGap(55, 55, 55)
+                        .addComponent(orderingQtySubtractButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(orderingQtyNoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(orderingQtyAddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(130, 130, 130)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(orderingQtyAddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(162, 162, 162)
                 .addGroup(orderingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(orderingPanelLayout.createSequentialGroup()
                         .addGap(20, 20, 20)
@@ -427,10 +460,10 @@ public class View extends JFrame implements Observer {
                         .addComponent(orderingFlavoursComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(44, 44, 44)
                         .addComponent(orderingQuantityLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(orderingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(orderingQtySubtractButton)
+                        .addGroup(orderingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(orderingQtyNoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(orderingQtyAddButton)))
+                            .addComponent(orderingQtyAddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(orderingQtySubtractButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(orderingPanelLayout.createSequentialGroup()
                         .addComponent(orderingCartLabel)
                         .addGap(0, 0, 0)
@@ -483,11 +516,27 @@ public class View extends JFrame implements Observer {
         loginContinueButton.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         loginContinueButton.setForeground(new java.awt.Color(255, 255, 255));
         loginContinueButton.setText("Continue");
+        loginContinueButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginContinueButtonActionPerformed(evt);
+            }
+        });
 
         loginBackButton.setBackground(new java.awt.Color(0, 51, 51));
         loginBackButton.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         loginBackButton.setForeground(new java.awt.Color(255, 255, 255));
         loginBackButton.setText("Back");
+        loginBackButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Object obj = evt.getActionCommand();
+                
+                if(obj == loginBackButton.getActionCommand()) {
+                    tabsPanel.setSelectedIndex(1);
+                }
+            }
+        });
         
         javax.swing.GroupLayout loginPanelLayout = new javax.swing.GroupLayout(loginPanel);
         loginPanel.setLayout(loginPanelLayout);
@@ -604,6 +653,7 @@ public class View extends JFrame implements Observer {
         detailsDelOrPicLabel.setText("Delivery or Pick Up:");
         
         detailsDelOrPicComboBox.setBackground(new java.awt.Color(0, 51, 51));
+        detailsDelOrPicComboBox.setForeground(new java.awt.Color(255, 255, 255));
         detailsDelOrPicComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Delivery", "Pick Up" }));
 
         detailsAddressTextArea.setBackground(new java.awt.Color(255, 255, 255));
@@ -729,38 +779,61 @@ public class View extends JFrame implements Observer {
             .addComponent(panelForFrame, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        //tabsPanel.addTab("Customer Details", detailsPanel);
-        //panelForFrame.add(tabsPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 700, 559)); // MAKE SURE HEIGHT IS 559 SO ITS HIDDEN
-        //getContentPane().add(panelForFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 630));
+        tabsPanel.addTab("Customer Details", detailsPanel);
 
         pack();
-        
-        // Implement actionlistener here
-        this.homeContinueBttn.addActionListener(this.actionListener);
-        //this.orderingQtyAddButton.addActionListener(this.actionListener);
-        //this.orderingQtySubtractButton.addActionListener(this.actionListener);
-        //this.orderingBackButton.addActionListener(this.actionListener);
-        this.orderingContinueButton.addActionListener(this.actionListener);
-        //this.loginBackButton.addActionListener(this.actionListener);
-        this.loginContinueButton.addActionListener(this.actionListener);  
-        //this.detailsBackButton.addActionListener(this.actionListener);
-        this.detailsContinueButton.addActionListener(this.actionListener);
     }
-    
-    // Method to initialize action listener 
-    public void addActionListener(ActionListener actionListener) {
-        this.actionListener = actionListener;
-        
-        mainPageGui();
-        this.setVisible(true);
-     
+
+    // Action Event methods for each button
+    private void homeContinueBttnActionPerformed(ActionEvent evt) {                                                 
         
     }
     
-    @Override
-    public void update(Observable o, Object o1) {
+     private void orderingQtySubtractButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                          
+        // Decrementing quantity that user chooses when they click this button
+        orderingQuantity--;
+        orderingQtyNoLabel.setText(String.valueOf(orderingQuantity));
         
+    }                                                         
+
+    private void orderingQtyAddButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                     
+        // Incrementing quantity that user chooses when they click this button
+        orderingQuantity++;
+        // Setting the value to the orderingQtyNoLabel based on how many times this button is clicked.
+        orderingQtyNoLabel.setText(String.valueOf(orderingQuantity)); 
+    }                                                    
+
+    private void orderingBackButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+        // Go back to the previous page which is the home panel
+        tabsPanel.setSelectedIndex(0);
+    }                                                  
+
+    private void orderingContinueButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                       
+        // Go to the next Panel which is the login panel
+        tabsPanel.setSelectedIndex(2);
+    }
+
+    private void loginContinueButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+        // Go the next Panel which is the details panel
+        tabsPanel.setSelectedIndex(3);
     }
     
+     private void detailsBackButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        // Go to the next 
+    }                                                 
+
+    private void detailsContinueButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                      
+        // TODO add your handling code here:
+    }         
+    
+    
+    
+    // Method to load combo boxes which hold the values from the CakeSizes, CakeShapes and CakeFlavours classes
+    private void loadBoxes() {
+        orderingSizesComboBox.setModel(new DefaultComboBoxModel<>(CakeSizes.values()));
+        orderingShapesComboBox.setModel(new DefaultComboBoxModel<>(CakeShapes.values()));
+        orderingFlavoursComboBox.setModel(new DefaultComboBoxModel<>(CakeFlavours.values()));
+    }
+
     
 }
