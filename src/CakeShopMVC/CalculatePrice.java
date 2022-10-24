@@ -4,6 +4,11 @@
  */
 package CakeShopMVC;
 import static CakeShopMVC.OrderingView.orderingSizesComboBox;
+import static CakeShopMVC.OrderingView.orderingShapesComboBox;
+import static CakeShopMVC.OrderingView.detailsDelOrPicComboBox;
+import static CakeShopMVC.OrderingView.orderingFlavoursComboBox;
+import static CakeShopMVC.OrderingView.orderingQuantity;
+
 
 /**
  *
@@ -15,23 +20,24 @@ import static CakeShopMVC.OrderingView.orderingSizesComboBox;
  */
 public class CalculatePrice {
     
+    double subTotal = 0;
+    double total = 0;
+    
     private double getSubTotalPrice() {
-        double subTotal = 0;
-        
         //System.out.println(((Double[])orderingSizesComboBox.getSelectedItem())[1]);
-        subTotal = (double) orderingSizesComboBox.getSelectedItem();
+        subTotal += (double) orderingSizesComboBox.getSelectedItem() + 
+                (double) orderingShapesComboBox.getSelectedItem() +
+                (double) orderingFlavoursComboBox.getSelectedItem();
         
-        return 0;
+        return subTotal * orderingQuantity;
         
     }
     
     private double getTotalPrice() {
-        double total = 0;
-        
-        
          //System.out.println(((Double[])orderingSizesComboBox.getSelectedItem())[1]);
-        total = (double) orderingSizesComboBox.getSelectedItem();
-        return 0;
+        total += (double) detailsDelOrPicComboBox.getSelectedItem() + subTotal;
+        
+        return total;
         
     }
     

@@ -61,7 +61,7 @@ public final class OrderingView extends JFrame {
     private javax.swing.JLabel orderingQuantityLabel;
     private javax.swing.JLabel orderingQtyNoLabel;
     public javax.swing.JButton orderingQtyAddButton;
-    private static int orderingQuantity = 1; // declare as 1 so that the quantity is 1 in ording QtyNoLabel.
+    public static int orderingQuantity = 1; // declare as 1 so that the quantity is 1 in ording QtyNoLabel.
     public javax.swing.JButton orderingQtySubtractButton;
     private javax.swing.JPanel orderingCartPanel;
     private javax.swing.JLabel orderingCartLabel;
