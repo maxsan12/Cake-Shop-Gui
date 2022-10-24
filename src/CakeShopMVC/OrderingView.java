@@ -751,11 +751,10 @@ public final class OrderingView extends JFrame {
         detailsContinueButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
-                // Go to the next JFrame which is the receiptt, which displays the users final order
+                // Go to the next JFrame which is the receipt, which displays the users final order
                 ReceiptView r = new ReceiptView();
                 r.show();
-                //r.setVisible(true);
-                dispose(); // dispose this frame when user gets 
+                //dispose(); // dispose this frame when user gets 
              
             }
         });
