@@ -38,7 +38,7 @@ public class Receipt extends javax.swing.JFrame {
         receiptFlavourTextField = new javax.swing.JTextField();
         receiptOrderNoLabel = new javax.swing.JLabel();
         receiptOtyTextField = new javax.swing.JTextField();
-        receiptQuantityLabel = new javax.swing.JLabel();
+        receiptQtyLabel = new javax.swing.JLabel();
         receiptDetailsPanel = new javax.swing.JPanel();
         receiptDetailsLabel = new javax.swing.JLabel();
         receiptFNameLabel = new javax.swing.JLabel();
@@ -99,28 +99,18 @@ public class Receipt extends javax.swing.JFrame {
 
         receiptSizeTextField.setEditable(false);
         receiptSizeTextField.setBackground(new java.awt.Color(255, 255, 255));
-        receiptSizeTextField.setFont(new java.awt.Font("Corbel", 0, 14)); // NOI18N
+        receiptSizeTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         receiptSizeTextField.setForeground(new java.awt.Color(0, 102, 102));
 
         receiptShapeTextField.setEditable(false);
         receiptShapeTextField.setBackground(new java.awt.Color(255, 255, 255));
-        receiptShapeTextField.setFont(new java.awt.Font("Corbel", 0, 14)); // NOI18N
+        receiptShapeTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         receiptShapeTextField.setForeground(new java.awt.Color(0, 102, 102));
-        receiptShapeTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                receiptShapeTextFieldActionPerformed(evt);
-            }
-        });
 
         receiptFlavourTextField.setEditable(false);
         receiptFlavourTextField.setBackground(new java.awt.Color(255, 255, 255));
-        receiptFlavourTextField.setFont(new java.awt.Font("Corbel", 0, 14)); // NOI18N
+        receiptFlavourTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         receiptFlavourTextField.setForeground(new java.awt.Color(0, 102, 102));
-        receiptFlavourTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                receiptFlavourTextFieldActionPerformed(evt);
-            }
-        });
 
         receiptOrderNoLabel.setBackground(new java.awt.Color(255, 255, 255));
         receiptOrderNoLabel.setFont(new java.awt.Font("Corbel", 1, 24)); // NOI18N
@@ -129,11 +119,12 @@ public class Receipt extends javax.swing.JFrame {
 
         receiptOtyTextField.setEditable(false);
         receiptOtyTextField.setBackground(new java.awt.Color(255, 255, 255));
-        receiptOtyTextField.setFont(new java.awt.Font("Corbel", 0, 14)); // NOI18N
+        receiptOtyTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
+        receiptOtyTextField.setForeground(new java.awt.Color(0, 102, 102));
 
-        receiptQuantityLabel.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
-        receiptQuantityLabel.setForeground(new java.awt.Color(0, 102, 102));
-        receiptQuantityLabel.setText("Quantity:");
+        receiptQtyLabel.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        receiptQtyLabel.setForeground(new java.awt.Color(0, 102, 102));
+        receiptQtyLabel.setText("Quantity:");
 
         javax.swing.GroupLayout receiptOrderPanelLayout = new javax.swing.GroupLayout(receiptOrderPanel);
         receiptOrderPanel.setLayout(receiptOrderPanelLayout);
@@ -170,7 +161,7 @@ public class Receipt extends javax.swing.JFrame {
                         .addComponent(receiptOtyTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(receiptOrderPanelLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(receiptQuantityLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(receiptQtyLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
         receiptOrderPanelLayout.setVerticalGroup(
@@ -193,7 +184,7 @@ public class Receipt extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(receiptFlavourTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                .addComponent(receiptQuantityLabel)
+                .addComponent(receiptQtyLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(receiptOtyTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(53, 53, 53))
@@ -221,37 +212,27 @@ public class Receipt extends javax.swing.JFrame {
         receiptEmailLabel.setForeground(new java.awt.Color(0, 102, 102));
         receiptEmailLabel.setText("Email Address:");
 
-        receiptAddressTextArea.setEditable(false);
         receiptAddressTextArea.setBackground(new java.awt.Color(255, 255, 255));
-        receiptAddressTextArea.setColumns(20);
-        receiptAddressTextArea.setFont(new java.awt.Font("Corbel", 0, 14)); // NOI18N
+        receiptAddressTextArea.setColumns(25);
+        receiptAddressTextArea.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         receiptAddressTextArea.setForeground(new java.awt.Color(0, 102, 102));
         receiptAddressTextArea.setRows(5);
         receiptAddressScrollPane.setViewportView(receiptAddressTextArea);
 
         receiptFNTextField.setEditable(false);
         receiptFNTextField.setBackground(new java.awt.Color(255, 255, 255));
-        receiptFNTextField.setFont(new java.awt.Font("Corbel", 0, 12)); // NOI18N
+        receiptFNTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
+        receiptFNTextField.setForeground(new java.awt.Color(0, 102, 102));
         receiptFNTextField.setToolTipText("");
-        receiptFNTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                receiptFNTextFieldActionPerformed(evt);
-            }
-        });
 
         receiptLNTextField.setEditable(false);
         receiptLNTextField.setBackground(new java.awt.Color(255, 255, 255));
-        receiptLNTextField.setFont(new java.awt.Font("Corbel", 0, 14)); // NOI18N
+        receiptLNTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         receiptLNTextField.setForeground(new java.awt.Color(0, 102, 102));
-        receiptLNTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                receiptLNTextFieldActionPerformed(evt);
-            }
-        });
 
         receiptEmailTextField.setEditable(false);
         receiptEmailTextField.setBackground(new java.awt.Color(255, 255, 255));
-        receiptEmailTextField.setFont(new java.awt.Font("Corbel", 0, 14)); // NOI18N
+        receiptEmailTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         receiptEmailTextField.setForeground(new java.awt.Color(0, 102, 102));
 
         receiptPhLabel.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
@@ -260,7 +241,7 @@ public class Receipt extends javax.swing.JFrame {
 
         receiptPhTextField.setEditable(false);
         receiptPhTextField.setBackground(new java.awt.Color(255, 255, 255));
-        receiptPhTextField.setFont(new java.awt.Font("Corbel", 0, 14)); // NOI18N
+        receiptPhTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         receiptPhTextField.setForeground(new java.awt.Color(0, 102, 102));
 
         javax.swing.GroupLayout receiptDetailsPanelLayout = new javax.swing.GroupLayout(receiptDetailsPanel);
@@ -334,13 +315,8 @@ public class Receipt extends javax.swing.JFrame {
 
         receiptDelOrPicTextField.setEditable(false);
         receiptDelOrPicTextField.setBackground(new java.awt.Color(255, 255, 255));
-        receiptDelOrPicTextField.setFont(new java.awt.Font("Corbel", 0, 14)); // NOI18N
+        receiptDelOrPicTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         receiptDelOrPicTextField.setForeground(new java.awt.Color(0, 102, 102));
-        receiptDelOrPicTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                receiptDelOrPicTextFieldActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout receiptDelOrPicPanelLayout = new javax.swing.GroupLayout(receiptDelOrPicPanel);
         receiptDelOrPicPanel.setLayout(receiptDelOrPicPanelLayout);
@@ -371,7 +347,7 @@ public class Receipt extends javax.swing.JFrame {
 
         receiptSubTotalTextField.setEditable(false);
         receiptSubTotalTextField.setBackground(new java.awt.Color(255, 255, 255));
-        receiptSubTotalTextField.setFont(new java.awt.Font("Corbel", 0, 14)); // NOI18N
+        receiptSubTotalTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         receiptSubTotalTextField.setForeground(new java.awt.Color(0, 102, 102));
 
         receiptTotalLabel.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
@@ -380,13 +356,8 @@ public class Receipt extends javax.swing.JFrame {
 
         receiptTotalTextField.setEditable(false);
         receiptTotalTextField.setBackground(new java.awt.Color(255, 255, 255));
-        receiptTotalTextField.setFont(new java.awt.Font("Corbel", 0, 14)); // NOI18N
+        receiptTotalTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         receiptTotalTextField.setForeground(new java.awt.Color(0, 102, 102));
-        receiptTotalTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                receiptTotalTextFieldActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout receipTotalPanelLayout = new javax.swing.GroupLayout(receipTotalPanel);
         receipTotalPanel.setLayout(receipTotalPanelLayout);
@@ -507,18 +478,6 @@ public class Receipt extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void receiptFlavourTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receiptFlavourTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_receiptFlavourTextFieldActionPerformed
-
-    private void receiptShapeTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receiptShapeTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_receiptShapeTextFieldActionPerformed
-
-    private void receiptLNTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receiptLNTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_receiptLNTextFieldActionPerformed
-
     private void receiptOrderAgainButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receiptOrderAgainButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_receiptOrderAgainButtonActionPerformed
@@ -526,18 +485,6 @@ public class Receipt extends javax.swing.JFrame {
     private void receiptConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receiptConfirmButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_receiptConfirmButtonActionPerformed
-
-    private void receiptFNTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receiptFNTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_receiptFNTextFieldActionPerformed
-
-    private void receiptDelOrPicTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receiptDelOrPicTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_receiptDelOrPicTextFieldActionPerformed
-
-    private void receiptTotalTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receiptTotalTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_receiptTotalTextFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -602,7 +549,7 @@ public class Receipt extends javax.swing.JFrame {
     private javax.swing.JPanel receiptPanel;
     private javax.swing.JLabel receiptPhLabel;
     private javax.swing.JTextField receiptPhTextField;
-    private javax.swing.JLabel receiptQuantityLabel;
+    private javax.swing.JLabel receiptQtyLabel;
     private javax.swing.JTextField receiptShapeTextField;
     private javax.swing.JLabel receiptShapesLabel;
     private javax.swing.JLabel receiptSizeLabel;

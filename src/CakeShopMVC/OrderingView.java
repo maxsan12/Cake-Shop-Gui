@@ -8,6 +8,7 @@ import CakeShopChoices.CakeSizes;
 import CakeShopChoices.CakeShapes;
 import CakeShopChoices.CakeFlavours;
 import CakeShopChoices.DeliveryOrPickup;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.DefaultComboBoxModel;
@@ -105,13 +106,17 @@ public final class OrderingView extends JFrame {
     public javax.swing.JButton detailsContinueButton;
     
     public OrderingView() {
-        initMainPageGui();
+        initMainComponents();
+        initHomeComponents();
+        initLoginComponents();
+        initOrderingComponents();
+        initDetailsComponents();
         loadBoxes();
         //initActionListener();
 
     }
     
-    private void initMainPageGui() {
+    private void initMainComponents() {
         
         // Instantiating Main Page gui components
         panelForFrame = new javax.swing.JPanel();
@@ -153,13 +158,16 @@ public final class OrderingView extends JFrame {
                 .addComponent(titleLabel)
                 .addGap(15, 15, 15))
         );
-
         
         tabsPanel.setBackground(new java.awt.Color(255, 255, 255));
         tabsPanel.setBorder(null);
         tabsPanel.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
-        tabsPanel.setSize(700, 559); // setting tabsPanel/JTabbedPanel to this specific size so that the panel can stay hidden when executed
-
+        //tabsPanel.setSize(700, 559); // setting tabsPanel/JTabbedPanel to this specific size so that the panel can stay hidden when executed
+        
+        pack();
+    }
+    
+    private void initHomeComponents() {
         
         // Instantiating home panel gui components 
         homePanel = new javax.swing.JPanel();
@@ -168,7 +176,7 @@ public final class OrderingView extends JFrame {
       
         homePanel.setBackground(new java.awt.Color(255, 255, 255));
         homePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
-      
+        homePanel.setPreferredSize(new Dimension (500, 450));
         // Creating an instance of HomePageImage class, which holds the image we need for home page panel
         //HomePageImage hpi = new HomePageImage();
         //this.add(hpi, BorderLayout.CENTER); // setting image to the center
@@ -209,8 +217,124 @@ public final class OrderingView extends JFrame {
                 .addComponent(homeContinueBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         
-        tabsPanel.addTab("Home", homePanel);  
+        tabsPanel.addTab("Home", homePanel);
         
+        pack();
+    }
+    
+    private void initLoginComponents() {
+        
+        // Instantiating login panel gui components
+        loginPanel = new javax.swing.JPanel();
+        loginUserTextField = new javax.swing.JTextField();
+        loginTextLabel = new javax.swing.JLabel();
+        loginUsernameLabel = new javax.swing.JLabel();
+        loginPasswordLabel = new javax.swing.JLabel();
+        loginUserPasswordField = new javax.swing.JPasswordField();
+        loginContinueButton = new javax.swing.JButton();
+        loginBackButton = new javax.swing.JButton();
+        
+        // Setting and adding elements to login components
+        loginPanel.setBackground(new java.awt.Color(255, 255, 255));
+        loginPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
+        
+        loginUserTextField.setBackground(new java.awt.Color(204, 204, 204));
+        loginUserTextField.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        loginUserTextField.setForeground(new java.awt.Color(0, 51, 51));
+
+        loginTextLabel.setFont(new java.awt.Font("Corbel", 1, 24)); // NOI18N
+        loginTextLabel.setForeground(new java.awt.Color(0, 102, 102));
+        loginTextLabel.setText("Login or create an account to proceed:");
+
+        loginUsernameLabel.setBackground(new java.awt.Color(255, 255, 255));
+        loginUsernameLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
+        loginUsernameLabel.setForeground(new java.awt.Color(0, 102, 102));
+        loginUsernameLabel.setText("Username:");
+
+        loginPasswordLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
+        loginPasswordLabel.setForeground(new java.awt.Color(0, 102, 102));
+        loginPasswordLabel.setText("Password:");
+
+        loginUserPasswordField.setBackground(new java.awt.Color(204, 204, 204));
+        loginUserPasswordField.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        loginUserPasswordField.setForeground(new java.awt.Color(0, 51, 51));
+
+        loginContinueButton.setBackground(new java.awt.Color(0, 51, 51));
+        loginContinueButton.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        loginContinueButton.setForeground(new java.awt.Color(255, 255, 255));
+        loginContinueButton.setText("Continue");
+        loginContinueButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                 // Go to the next Panel which is the Ordering panel
+                tabsPanel.setSelectedIndex(2);
+            }
+        });
+
+        loginBackButton.setBackground(new java.awt.Color(0, 51, 51));
+        loginBackButton.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        loginBackButton.setForeground(new java.awt.Color(255, 255, 255));
+        loginBackButton.setText("Back");
+        loginBackButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                // Go back to the previous page which is the home panel
+                tabsPanel.setSelectedIndex(0);
+            }
+        });
+        
+        javax.swing.GroupLayout loginPanelLayout = new javax.swing.GroupLayout(loginPanel);
+        loginPanel.setLayout(loginPanelLayout);
+        loginPanelLayout.setHorizontalGroup(
+            loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(loginPanelLayout.createSequentialGroup()
+                .addGap(167, 167, 167)
+                .addComponent(loginTextLabel))
+            .addGroup(loginPanelLayout.createSequentialGroup()
+                .addGap(207, 207, 207)
+                .addComponent(loginUsernameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(loginUserTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(loginPanelLayout.createSequentialGroup()
+                .addGap(207, 207, 207)
+                .addComponent(loginPasswordLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(loginUserPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(loginPanelLayout.createSequentialGroup()
+                .addGap(227, 227, 227)
+                .addComponent(loginBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(loginContinueButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        loginPanelLayout.setVerticalGroup(
+            loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(loginPanelLayout.createSequentialGroup()
+                .addGap(117, 117, 117)
+                .addComponent(loginTextLabel)
+                .addGap(40, 40, 40)
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(loginPanelLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(loginUsernameLabel))
+                    .addComponent(loginUserTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(loginPanelLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(loginPasswordLabel))
+                    .addComponent(loginUserPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(70, 70, 70)
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(loginBackButton)
+                    .addComponent(loginContinueButton)))
+        );
+
+        tabsPanel.addTab("Login", loginPanel);
+        
+        pack();
+    }
+    
+    private void initOrderingComponents() {
         
         // Instantiating ordering panel gui components
         orderingPanel = new javax.swing.JPanel();
@@ -237,7 +361,6 @@ public final class OrderingView extends JFrame {
         orderingBackButton = new javax.swing.JButton();
         orderingContinueButton = new javax.swing.JButton();
         
-        
         // Setting and adding elements to ordering components
         orderingPanel.setBackground(new java.awt.Color(255, 255, 255));
         orderingPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
@@ -252,7 +375,7 @@ public final class OrderingView extends JFrame {
         orderingSizesComboBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
-                // ggetting selected option from sizes combobox
+                // Getting selected option from sizes combobox
                 String selected = orderingSizesComboBox.getSelectedItem().toString();
                 // placing selected size option into the textfield
                 orderingCartSizesTextField.setText(selected);
@@ -385,8 +508,8 @@ public final class OrderingView extends JFrame {
          orderingBackButton.addActionListener(new java.awt.event.ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                // Go back to the previous page which is the home panel
-                tabsPanel.setSelectedIndex(0);
+                // Go back to the previous page which is the login panel
+                tabsPanel.setSelectedIndex(1);
             }
         });
 
@@ -397,8 +520,8 @@ public final class OrderingView extends JFrame {
         orderingContinueButton.addActionListener(new java.awt.event.ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                // Go to the next Panel which is the login panel
-                tabsPanel.setSelectedIndex(2);
+                // Go to the next Panel which is the details panel
+                tabsPanel.setSelectedIndex(3);
             }
         });
         
@@ -519,113 +642,10 @@ public final class OrderingView extends JFrame {
 
         tabsPanel.addTab("Ordering", orderingPanel);
         
-        
-        // Instantiating login panel gui components
-        loginPanel = new javax.swing.JPanel();
-        loginUserTextField = new javax.swing.JTextField();
-        loginTextLabel = new javax.swing.JLabel();
-        loginUsernameLabel = new javax.swing.JLabel();
-        loginPasswordLabel = new javax.swing.JLabel();
-        loginUserPasswordField = new javax.swing.JPasswordField();
-        loginContinueButton = new javax.swing.JButton();
-        loginBackButton = new javax.swing.JButton();
-        
-        // Setting and adding elements to login components
-        loginPanel.setBackground(new java.awt.Color(255, 255, 255));
-        loginPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
-        
-        loginUserTextField.setBackground(new java.awt.Color(204, 204, 204));
-        loginUserTextField.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
-        loginUserTextField.setForeground(new java.awt.Color(0, 51, 51));
-
-        loginTextLabel.setFont(new java.awt.Font("Corbel", 1, 24)); // NOI18N
-        loginTextLabel.setForeground(new java.awt.Color(0, 102, 102));
-        loginTextLabel.setText("Login or create an account to proceed:");
-
-        loginUsernameLabel.setBackground(new java.awt.Color(255, 255, 255));
-        loginUsernameLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
-        loginUsernameLabel.setForeground(new java.awt.Color(0, 102, 102));
-        loginUsernameLabel.setText("Username:");
-
-        loginPasswordLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
-        loginPasswordLabel.setForeground(new java.awt.Color(0, 102, 102));
-        loginPasswordLabel.setText("Password:");
-
-        loginUserPasswordField.setBackground(new java.awt.Color(204, 204, 204));
-        loginUserPasswordField.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
-        loginUserPasswordField.setForeground(new java.awt.Color(0, 51, 51));
-
-        loginContinueButton.setBackground(new java.awt.Color(0, 51, 51));
-        loginContinueButton.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
-        loginContinueButton.setForeground(new java.awt.Color(255, 255, 255));
-        loginContinueButton.setText("Continue");
-        loginContinueButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent evt) {
-                 // Go the next Panel which is the details panel
-                tabsPanel.setSelectedIndex(3);
-            }
-        });
-
-        loginBackButton.setBackground(new java.awt.Color(0, 51, 51));
-        loginBackButton.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
-        loginBackButton.setForeground(new java.awt.Color(255, 255, 255));
-        loginBackButton.setText("Back");
-        loginBackButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                // Go back to the previous panel which is the ordering panel
-                tabsPanel.setSelectedIndex(1);
-            }
-        });
-        
-        javax.swing.GroupLayout loginPanelLayout = new javax.swing.GroupLayout(loginPanel);
-        loginPanel.setLayout(loginPanelLayout);
-        loginPanelLayout.setHorizontalGroup(
-            loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(loginPanelLayout.createSequentialGroup()
-                .addGap(167, 167, 167)
-                .addComponent(loginTextLabel))
-            .addGroup(loginPanelLayout.createSequentialGroup()
-                .addGap(207, 207, 207)
-                .addComponent(loginUsernameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(loginUserTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(loginPanelLayout.createSequentialGroup()
-                .addGap(207, 207, 207)
-                .addComponent(loginPasswordLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(loginUserPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(loginPanelLayout.createSequentialGroup()
-                .addGap(227, 227, 227)
-                .addComponent(loginBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(loginContinueButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        loginPanelLayout.setVerticalGroup(
-            loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(loginPanelLayout.createSequentialGroup()
-                .addGap(117, 117, 117)
-                .addComponent(loginTextLabel)
-                .addGap(40, 40, 40)
-                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(loginPanelLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(loginUsernameLabel))
-                    .addComponent(loginUserTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(loginPanelLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(loginPasswordLabel))
-                    .addComponent(loginUserPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(70, 70, 70)
-                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(loginBackButton)
-                    .addComponent(loginContinueButton)))
-        );
-
-        tabsPanel.addTab("Login", loginPanel);
+        pack();
+    }
+    
+    private void initDetailsComponents() {
         
         // Instantiating details panel gui components
         detailsPanel = new javax.swing.JPanel();
@@ -719,7 +739,7 @@ public final class OrderingView extends JFrame {
         detailsBackButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
-                // Go back to the previous panel which is the login panel
+                // Go back to the previous panel which is the ordering panel
                 tabsPanel.setSelectedIndex(2);
             }
         });
@@ -732,9 +752,11 @@ public final class OrderingView extends JFrame {
             @Override
             public void actionPerformed(ActionEvent evt) {
                 // Go to the next JFrame which is the receiptt, which displays the users final order
-                ReceiptView receipt = new ReceiptView();
-                receipt.setVisible(true);
-               
+                ReceiptView r = new ReceiptView();
+                r.show();
+                //r.setVisible(true);
+                dispose(); // dispose this frame when user gets 
+             
             }
         });
         

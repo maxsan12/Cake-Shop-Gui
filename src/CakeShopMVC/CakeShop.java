@@ -24,9 +24,6 @@ public class CakeShop {
             public void run() {
                 OrderingView view = new OrderingView();
                 view.setVisible(true);
-                
-                ReceiptView r = new ReceiptView();
-                r.setVisible(true);
             }
         });
         
