@@ -133,6 +133,8 @@ public class MainPage extends javax.swing.JFrame {
         tabsPanel.setBackground(new java.awt.Color(255, 255, 255));
         tabsPanel.setBorder(null);
         tabsPanel.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
+        tabsPanel.setMaximumSize(null);
+        tabsPanel.setMinimumSize(null);
 
         homePanel.setBackground(new java.awt.Color(255, 255, 255));
         homePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
@@ -173,7 +175,7 @@ public class MainPage extends javax.swing.JFrame {
         tabsPanel.addTab("Home", homePanel);
 
         loginPanel.setBackground(new java.awt.Color(255, 255, 255));
-        loginPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
+        loginPanel.setBorder(null);
 
         loginUserTextField.setBackground(new java.awt.Color(204, 204, 204));
         loginUserTextField.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N

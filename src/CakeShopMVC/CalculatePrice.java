@@ -23,6 +23,11 @@ public class CalculatePrice {
     double subTotal = 0;
     double total = 0;
     
+    public CalculatePrice() {
+        getSubTotalPrice();
+        getTotalPrice();
+    }
+    
     private double getSubTotalPrice() {
         //System.out.println(((Double[])orderingSizesComboBox.getSelectedItem())[1]);
         subTotal += (double) orderingSizesComboBox.getSelectedItem() + 

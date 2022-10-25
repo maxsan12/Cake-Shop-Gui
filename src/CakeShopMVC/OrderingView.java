@@ -17,19 +17,18 @@ import javax.swing.JFrame;
 /**
  *
  * @author Maxinne Santico 19084694
- COMP603/50 - 19084694
- 
- This class is designed as the 'OrderingView' class inspired by the MVC design pattern
- The view class should contain what the user will be seeing - the full gui. 
- NOTE: class is long since there are multiple tabs inside a JTabbedPane. 
- I decided to go with this route instead of creating multiple new JFrames and
- Instantiating them as this could potential slow down the process. 
+ * COMP603/50 - Group 27
+ * Assignment 2
+ * 
+ * This class is designed as the 'OrderingView' class inspired by the MVC design pattern
+ * The view class should contain what the user will be seeing - the full gui. 
+ * NOTE: class is long since there are multiple tabs inside a JTabbedPane. 
+ * I decided to go with this route instead of creating multiple new JFrames and
+ * Instantiating them as this could potential slow down the loading process, 
+ * also can potentially cause memory leak
  * 
  */
 public final class OrderingView extends JFrame {
-    
-    // Declare ActionListnener for addActionListener method later for components below
-    private ActionListener actionListener; 
     
     /** COMPONENTS FOR MAIN PAGE GUI 
      * 
@@ -160,9 +159,9 @@ public final class OrderingView extends JFrame {
         );
         
         tabsPanel.setBackground(new java.awt.Color(255, 255, 255));
-        tabsPanel.setBorder(null);
         tabsPanel.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
-        //tabsPanel.setSize(700, 559); // setting tabsPanel/JTabbedPanel to this specific size so that the panel can stay hidden when executed
+        //tabsPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
+        tabsPanel.setPreferredSize(new Dimension (700, 559)); // setting tabsPanel/JTabbedPanel to this specific size so that the panel can stay hidden when executed
         
         pack();
     }
@@ -175,8 +174,8 @@ public final class OrderingView extends JFrame {
         homeContinueBttn = new javax.swing.JButton();
       
         homePanel.setBackground(new java.awt.Color(255, 255, 255));
-        homePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
-        homePanel.setPreferredSize(new Dimension (500, 450));
+        //homePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
+      
         // Creating an instance of HomePageImage class, which holds the image we need for home page panel
         //HomePageImage hpi = new HomePageImage();
         //this.add(hpi, BorderLayout.CENTER); // setting image to the center
@@ -194,6 +193,7 @@ public final class OrderingView extends JFrame {
             public void actionPerformed(ActionEvent evt) {
                 // Go to the next page which is the ordering panel
                 tabsPanel.setSelectedIndex(1);
+                System.out.println("Ordering cake!"); // display to the system console
             }
         });
         
@@ -236,8 +236,7 @@ public final class OrderingView extends JFrame {
         
         // Setting and adding elements to login components
         loginPanel.setBackground(new java.awt.Color(255, 255, 255));
-        loginPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
-        
+        //loginPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
         loginUserTextField.setBackground(new java.awt.Color(204, 204, 204));
         loginUserTextField.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         loginUserTextField.setForeground(new java.awt.Color(0, 51, 51));
@@ -268,6 +267,7 @@ public final class OrderingView extends JFrame {
             public void actionPerformed(ActionEvent evt) {
                  // Go to the next Panel which is the Ordering panel
                 tabsPanel.setSelectedIndex(2);
+                
             }
         });
 
@@ -363,8 +363,7 @@ public final class OrderingView extends JFrame {
         
         // Setting and adding elements to ordering components
         orderingPanel.setBackground(new java.awt.Color(255, 255, 255));
-        orderingPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
-
+        //orderingPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
         orderingSizesLabel.setBackground(new java.awt.Color(255, 255, 255));
         orderingSizesLabel.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         orderingSizesLabel.setForeground(new java.awt.Color(0, 102, 102));
@@ -407,7 +406,7 @@ public final class OrderingView extends JFrame {
         orderingFlavoursComboBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
-                // ggetting selected option from sizes combobox
+                // getting selected option from sizes combobox
                 String selected = orderingFlavoursComboBox.getSelectedItem().toString();
                 // placing selected size option into the textfield
                 orderingCartFlavoursTextField.setText(selected);
@@ -459,9 +458,8 @@ public final class OrderingView extends JFrame {
         orderingCartLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
         orderingCartLabel.setForeground(new java.awt.Color(0, 102, 102));
         orderingCartLabel.setText("Your Cart:");
-        
         orderingCartPanel.setBackground(new java.awt.Color(255, 255, 255));
-        orderingCartPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
+        //orderingCartPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
        
         orderingCartSizesLabel.setBackground(new java.awt.Color(255, 255, 255));
         orderingCartSizesLabel.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
@@ -499,7 +497,7 @@ public final class OrderingView extends JFrame {
         orderingCartQuantityTextField.setBackground(new java.awt.Color(255, 255, 255));
         orderingCartQuantityTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         orderingCartQuantityTextField.setForeground(new java.awt.Color(0, 102, 102));
-        orderingCartQuantityTextField.setText("1"); // setting it to 1 as that is the default value
+        orderingCartQuantityTextField.setText(String.valueOf(orderingQuantity)); // setting it to 1 as that is the default value
 
         orderingBackButton.setBackground(new java.awt.Color(0, 51, 51));
         orderingBackButton.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
@@ -667,7 +665,7 @@ public final class OrderingView extends JFrame {
         
         // setting and adding elements to details components
         detailsPanel.setBackground(new java.awt.Color(255, 255, 255));
-        detailsPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
+        //detailsPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
 
         detailsFNLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
         detailsFNLabel.setForeground(new java.awt.Color(0, 102, 102));
@@ -850,7 +848,7 @@ public final class OrderingView extends JFrame {
             .addComponent(titlePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(panelForFrameLayout.createSequentialGroup()
                 .addGap(100, 100, 100)
-                .addComponent(tabsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 559, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(tabsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 555, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
