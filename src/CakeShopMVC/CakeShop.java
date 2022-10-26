@@ -17,8 +17,6 @@ public class CakeShop {
     
     public static void main(String[] args) {
         
-        
-       
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 OrderingView view = new OrderingView();

@@ -4,6 +4,7 @@
  */
 package CakeShopMVC;
 
+import static CakeShopMVC.OrderingView.detailsDelOrPicComboBox;
 import java.util.Random;
 import javax.swing.JFrame;
 
@@ -423,7 +424,8 @@ public class ReceiptView extends JFrame {
         receiptDelOrPicTextField.setBackground(new java.awt.Color(255, 255, 255));
         receiptDelOrPicTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         receiptDelOrPicTextField.setForeground(new java.awt.Color(0, 102, 102));
-        //receiptDelOrPicTextField.setText();
+        // Setting what user selects in delivery or pick up combo box from OrderingView class
+        receiptDelOrPicTextField.setText(OrderingView.detailsDelOrPicComboBox.getSelectedItem().toString());
 
         javax.swing.GroupLayout receiptDelOrPicPanelLayout = new javax.swing.GroupLayout(receiptDelOrPicPanel);
         receiptDelOrPicPanel.setLayout(receiptDelOrPicPanelLayout);
