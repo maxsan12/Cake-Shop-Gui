@@ -524,10 +524,15 @@ public final class OrderingView extends JFrame {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 // Go to the next Panel which is the details panel
                Object obj = evt.getSource();
+               String sizes = orderingCartSizesTextField.getText();
                
-                if (orderingShapesComboBox.getSelectedItem().toString() == null) {
-                JOptionPane.showMessageDialog(null,"Select a shape to continue");
-                }
+               if (obj == orderingContinueButton) {
+                   
+                   if (sizes.equals("")) {
+                        JOptionPane.showMessageDialog(null, orderingShapesComboBox, "Select a shape to continue", JOptionPane.OK_OPTION);
+                   }
+               }
+               
                 tabsPanel.setSelectedIndex(3);
             }
         });
