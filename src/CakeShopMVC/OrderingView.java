@@ -25,8 +25,8 @@ import javax.swing.JOptionPane;
  * The view class should contain what the user will be seeing - the full gui. 
  * NOTE: class is long since there are multiple tabs inside a JTabbedPane. 
  * I decided to go with this route instead of creating multiple new JFrames and
- * Instantiating them as this could potential slow down the loading process, 
- * also can cause memory leak
+ * Instantiating them as this could potential slow down the loading process and can
+ * also cause memory leak
  * 
  */
 public final class OrderingView extends JFrame {
@@ -113,8 +113,6 @@ public final class OrderingView extends JFrame {
         initOrderingComponents();
         initDetailsComponents();
         loadBoxes();
-        //initActionListener();
-
     }
     
     private void initMainComponents() {
@@ -162,7 +160,6 @@ public final class OrderingView extends JFrame {
         
         tabsPanel.setBackground(new java.awt.Color(255, 255, 255));
         tabsPanel.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
-        //tabsPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
         tabsPanel.setPreferredSize(new Dimension (700, 559)); // setting tabsPanel/JTabbedPanel to this specific size so that the panel can stay hidden when executed
         
         pack();
@@ -176,8 +173,6 @@ public final class OrderingView extends JFrame {
         homeContinueBttn = new javax.swing.JButton();
       
         homePanel.setBackground(new java.awt.Color(255, 255, 255));
-        //homePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
-      
         // Creating an instance of HomePageImage class, which holds the image we need for home page panel
         //HomePageImage hpi = new HomePageImage();
         //this.add(hpi, BorderLayout.CENTER); // setting image to the center
@@ -193,9 +188,9 @@ public final class OrderingView extends JFrame {
             
             @Override
             public void actionPerformed(ActionEvent evt) {
-                // Go to the next page which is the ordering panel
+                // Go to the next page which is the login panel
                 tabsPanel.setSelectedIndex(1);
-                System.out.println("Ordering cake!"); // display to the system console
+                System.out.println("User Login"); // display to the system console
             }
         });
         
@@ -267,8 +262,9 @@ public final class OrderingView extends JFrame {
         loginContinueButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
-                 // Go to the next Panel which is the Ordering panel
+                 // Go to the next Panel which is the ordering panel
                 tabsPanel.setSelectedIndex(2);
+                System.out.println("Ordering Cake");
                 
             }
         });
@@ -282,6 +278,7 @@ public final class OrderingView extends JFrame {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 // Go back to the previous page which is the home panel
                 tabsPanel.setSelectedIndex(0);
+                System.out.println("Home Page");
             }
         });
         
@@ -365,7 +362,6 @@ public final class OrderingView extends JFrame {
         
         // Setting and adding elements to ordering components
         orderingPanel.setBackground(new java.awt.Color(255, 255, 255));
-        //orderingPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
         orderingSizesLabel.setBackground(new java.awt.Color(255, 255, 255));
         orderingSizesLabel.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         orderingSizesLabel.setForeground(new java.awt.Color(0, 102, 102));
@@ -378,7 +374,7 @@ public final class OrderingView extends JFrame {
             public void actionPerformed(ActionEvent evt) {
                 // Getting selected option from sizes combobox
                 String selected = orderingSizesComboBox.getSelectedItem().toString();
-                // placing selected size option into the textfield
+                // placing selected size option into the size textfield inside the cart label
                 orderingCartSizesTextField.setText(selected);
             }
         });
@@ -392,9 +388,9 @@ public final class OrderingView extends JFrame {
         orderingShapesComboBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
-                // ggetting selected option from sizes combobox
+                // ggetting selected option from shapes combobox
                 String selected = orderingShapesComboBox.getSelectedItem().toString();
-                // placing selected size option into the textfield
+                // placing selected shape option into the textfield inside the cart label
                 orderingCartShapesTextField.setText(selected);
             }
         });
@@ -408,9 +404,9 @@ public final class OrderingView extends JFrame {
         orderingFlavoursComboBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
-                // getting selected option from sizes combobox
+                // getting selected option from flavours combobox
                 String selected = orderingFlavoursComboBox.getSelectedItem().toString();
-                // placing selected size option into the textfield
+                // placing selected flavour option into the textfield inside the cart label
                 orderingCartFlavoursTextField.setText(selected);
             }
         });
@@ -426,8 +422,10 @@ public final class OrderingView extends JFrame {
         orderingQtySubtractButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
-                // Decrementing quantity that user chooses when they click this button
-                // Note: value will only decrement if quantity is greater than 1.
+                /**
+                 * Decrementing quantity that user chooses when they click this button
+                 * Note: value will only decrement if quantity is greater than 1.
+                */ 
                 orderingQuantity = orderingQuantity > 1 ? --orderingQuantity : 1;
                 orderingQtyNoLabel.setText(String.valueOf(orderingQuantity));
                 orderingCartQuantityTextField.setText(String.valueOf(orderingQuantity));
@@ -461,8 +459,7 @@ public final class OrderingView extends JFrame {
         orderingCartLabel.setForeground(new java.awt.Color(0, 102, 102));
         orderingCartLabel.setText("Your Cart:");
         orderingCartPanel.setBackground(new java.awt.Color(255, 255, 255));
-        //orderingCartPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
-       
+        
         orderingCartSizesLabel.setBackground(new java.awt.Color(255, 255, 255));
         orderingCartSizesLabel.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         orderingCartSizesLabel.setForeground(new java.awt.Color(0, 102, 102));
@@ -481,8 +478,6 @@ public final class OrderingView extends JFrame {
         orderingCartShapesTextField.setBackground(new java.awt.Color(255, 255, 255));
         orderingCartShapesTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         orderingCartShapesTextField.setForeground(new java.awt.Color(0, 102, 102));
-                // placing selected size option into the textfield
-                orderingCartFlavoursTextField.setText("");
         
         orderingCartFlavoursLabel.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         orderingCartFlavoursLabel.setForeground(new java.awt.Color(0, 102, 102));
@@ -512,6 +507,7 @@ public final class OrderingView extends JFrame {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 // Go back to the previous page which is the login panel
                 tabsPanel.setSelectedIndex(1);
+                System.out.println("User Login");
             }
         });
 
@@ -522,27 +518,31 @@ public final class OrderingView extends JFrame {
         orderingContinueButton.addActionListener(new java.awt.event.ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                // Go to the next Panel which is the details panel
-               Object obj = evt.getSource();
-               String sizes = orderingCartSizesTextField.getText();
-               String shapes = orderingCartShapesTextField.getText();
-               String flavours = orderingCartShapesTextField.getText();
-               
-               if (obj == orderingContinueButton) {
+                /**
+                 * Making sure to display message dialog if user leaves textfields empty/
+                 * does not select an option from the comboboxes. Will then be able
+                 * to go to the next page which is the customer details page.
+                 */
+                Object obj = evt.getSource();
+                String sizes = orderingCartSizesTextField.getText();
+                String shapes = orderingCartShapesTextField.getText();
+                String flavours = orderingCartFlavoursTextField.getText();
+
+                if (obj == orderingContinueButton) {
                    
-                   if (sizes.equals("")) {
+                    if (sizes.equals("")) {
                         JOptionPane.showMessageDialog(null, "Select a size to continue");
-                   }
-                   else if (shapes.equals("")) {
-                       JOptionPane.showMessageDialog(null, "Select a shape to continue");
-                   }
-                   else if (flavours.equals("")) {
-                       JOptionPane.showMessageDialog(null, "Select a flavour to continue");
-                   }
-               }
-               else {
-                   tabsPanel.setSelectedIndex(3);
-               }
+                    }
+                    else if (shapes.equals("")) {
+                        JOptionPane.showMessageDialog(null, "Select a shape to continue");
+                    }
+                    else if (flavours.equals("")) {
+                        JOptionPane.showMessageDialog(null, "Select a flavour to continue");
+                    }
+                    else 
+                        tabsPanel.setSelectedIndex(3);
+                        System.out.println("Customer Details");
+                }     
             }
         });
         
@@ -740,9 +740,7 @@ public final class OrderingView extends JFrame {
             @Override
             public void actionPerformed(ActionEvent evt) {
                 // ggetting selected option from sizes combobox
-                String selected = detailsDelOrPicComboBox.getSelectedItem().toString();
-                // placing selected size option into the textfield - will be added in receipt class
-                
+                detailsDelOrPicComboBox.getSelectedItem().toString();
             }
         });
 
@@ -763,6 +761,7 @@ public final class OrderingView extends JFrame {
             public void actionPerformed(ActionEvent evt) {
                 // Go back to the previous panel which is the ordering panel
                 tabsPanel.setSelectedIndex(2);
+                System.out.println("Ordering Cake");
             }
         });
 
@@ -778,21 +777,48 @@ public final class OrderingView extends JFrame {
                  * will also transfer data from this class to the ReceiptView class
                  */ 
                 
-                ReceiptView r = new ReceiptView();
+                Object obj = evt.getSource();
+                String fName = detailsFNTextField.getText();
+                String lName = detailsLNTextField.getText();
+                String address = detailsAddressTextArea.getText();
+                String email = detailsEmailTextField.getText();
+                String number = String.valueOf(detailsPhNoTextField.getText());
+
+                if (obj == detailsContinueButton) {
+                   
+                    if (fName.equals("")) {
+                        JOptionPane.showMessageDialog(rootPane, "Enter a first name to continue");
+                    }
+                    else if (lName.equals("")) {
+                        JOptionPane.showMessageDialog(rootPane, "Enter a last name to continue");
+                    }
+                    else if (address.equals("")) {
+                        JOptionPane.showMessageDialog(rootPane, "Enter a address to continue");
+                    }
+                    else if (email.equals("")) {
+                        JOptionPane.showMessageDialog(rootPane, "Enter a email to continue");
+                    }
+                    else if (number.equals("")) {
+                        JOptionPane.showMessageDialog(rootPane, "Enter a phone number to continue");
+                    }
+                    
+                    else {
+                        ReceiptView r = new ReceiptView();
                 
-                ReceiptView.receiptSizeTextField.setText(OrderingView.orderingCartSizesTextField.getText());
-                ReceiptView.receiptShapeTextField.setText(OrderingView.orderingCartShapesTextField.getText());
-                ReceiptView.receiptFlavourTextField.setText(OrderingView.orderingCartFlavoursTextField.getText());
-                ReceiptView.receiptOtyTextField.setText(OrderingView.orderingCartQuantityTextField.getText());
-                
-                ReceiptView.receiptFNTextField.setText(OrderingView.detailsFNTextField.getText());
-                ReceiptView.receiptLNTextField.setText(OrderingView.detailsLNTextField.getText());
-                ReceiptView.receiptAddressTextArea.setText(OrderingView.detailsAddressTextArea.getText());
-                ReceiptView.receiptEmailTextField.setText(OrderingView.detailsEmailTextField.getText());
-                ReceiptView.receiptPhTextField.setText(OrderingView.detailsPhNoTextField.getText());
-                
-                r.setVisible(true);
-             
+                        ReceiptView.receiptSizeTextField.setText(OrderingView.orderingCartSizesTextField.getText());
+                        ReceiptView.receiptShapeTextField.setText(OrderingView.orderingCartShapesTextField.getText());
+                        ReceiptView.receiptFlavourTextField.setText(OrderingView.orderingCartFlavoursTextField.getText());
+                        ReceiptView.receiptOtyTextField.setText(OrderingView.orderingCartQuantityTextField.getText());
+
+                        ReceiptView.receiptFNTextField.setText(OrderingView.detailsFNTextField.getText());
+                        ReceiptView.receiptLNTextField.setText(OrderingView.detailsLNTextField.getText());
+                        ReceiptView.receiptAddressTextArea.setText(OrderingView.detailsAddressTextArea.getText());
+                        ReceiptView.receiptEmailTextField.setText(OrderingView.detailsEmailTextField.getText());
+                        ReceiptView.receiptPhTextField.setText(OrderingView.detailsPhNoTextField.getText());
+
+                        r.setVisible(true);
+                    } 
+                }
             }
         });
         
@@ -913,5 +939,4 @@ public final class OrderingView extends JFrame {
         orderingFlavoursComboBox.setModel(new DefaultComboBoxModel<>(CakeFlavours.values()));
         detailsDelOrPicComboBox.setModel(new DefaultComboBoxModel<>(DeliveryOrPickup.values()));
     }
-
 }
