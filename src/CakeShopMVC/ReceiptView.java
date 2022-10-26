@@ -4,8 +4,10 @@
  */
 package CakeShopMVC;
 
+import CakeShopMVC.CalculatePrice;
 import java.util.Random;
 import javax.swing.JFrame;
+
 
 /**
  *
@@ -174,7 +176,6 @@ public class ReceiptView extends JFrame {
         receiptSizeTextField.setBackground(new java.awt.Color(255, 255, 255));
         receiptSizeTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         receiptSizeTextField.setForeground(new java.awt.Color(0, 102, 102));
-        
         receiptShapesLabel.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         receiptShapesLabel.setForeground(new java.awt.Color(0, 102, 102));
         receiptShapesLabel.setText("Cake Shape:");
@@ -419,6 +420,7 @@ public class ReceiptView extends JFrame {
         receiptDelOrPicTextField.setBackground(new java.awt.Color(255, 255, 255));
         receiptDelOrPicTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         receiptDelOrPicTextField.setForeground(new java.awt.Color(0, 102, 102));
+        receiptDelOrPicTextField.setText();
 
         javax.swing.GroupLayout receiptDelOrPicPanelLayout = new javax.swing.GroupLayout(receiptDelOrPicPanel);
         receiptDelOrPicPanel.setLayout(receiptDelOrPicPanelLayout);
@@ -461,6 +463,7 @@ public class ReceiptView extends JFrame {
         receiptSubTotalTextField.setBackground(new java.awt.Color(255, 255, 255));
         receiptSubTotalTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         receiptSubTotalTextField.setForeground(new java.awt.Color(0, 102, 102));
+        //receiptSubTotalTextField.setText(String.valueOf(CalculatePrice.getSubTotalPrice()));
 
         receiptTotalLabel.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         receiptTotalLabel.setForeground(new java.awt.Color(0, 102, 102));
@@ -470,6 +473,9 @@ public class ReceiptView extends JFrame {
         receiptTotalTextField.setBackground(new java.awt.Color(255, 255, 255));
         receiptTotalTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         receiptTotalTextField.setForeground(new java.awt.Color(0, 102, 102));
+        CalculatePrice cp = new CalculatePrice();
+        receiptTotalTextField.setText(String.valueOf(CalculatePrice.getTotalPrice()));
+        
 
         javax.swing.GroupLayout receipTotalPanelLayout = new javax.swing.GroupLayout(receipTotalPanel);
         receipTotalPanel.setLayout(receipTotalPanelLayout);

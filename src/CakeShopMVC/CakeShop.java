@@ -4,7 +4,6 @@
  */
 package CakeShopMVC;
 
-import CakeShopGUI.MainPage;
 
 /**
  *
@@ -26,6 +25,5 @@ public class CakeShop {
                 view.setVisible(true);
             }
         });
-        
     }
 }
