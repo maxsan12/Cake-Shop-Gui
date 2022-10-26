@@ -190,7 +190,6 @@ public final class OrderingView extends JFrame {
             public void actionPerformed(ActionEvent evt) {
                 // Go to the next page which is the login panel
                 tabsPanel.setSelectedIndex(1);
-                System.out.println("User Login"); // display to the system console
             }
         });
         
@@ -264,8 +263,6 @@ public final class OrderingView extends JFrame {
             public void actionPerformed(ActionEvent evt) {
                  // Go to the next Panel which is the ordering panel
                 tabsPanel.setSelectedIndex(2);
-                System.out.println("Ordering Cake");
-                
             }
         });
 
@@ -278,7 +275,6 @@ public final class OrderingView extends JFrame {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 // Go back to the previous page which is the home panel
                 tabsPanel.setSelectedIndex(0);
-                System.out.println("Home Page");
             }
         });
         
@@ -507,7 +503,6 @@ public final class OrderingView extends JFrame {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 // Go back to the previous page which is the login panel
                 tabsPanel.setSelectedIndex(1);
-                System.out.println("User Login");
             }
         });
 
@@ -541,7 +536,6 @@ public final class OrderingView extends JFrame {
                     }
                     else 
                         tabsPanel.setSelectedIndex(3);
-                        System.out.println("Customer Details");
                 }     
             }
         });
@@ -739,7 +733,7 @@ public final class OrderingView extends JFrame {
         detailsDelOrPicComboBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
-                // ggetting selected option from sizes combobox
+                // getting selected option from sizes combobox
                 detailsDelOrPicComboBox.getSelectedItem().toString();
             }
         });
@@ -761,7 +755,6 @@ public final class OrderingView extends JFrame {
             public void actionPerformed(ActionEvent evt) {
                 // Go back to the previous panel which is the ordering panel
                 tabsPanel.setSelectedIndex(2);
-                System.out.println("Ordering Cake");
             }
         });
 
