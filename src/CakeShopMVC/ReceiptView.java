@@ -329,7 +329,7 @@ public class ReceiptView extends JFrame {
         
         receiptEmailTextField.setEditable(false);
         receiptEmailTextField.setBackground(new java.awt.Color(255, 255, 255));
-        receiptEmailTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
+        receiptEmailTextField.setFont(new java.awt.Font("Corbel", 0, 12)); // NOI18N
         receiptEmailTextField.setForeground(new java.awt.Color(0, 102, 102));
         
         receiptPhLabel.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
