@@ -525,15 +525,24 @@ public final class OrderingView extends JFrame {
                 // Go to the next Panel which is the details panel
                Object obj = evt.getSource();
                String sizes = orderingCartSizesTextField.getText();
+               String shapes = orderingCartShapesTextField.getText();
+               String flavours = orderingCartShapesTextField.getText();
                
                if (obj == orderingContinueButton) {
                    
                    if (sizes.equals("")) {
-                        JOptionPane.showMessageDialog(null, orderingShapesComboBox, "Select a shape to continue", JOptionPane.OK_OPTION);
+                        JOptionPane.showMessageDialog(null, "Select a size to continue");
+                   }
+                   else if (shapes.equals("")) {
+                       JOptionPane.showMessageDialog(null, "Select a shape to continue");
+                   }
+                   else if (flavours.equals("")) {
+                       JOptionPane.showMessageDialog(null, "Select a flavour to continue");
                    }
                }
-               
-                tabsPanel.setSelectedIndex(3);
+               else {
+                   tabsPanel.setSelectedIndex(3);
+               }
             }
         });
         
@@ -783,8 +792,6 @@ public final class OrderingView extends JFrame {
                 ReceiptView.receiptPhTextField.setText(OrderingView.detailsPhNoTextField.getText());
                 
                 r.setVisible(true);
-               
-                //dispose(); // dispose this frame when user gets 
              
             }
         });
