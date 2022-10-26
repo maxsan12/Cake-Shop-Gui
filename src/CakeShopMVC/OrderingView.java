@@ -13,6 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -480,6 +481,8 @@ public final class OrderingView extends JFrame {
         orderingCartShapesTextField.setBackground(new java.awt.Color(255, 255, 255));
         orderingCartShapesTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         orderingCartShapesTextField.setForeground(new java.awt.Color(0, 102, 102));
+                // placing selected size option into the textfield
+                orderingCartFlavoursTextField.setText("");
         
         orderingCartFlavoursLabel.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         orderingCartFlavoursLabel.setForeground(new java.awt.Color(0, 102, 102));
@@ -520,6 +523,11 @@ public final class OrderingView extends JFrame {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 // Go to the next Panel which is the details panel
+               Object obj = evt.getSource();
+               
+                if (orderingShapesComboBox.getSelectedItem().toString() == null) {
+                JOptionPane.showMessageDialog(null,"Select a shape to continue");
+                }
                 tabsPanel.setSelectedIndex(3);
             }
         });
