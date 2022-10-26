@@ -25,7 +25,7 @@ import javax.swing.JFrame;
  * NOTE: class is long since there are multiple tabs inside a JTabbedPane. 
  * I decided to go with this route instead of creating multiple new JFrames and
  * Instantiating them as this could potential slow down the loading process, 
- * also can potentially cause memory leak
+ * also can cause memory leak
  * 
  */
 public final class OrderingView extends JFrame {
@@ -40,6 +40,7 @@ public final class OrderingView extends JFrame {
      */
     
     // Main Page components 
+    
     private javax.swing.JPanel panelForFrame;
     private javax.swing.JPanel titlePanel;
     private javax.swing.JLabel titleLabel;
@@ -66,13 +67,13 @@ public final class OrderingView extends JFrame {
     private javax.swing.JPanel orderingCartPanel;
     private javax.swing.JLabel orderingCartLabel;
     private javax.swing.JLabel orderingCartSizesLabel;
-    private javax.swing.JTextField orderingCartSizesTextField;
+    public static javax.swing.JTextField orderingCartSizesTextField;
     private javax.swing.JLabel orderingCartShapesLabel;
-    private javax.swing.JTextField orderingCartShapesTextField;
+    public static javax.swing.JTextField orderingCartShapesTextField;
     private javax.swing.JLabel orderingCartFlavoursLabel;
-    private javax.swing.JTextField orderingCartFlavoursTextField;
+    public static javax.swing.JTextField orderingCartFlavoursTextField;
     private javax.swing.JLabel orderingCartQuantityLabel;
-    private javax.swing.JTextField orderingCartQuantityTextField;
+    public static javax.swing.JTextField orderingCartQuantityTextField;
     public javax.swing.JButton orderingBackButton;
     public javax.swing.JButton orderingContinueButton;
     
@@ -81,24 +82,24 @@ public final class OrderingView extends JFrame {
     private javax.swing.JLabel loginTextLabel;
     private javax.swing.JLabel loginUsernameLabel;
     private javax.swing.JLabel loginPasswordLabel;
-    public javax.swing.JPasswordField loginUserPasswordField;
-    public javax.swing.JTextField loginUserTextField;
+    public static javax.swing.JPasswordField loginUserPasswordField;
+    public static javax.swing.JTextField loginUserTextField;
     public javax.swing.JButton loginBackButton;
     public javax.swing.JButton loginContinueButton;
     
     // Components for Details Panel
     private javax.swing.JPanel detailsPanel;
     private javax.swing.JLabel detailsFNLabel;
-    public javax.swing.JTextField detailsFNTextField;
+    public static javax.swing.JTextField detailsFNTextField;
     private javax.swing.JLabel detailsLNLabel;
-    public javax.swing.JTextField detailsLNTextField;
+    public static javax.swing.JTextField detailsLNTextField;
     private javax.swing.JLabel detailsAddressLabel;
-    private javax.swing.JScrollPane detailsAddressScrollPane;
-    public javax.swing.JTextArea detailsAddressTextArea;
+    public javax.swing.JScrollPane detailsAddressScrollPane;
+    public static javax.swing.JTextArea detailsAddressTextArea;
     private javax.swing.JLabel detailsEmailLabel;
-    public javax.swing.JTextField detailsEmailTextField;
+    public static javax.swing.JTextField detailsEmailTextField;
     private javax.swing.JLabel detailsPhNoLabel;
-    public javax.swing.JTextField detailsPhNoTextField;
+    public static javax.swing.JTextField detailsPhNoTextField;
     private javax.swing.JLabel detailsDelOrPicLabel;
     public static javax.swing.JComboBox<DeliveryOrPickup> detailsDelOrPicComboBox;
     public javax.swing.JButton detailsBackButton;
@@ -751,7 +752,9 @@ public final class OrderingView extends JFrame {
             public void actionPerformed(ActionEvent evt) {
                 // Go to the next JFrame which is the receipt, which displays the users final order
                 ReceiptView r = new ReceiptView();
-                r.show();
+                ReceiptView.receiptFNTextField.setText(OrderingView.detailsFNTextField.getText());
+                r.setVisible(true);
+               
                 //dispose(); // dispose this frame when user gets 
              
             }

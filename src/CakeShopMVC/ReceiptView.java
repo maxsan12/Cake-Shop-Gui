@@ -4,6 +4,7 @@
  */
 package CakeShopMVC;
 
+import static CakeShopGUI.MainPage.detailsFNTextField;
 import CakeShopMVC.CalculatePrice;
 import java.util.Random;
 import javax.swing.JFrame;
@@ -18,6 +19,7 @@ import javax.swing.JFrame;
 public class ReceiptView extends JFrame {
     
     // Full panel
+  
     private javax.swing.JPanel receiptPanel;
     private javax.swing.JLabel receiptLabel;
     // Buttons which prompt user to confirm order and leave the program
@@ -30,42 +32,40 @@ public class ReceiptView extends JFrame {
     private javax.swing.JLabel receiptOrderNoLabel;
     private javax.swing.JLabel receiptOrderLabel;
     private javax.swing.JLabel receiptSizeLabel;
-    private javax.swing.JTextField receiptSizeTextField;
+    public static javax.swing.JTextField receiptSizeTextField;
     private javax.swing.JLabel receiptShapesLabel;
-    private javax.swing.JTextField receiptShapeTextField;
+    public static javax.swing.JTextField receiptShapeTextField;
     private javax.swing.JLabel receiptFlavourLabel;
-    private javax.swing.JTextField receiptFlavourTextField;
+    public static javax.swing.JTextField receiptFlavourTextField;
     private javax.swing.JLabel receiptQtyLabel;
-    private javax.swing.JTextField receiptOtyTextField;
+    public static javax.swing.JTextField receiptOtyTextField;
     
     // Panel and components for customer details
     private javax.swing.JPanel receiptDetailsPanel;
     private javax.swing.JLabel receiptDetailsLabel;
     private javax.swing.JLabel receiptFNameLabel;
-    private javax.swing.JTextField receiptFNTextField;
+    public static javax.swing.JTextField receiptFNTextField;
     private javax.swing.JLabel receiptLNameLabel;
-    private javax.swing.JTextField receiptLNTextField;
+    public static javax.swing.JTextField receiptLNTextField;
     private javax.swing.JLabel receiptAddressLabel;
     private javax.swing.JScrollPane receiptAddressScrollPane;
-    private javax.swing.JTextArea receiptAddressTextArea;
+    public static javax.swing.JTextArea receiptAddressTextArea;
     private javax.swing.JLabel receiptEmailLabel;
-    private javax.swing.JTextField receiptEmailTextField;
+    public static javax.swing.JTextField receiptEmailTextField;
     private javax.swing.JLabel receiptPhLabel;
-    private javax.swing.JTextField receiptPhTextField;
+    public static javax.swing.JTextField receiptPhTextField;
     
     // Panel and components for Delivery or pick up details
     private javax.swing.JPanel receiptDelOrPicPanel;
     private javax.swing.JLabel receiptDelOrPicLabel;
-    private javax.swing.JTextField receiptDelOrPicTextField;
+    public static javax.swing.JTextField receiptDelOrPicTextField;
     
     // Panel and components for subtotal and total
     private javax.swing.JPanel receipTotalPanel;
     private javax.swing.JLabel receiptSubTotalLabel;
-    private javax.swing.JTextField receiptSubTotalTextField;
+    public static javax.swing.JTextField receiptSubTotalTextField;
     private javax.swing.JLabel receiptTotalLabel;
-    private javax.swing.JTextField receiptTotalTextField;
-    
-    
+    public static javax.swing.JTextField receiptTotalTextField;
     
     
     public ReceiptView() {
@@ -176,6 +176,8 @@ public class ReceiptView extends JFrame {
         receiptSizeTextField.setBackground(new java.awt.Color(255, 255, 255));
         receiptSizeTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         receiptSizeTextField.setForeground(new java.awt.Color(0, 102, 102));
+        
+        
         receiptShapesLabel.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         receiptShapesLabel.setForeground(new java.awt.Color(0, 102, 102));
         receiptShapesLabel.setText("Cake Shape:");
@@ -301,6 +303,8 @@ public class ReceiptView extends JFrame {
         receiptFNTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         receiptFNTextField.setForeground(new java.awt.Color(0, 102, 102));
         
+        
+        
         receiptLNameLabel.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         receiptLNameLabel.setForeground(new java.awt.Color(0, 102, 102));
         receiptLNameLabel.setText("Last Name:");
@@ -338,6 +342,7 @@ public class ReceiptView extends JFrame {
         receiptPhTextField.setBackground(new java.awt.Color(255, 255, 255));
         receiptPhTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         receiptPhTextField.setForeground(new java.awt.Color(0, 102, 102));
+        
 
         javax.swing.GroupLayout receiptDetailsPanelLayout = new javax.swing.GroupLayout(receiptDetailsPanel);
         receiptDetailsPanel.setLayout(receiptDetailsPanelLayout);
@@ -420,7 +425,7 @@ public class ReceiptView extends JFrame {
         receiptDelOrPicTextField.setBackground(new java.awt.Color(255, 255, 255));
         receiptDelOrPicTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         receiptDelOrPicTextField.setForeground(new java.awt.Color(0, 102, 102));
-        receiptDelOrPicTextField.setText();
+        //receiptDelOrPicTextField.setText();
 
         javax.swing.GroupLayout receiptDelOrPicPanelLayout = new javax.swing.GroupLayout(receiptDelOrPicPanel);
         receiptDelOrPicPanel.setLayout(receiptDelOrPicPanelLayout);
