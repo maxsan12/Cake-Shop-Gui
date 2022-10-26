@@ -18,32 +18,21 @@ import static CakeShopMVC.OrderingView.orderingQuantity;
  * 
  * class to calculate price based on what user selects from combobox's in OrderingView class. 
  */
-public class CalculatePrice {
-    
-    double subTotal = 0;
-    double total = 0;
-    
-    public CalculatePrice() {
-        getSubTotalPrice();
-        getTotalPrice();
-    }
-    
-    private double getSubTotalPrice() {
-        //System.out.println(((Double[])orderingSizesComboBox.getSelectedItem())[1]);
+public class CalculatePrice extends CalculateCost {
+ 
+    @Override
+    public double calcSubPrice() {
         subTotal += (double) orderingSizesComboBox.getSelectedItem() + 
                 (double) orderingShapesComboBox.getSelectedItem() +
                 (double) orderingFlavoursComboBox.getSelectedItem();
         
         return subTotal * orderingQuantity;
-        
     }
-    
-    private double getTotalPrice() {
-         //System.out.println(((Double[])orderingSizesComboBox.getSelectedItem())[1]);
+
+    @Override
+    public double calcTotalPrice() {
         total += (double) detailsDelOrPicComboBox.getSelectedItem() + subTotal;
         
         return total;
-        
     }
-    
 }

@@ -78,6 +78,7 @@ public class ReceiptView extends JFrame {
     /** 
      * Method to generate a random number that will be customers order number
      *  will be placed inside receiptOrderNoLabel 
+     * @return 
      */
     public static int orderNumber() {
         Random random = new Random();
@@ -158,7 +159,7 @@ public class ReceiptView extends JFrame {
         receiptOrderNoLabel.setBackground(new java.awt.Color(255, 255, 255));
         receiptOrderNoLabel.setFont(new java.awt.Font("Corbel", 1, 24)); // NOI18N
         receiptOrderNoLabel.setForeground(new java.awt.Color(0, 102, 102));
-        receiptOrderNoLabel.setText("ORDER #"); // adding static random method here.
+        receiptOrderNoLabel.setText("ORDER #"+String.valueOf(orderNumber())); // adding static random method here.
 
         receiptOrderLabel.setBackground(new java.awt.Color(255, 255, 255));
         receiptOrderLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
