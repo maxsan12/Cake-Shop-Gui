@@ -449,7 +449,7 @@ public final class OrderingView extends JFrame {
         
                 // Incrementing quantity that user chooses when they click this button
                 orderingQuantity++;
-                // Setting the value to the orderingQtyNoLabel based on how many times this button is clicked.
+                // Setting the value to the orderingQtyNoLabel based on how many times the add button is clicked.
                 orderingQtyNoLabel.setText(String.valueOf(orderingQuantity));
                 orderingCartQuantityTextField.setText(String.valueOf(orderingQuantity));
             }
@@ -720,6 +720,7 @@ public final class OrderingView extends JFrame {
                 // ggetting selected option from sizes combobox
                 String selected = detailsDelOrPicComboBox.getSelectedItem().toString();
                 // placing selected size option into the textfield - will be added in receipt class
+                
             }
         });
 
@@ -750,9 +751,24 @@ public final class OrderingView extends JFrame {
         detailsContinueButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
-                // Go to the next JFrame which is the receipt, which displays the users final order
+                /**
+                 * Go to the next JFrame which is the receipt, which displays the users final order
+                 * will also transfer data from this class to the ReceiptView class
+                 */ 
+                
                 ReceiptView r = new ReceiptView();
+                
+                ReceiptView.receiptSizeTextField.setText(OrderingView.orderingCartSizesTextField.getText());
+                ReceiptView.receiptShapeTextField.setText(OrderingView.orderingCartShapesTextField.getText());
+                ReceiptView.receiptFlavourTextField.setText(OrderingView.orderingCartFlavoursTextField.getText());
+                ReceiptView.receiptOtyTextField.setText(OrderingView.orderingCartQuantityTextField.getText());
+                
                 ReceiptView.receiptFNTextField.setText(OrderingView.detailsFNTextField.getText());
+                ReceiptView.receiptLNTextField.setText(OrderingView.detailsLNTextField.getText());
+                ReceiptView.receiptAddressTextArea.setText(OrderingView.detailsAddressTextArea.getText());
+                ReceiptView.receiptEmailTextField.setText(OrderingView.detailsEmailTextField.getText());
+                ReceiptView.receiptPhTextField.setText(OrderingView.detailsPhNoTextField.getText());
+                
                 r.setVisible(true);
                
                 //dispose(); // dispose this frame when user gets 

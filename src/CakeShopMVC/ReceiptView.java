@@ -4,8 +4,6 @@
  */
 package CakeShopMVC;
 
-import static CakeShopGUI.MainPage.detailsFNTextField;
-import CakeShopMVC.CalculatePrice;
 import java.util.Random;
 import javax.swing.JFrame;
 
@@ -478,8 +476,8 @@ public class ReceiptView extends JFrame {
         receiptTotalTextField.setBackground(new java.awt.Color(255, 255, 255));
         receiptTotalTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         receiptTotalTextField.setForeground(new java.awt.Color(0, 102, 102));
-        CalculatePrice cp = new CalculatePrice();
-        receiptTotalTextField.setText(String.valueOf(CalculatePrice.getTotalPrice()));
+        //CalculatePrice cp = new CalculatePrice();
+        //receiptTotalTextField.setText(String.valueOf(CalculatePrice.getTotalPrice()));
         
 
         javax.swing.GroupLayout receipTotalPanelLayout = new javax.swing.GroupLayout(receipTotalPanel);
