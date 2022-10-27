@@ -4,30 +4,32 @@
  */
 package CakeShopMVC;
 
+import CakeShopChoices.CakeSizes;
+
 /**
  *
  * @author maxin
  */
 public abstract class CalculateCost {
  
-    public double subTotal = 0.0;
-    public double total = 0.0;
+    public double price = 0.0;
+    //public double total = 0.0;
     
-    public double getSubTotal() {
-        return subTotal;
+    public double getPrice() {
+        return price;
     }
     
-    public void setSubTotal(double subtotal) {
-        this.subTotal = subtotal; 
+    public void setPrice(double price) {
+        this.price = price; 
     }
     
-      public double getTotal() {
+    /*  public double getTotal() {
         return total;
     }
 
     public void setTotal(double total) {
         this.total = total;
-    }
+    }*/
     
     // Method to print sub price to decimal places and include dollar sign
     public void printSubPrice(double subTotal) {
@@ -39,7 +41,7 @@ public abstract class CalculateCost {
         System.out.print(String.format("$%.2f", total));
     }
     
-    public abstract double calcSubPrice(); // method to calculate and save prices.
+    public abstract double calcSubPrice(CakeSizes cakes); // method to calculate and save prices.
     //public abstract double calcTotalPrice();
     
     

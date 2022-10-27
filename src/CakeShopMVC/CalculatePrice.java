@@ -10,6 +10,8 @@ import static CakeShopMVC.OrderingView.orderingShapesComboBox;
 import static CakeShopMVC.OrderingView.detailsDelOrPicComboBox;
 import static CakeShopMVC.OrderingView.orderingFlavoursComboBox;
 import static CakeShopMVC.OrderingView.orderingQuantity;
+import static CakeShopMVC.OrderingView.orderingSizesComboBox;
+import static CakeShopMVC.PriceForCustomer.setPriceForSize;
 
 
 /**
@@ -22,6 +24,8 @@ import static CakeShopMVC.OrderingView.orderingQuantity;
  */
 public class CalculatePrice {
 
+    private static double priceForSize;
+    
     /**
      * @return the priceForSize
      */
@@ -36,39 +40,17 @@ public class CalculatePrice {
         priceForSize = aPriceForSize;
     }
   
-    static double subTotal = 0.0;
-    static double total = 0.0;
-    private static double priceForSize;
-    
-    public CalculatePrice() {
+    static double price() {
         
-    }
-    
-    public static double getSubTotalPrice(Double price) {
         
-        //System.out.println(((Double[])orderingSizesComboBox.getSelectedItem())[1]);
-        
-        String str = (String) orderingSizesComboBox.getSelectedItem();
-
-        
-        if (str.equals(CakeSizes.FOURINCH.getSizeName())) {
-            setPriceForSize(CakeSizes.FOURINCH.getSizeCost());
-            
-        }
-        
-        subTotal += (double) orderingSizesComboBox.getSelectedItem() + 
-                (double) orderingShapesComboBox.getSelectedItem() +
-                (double) orderingFlavoursComboBox.getSelectedItem();
-        
-        return subTotal * orderingQuantity;
-    }
-    
-    static double getTotalPrice() {
-         //System.out.println(((Double[])orderingSizesComboBox.getSelectedItem())[1]);
-        total += (double) detailsDelOrPicComboBox.getSelectedItem() + subTotal;
-        
-        return total;
-        
+        switch (orderingSizesComboBox.getSelectedIndex()) {
+           case 0 -> {
+               setPriceForSize(CakeSizes.FOURINCH.getSizeCost());
+               break;
+           }
+               
+       }
+        return getPriceForSize();
     }
     
 }

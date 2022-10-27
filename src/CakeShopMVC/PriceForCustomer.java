@@ -16,24 +16,42 @@ import static CakeShopMVC.OrderingView.orderingSizesComboBox;
  * COMP603/50 - Group 27
  */
 public class PriceForCustomer extends CalculateCost {
+    
+    private static double priceForSize; 
+
+   
+
+    /**
+     * @return the priceForSize
+     */
+    public static double getPriceForSize() {
+        return priceForSize;
+    }
+
+    
+    public static void setPriceForSize(double aPriceForSize) {
+        priceForSize = aPriceForSize;
+    }
 
     @Override
-    public double calcSubPrice() {
+    public double calcSubPrice(CakeSizes cakes) {
         
-        double sp = 0.0; 
-        double s = (double) orderingSizesComboBox.getSelectedItem();
-        double str1 = (double) orderingShapesComboBox.getSelectedItem();
-        String str2 = (String) orderingFlavoursComboBox.getSelectedItem();
+       // int num = orderingSizesComboBox.getSelectedIndex();
         
-        
-        if (str.equals(CakeSizes.FOURINCH.getSizeName())) {
-            setPriceForSize(CakeSizes.FOURINCH.getSizeCost());
-            
-        }
-        
-        sp = s + str1;
-        
-        return sp;
+       switch (orderingSizesComboBox.getSelectedIndex()) {
+           case 0 -> {
+               setPriceForSize(CakeSizes.FOURINCH.getSizeCost());
+               break;
+           }
+               
+       }
+           
+       
+       //if (orderingSizesComboBox.getSelectedIndex()) {
+          // setPriceForSize(CakeSizes.FOURINCH.getSizeCost());
+       //}
+       
+       return getPriceForSize();
     }
 
 
