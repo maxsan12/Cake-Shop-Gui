@@ -35,14 +35,14 @@ public final class OrderingView extends JFrame {
     /** COMPONENTS FOR MAIN PAGE GUI 
      * 
      * note: components that will be pressed/typed by 
-     * the user will be declared as public
+     * the user will be declared as public/public static
+     * so that the ReceiptView can access the data
      * (the rest of the components will be private 
      * so that the user cannot modify them)
      * 
      */
     
     // Main Page components 
-    
     private javax.swing.JPanel panelForFrame;
     private javax.swing.JPanel titlePanel;
     private javax.swing.JLabel titleLabel;

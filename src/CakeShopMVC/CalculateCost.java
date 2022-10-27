@@ -30,7 +30,7 @@ public abstract class CalculateCost {
     }
     
     // Method to print sub price to decimal places and include dollar sign
-    public void printSubPirce(double subTotal) {
+    public void printSubPrice(double subTotal) {
         System.out.println(String.format("$%.2f", subTotal));
     }
     
@@ -40,6 +40,8 @@ public abstract class CalculateCost {
     }
     
     public abstract double calcSubPrice(); // method to calculate and save prices.
-    public abstract double calcTotalPrice();
+    //public abstract double calcTotalPrice();
+    
+    
     
 }
