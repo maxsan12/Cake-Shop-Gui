@@ -10,17 +10,24 @@ package CalculatingCosts;
  */
 public abstract class CalculateCost {
  
-    public double price = 0.0;
-    //public double total = 0.0;
+    public double subPrice = 0.0;
+    public double totalPrice = 0.0;
     
-    public double getPrice() {
-        return price;
+    public double getSubPrice() {
+        return subPrice;
     }
     
-    public void setPrice(double price) {
-        this.price = price; 
+    public void setSubPrice(double subPrice) {
+        this.subPrice = subPrice;
     }
-
+    
+    public double getTotalPrice() {
+        return totalPrice;
+    }
+    
+    public void setTotalPrice(double totalPrice) {
+        this.totalPrice = totalPrice;
+    }
     
     // Method to print total price to decimal places and include dollar sign.
     public void printPrice(double total){
