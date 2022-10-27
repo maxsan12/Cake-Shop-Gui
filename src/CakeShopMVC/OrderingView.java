@@ -461,7 +461,7 @@ public final class OrderingView extends JFrame {
         orderingCartSizesLabel.setBackground(new java.awt.Color(255, 255, 255));
         orderingCartSizesLabel.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         orderingCartSizesLabel.setForeground(new java.awt.Color(0, 102, 102));
-        orderingCartSizesLabel.setText("Cake Sizes:");
+        orderingCartSizesLabel.setText("Cake Size:");
         
         orderingCartSizesTextField.setEditable(false);
         orderingCartSizesTextField.setBackground(new java.awt.Color(255, 255, 255));
@@ -470,7 +470,7 @@ public final class OrderingView extends JFrame {
         
         orderingCartShapesLabel.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         orderingCartShapesLabel.setForeground(new java.awt.Color(0, 102, 102));
-        orderingCartShapesLabel.setText("Cake Shapes:");
+        orderingCartShapesLabel.setText("Cake Shape:");
         
         orderingCartShapesTextField.setEditable(false);
         orderingCartShapesTextField.setBackground(new java.awt.Color(255, 255, 255));
@@ -479,7 +479,7 @@ public final class OrderingView extends JFrame {
         
         orderingCartFlavoursLabel.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         orderingCartFlavoursLabel.setForeground(new java.awt.Color(0, 102, 102));
-        orderingCartFlavoursLabel.setText("Cake Flavours:");
+        orderingCartFlavoursLabel.setText("Cake Flavour:");
         
         orderingCartFlavoursTextField.setEditable(false);
         orderingCartFlavoursTextField.setBackground(new java.awt.Color(255, 255, 255));

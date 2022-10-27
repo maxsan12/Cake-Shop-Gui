@@ -4,13 +4,17 @@
  */
 package CalculatingCosts;
 
-import static CakeShopMVC.OrderingView.orderingQuantity;
+import CakeShopMVC.OrderingView;
+import java.text.NumberFormat;
 
 /**
  *
  * @author maxin
  */
 public class CalculatePrices extends CalculateCost {
+    
+    CalculateCost cc = new CalculatePrices();
+    NumberFormat nf = NumberFormat.getCurrencyInstance();
     
     private static double subtotal; 
     private static double total;
@@ -43,14 +47,25 @@ public class CalculatePrices extends CalculateCost {
         total = aTotal;
     }
     
+    public CalculatePrices() {
+        setSubTotal(cc.calcSubPrice());
+        setTotal(cc.calcTotalPrice());
+       
+   }
+    
+//    public void printTotalPrice() {
+//        
+//    }
     @Override
     public double calcSubPrice() {
 
+        double sp; 
+        sp = CalculateCakeSize.getPriceForSize() + CalculateCakeShape.getPriceForShape()
+                + CalculateCakeFlavour.getPriceForFlavour();
         
-        setSubTotal(CalculateCakeSize.getPriceForSize() + CalculateCakeShape.getPriceForShape()
-                + CalculateCakeFlavour.getPriceForFlavour());
         
-        return this.subPrice = getSubTotal() * orderingQuantity;
+        
+        return this.subPrice = sp * OrderingView.orderingQuantity;
     }
 
     @Override
