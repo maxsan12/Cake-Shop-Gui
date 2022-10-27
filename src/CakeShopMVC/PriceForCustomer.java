@@ -4,6 +4,7 @@
  */
 package CakeShopMVC;
 
+import Abstract.CalculateCost;
 import CakeShopChoices.CakeSizes;
 import static CakeShopMVC.CalculatePrice.setPriceForSize;
 import static CakeShopMVC.OrderingView.orderingFlavoursComboBox;
