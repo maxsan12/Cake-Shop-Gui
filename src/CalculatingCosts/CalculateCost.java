@@ -28,7 +28,7 @@ public abstract class CalculateCost {
     }
     
     public abstract double calcSubPrice(); // method to calculate and save prices.
-    //public abstract double calcTotalPrice();
+    public abstract double calcTotalPrice();
     
     
     

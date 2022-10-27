@@ -470,10 +470,8 @@ public class ReceiptView extends JFrame {
         receiptSubTotalTextField.setBackground(new java.awt.Color(255, 255, 255));
         receiptSubTotalTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         receiptSubTotalTextField.setForeground(new java.awt.Color(0, 102, 102));
-        //String str = OrderingView.orderingCartSizesTextField.getText();
-        //receiptSubTotalTextField.setText(str);
-        //CalculateCost c = new PriceForCustomer();
-        //receiptSubTotalTextField.setText(Double.toString(PriceForCustomer.getPriceForSize()));
+        
+        // will print cake size price:
         receiptSubTotalTextField.setText(Double.toString(CalculateCakePrice.getPriceForSize()));
         
         
