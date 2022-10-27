@@ -34,8 +34,8 @@ public abstract class CalculateCost {
         System.out.print(String.format("$%.2f", total));
     }
     
-    public abstract double calcSubPrice(); // method to calculate and save prices.
-    public abstract double calcTotalPrice();
+    public abstract double calcPrice(); // method to calculate and save prices.
+    //public abstract double calcTotalPrice();
     
     
     

@@ -11,7 +11,7 @@ import static CakeShopMVC.OrderingView.detailsDelOrPicComboBox;
  *
  * @author maxin
  */
-public class CalculateDelOrPic {
+public class CalculateDelOrPic extends CalculateCost {
     
     private static double priceForDelOrPic;
     
@@ -41,5 +41,10 @@ public class CalculateDelOrPic {
             }
         }
         return getPriceForDelOrPic();
+    }
+
+    @Override
+    public double calcPrice() {
+        return this.price += getPriceForDelOrPic();
     }
 }

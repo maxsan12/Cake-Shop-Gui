@@ -4,13 +4,11 @@
  */
 package CalculatingCosts;
 
-import static CakeShopMVC.OrderingView.orderingFlavoursComboBox;
-
 /**
  *
  * @author maxin
  */
-public class CalculateCakeFlavour {
+public class CalculateCakeFlavour extends CalculateCost {
     
     private static double priceForFlavour; 
 
@@ -33,6 +31,11 @@ public class CalculateCakeFlavour {
         setPriceForFlavour(2.0); // all cake flavours are 2.0
         
         return getPriceForFlavour();
+    }
+
+    @Override
+    public double calcPrice() {
+        return this.price += getPriceForFlavour();
     }
     
     

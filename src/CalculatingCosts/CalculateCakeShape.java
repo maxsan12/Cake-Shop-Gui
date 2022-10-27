@@ -16,7 +16,7 @@ import static CakeShopMVC.OrderingView.orderingShapesComboBox;
  * class to calculate cake shape price based on what user selects from comboboxes in OrderingView class. 
  * note: switch case was the only solution i could come up with. 
  */
-public class CalculateCakeShape {
+public class CalculateCakeShape extends CalculateCost {
     
     private static double priceForShape;
 
@@ -66,5 +66,10 @@ public class CalculateCakeShape {
             }
         }
         return getPriceForShape();
+    }
+
+    @Override
+    public double calcPrice() {
+        return this.price += getPriceForShape();
     }
 }

@@ -16,7 +16,7 @@ import static CakeShopMVC.OrderingView.orderingSizesComboBox;
  * 
  * class to calculate cake size price based on what user selects from combobox's in OrderingView class. 
  */
-public class CalculateCakeSize {
+public class CalculateCakeSize extends CalculateCost {
 
     private static double priceForSize;
     
@@ -63,6 +63,11 @@ public class CalculateCakeSize {
                
        }
         return getPriceForSize();
+    }
+
+    @Override
+    public double calcPrice() {
+        return this.price += getPriceForSize();
     }
     
 }
