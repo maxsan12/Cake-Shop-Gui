@@ -4,7 +4,6 @@
  */
 package CalculatingCosts;
 
-import CalculatingCosts.CalculateCost;
 import CakeShopChoices.CakeSizes;
 import static CakeShopMVC.OrderingView.orderingSizesComboBox;
 

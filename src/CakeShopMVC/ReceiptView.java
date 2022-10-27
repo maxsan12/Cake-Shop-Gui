@@ -4,9 +4,7 @@
  */
 package CakeShopMVC;
 
-import static CakeShopMVC.CalculatePrice.getSubTotalPrice;
-import static CakeShopMVC.OrderingView.detailsDelOrPicComboBox;
-import CalculatingCosts.CalculateCakePrice;
+import CalculatingCosts.CalculateCakeSize;
 import java.util.Random;
 import javax.swing.JFrame;
 
@@ -304,8 +302,6 @@ public class ReceiptView extends JFrame {
         receiptFNTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         receiptFNTextField.setForeground(new java.awt.Color(0, 102, 102));
         
-        
-        
         receiptLNameLabel.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         receiptLNameLabel.setForeground(new java.awt.Color(0, 102, 102));
         receiptLNameLabel.setText("Last Name:");
@@ -344,7 +340,6 @@ public class ReceiptView extends JFrame {
         receiptPhTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         receiptPhTextField.setForeground(new java.awt.Color(0, 102, 102));
         
-
         javax.swing.GroupLayout receiptDetailsPanelLayout = new javax.swing.GroupLayout(receiptDetailsPanel);
         receiptDetailsPanel.setLayout(receiptDetailsPanelLayout);
         receiptDetailsPanelLayout.setHorizontalGroup(
@@ -472,7 +467,7 @@ public class ReceiptView extends JFrame {
         receiptSubTotalTextField.setForeground(new java.awt.Color(0, 102, 102));
         
         // will print cake size price:
-        receiptSubTotalTextField.setText(Double.toString(CalculateCakePrice.getPriceForSize()));
+        receiptSubTotalTextField.setText(Double.toString(CalculateCakeSize.getPriceForSize()));
         
         
         receiptTotalLabel.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
