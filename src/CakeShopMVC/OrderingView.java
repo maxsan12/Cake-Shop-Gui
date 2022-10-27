@@ -4,6 +4,7 @@
  */
 package CakeShopMVC;
 
+import CakeShopChoices.LoadBoxes;
 import CakeShopChoices.CakeSizes;
 import CakeShopChoices.CakeShapes;
 import CakeShopChoices.CakeFlavours;
@@ -106,13 +107,15 @@ public final class OrderingView extends JFrame {
     public javax.swing.JButton detailsBackButton;
     public javax.swing.JButton detailsContinueButton;
     
+    // Constructor for invoking methods
     public OrderingView() {
         initMainComponents();
         initHomeComponents();
         initLoginComponents();
         initOrderingComponents();
         initDetailsComponents();
-        loadBoxes();
+        LoadBoxes.loadBoxes();
+        
     }
     
     private void initMainComponents() {
@@ -232,7 +235,6 @@ public final class OrderingView extends JFrame {
         
         // Setting and adding elements to login components
         loginPanel.setBackground(new java.awt.Color(255, 255, 255));
-        //loginPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
         loginUserTextField.setBackground(new java.awt.Color(204, 204, 204));
         loginUserTextField.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         loginUserTextField.setForeground(new java.awt.Color(0, 51, 51));
@@ -682,8 +684,7 @@ public final class OrderingView extends JFrame {
         
         // setting and adding elements to details components
         detailsPanel.setBackground(new java.awt.Color(255, 255, 255));
-        //detailsPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
-
+        
         detailsFNLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
         detailsFNLabel.setForeground(new java.awt.Color(0, 102, 102));
         detailsFNLabel.setText("First Name:");
@@ -789,7 +790,7 @@ public final class OrderingView extends JFrame {
                         JOptionPane.showMessageDialog(rootPane, "Enter a address to continue");
                     }
                     else if (email.equals("")) {
-                        JOptionPane.showMessageDialog(rootPane, "Enter a email to continue");
+                        JOptionPane.showMessageDialog(rootPane, "Enter an email to continue");
                     }
                     else if (number.equals("")) {
                         JOptionPane.showMessageDialog(rootPane, "Enter a phone number to continue");
@@ -923,13 +924,5 @@ public final class OrderingView extends JFrame {
         tabsPanel.addTab("Customer Details", detailsPanel);
 
         pack();
-    }
-
-    // Method to load combo boxes which hold the values from the CakeSizes, CakeShapes and CakeFlavours classes
-    private void loadBoxes() {
-        orderingSizesComboBox.setModel(new DefaultComboBoxModel<>(CakeSizes.values()));
-        orderingShapesComboBox.setModel(new DefaultComboBoxModel<>(CakeShapes.values()));
-        orderingFlavoursComboBox.setModel(new DefaultComboBoxModel<>(CakeFlavours.values()));
-        detailsDelOrPicComboBox.setModel(new DefaultComboBoxModel<>(DeliveryOrPickup.values()));
     }
 }
