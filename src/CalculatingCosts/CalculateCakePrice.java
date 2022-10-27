@@ -2,16 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package CakeShopMVC;
+package CalculatingCosts;
 
+import CalculatingCosts.CalculateCost;
 import CakeShopChoices.CakeSizes;
 import static CakeShopMVC.OrderingView.orderingSizesComboBox;
-import static CakeShopMVC.OrderingView.orderingShapesComboBox;
-import static CakeShopMVC.OrderingView.detailsDelOrPicComboBox;
-import static CakeShopMVC.OrderingView.orderingFlavoursComboBox;
-import static CakeShopMVC.OrderingView.orderingQuantity;
-import static CakeShopMVC.OrderingView.orderingSizesComboBox;
-import static CakeShopMVC.PriceForCustomer.setPriceForSize;
 
 
 /**
@@ -22,7 +17,7 @@ import static CakeShopMVC.PriceForCustomer.setPriceForSize;
  * 
  * class to calculate price based on what user selects from combobox's in OrderingView class. 
  */
-public class CalculatePrice {
+public class CalculateCakePrice {
 
     private static double priceForSize;
     
@@ -40,17 +35,24 @@ public class CalculatePrice {
         priceForSize = aPriceForSize;
     }
   
-    static double price() {
-        
+    static double cakeSizePrice() {
         
         switch (orderingSizesComboBox.getSelectedIndex()) {
            case 0 -> {
-               setPriceForSize(CakeSizes.FOURINCH.getSizeCost());
+               setPriceForSize(CakeSizes.FOURINCH.getSizeCost()); // should return 45
                break;
+           }
+           case 1 -> {
+               setPriceForSize(CakeSizes.SIXINCH.getSizeCost()); 
+               break;
+           }
+           case 2 -> {
+               setPriceForSize(CakeSizes.EIGHTINCH.getSizeCost());
            }
                
        }
         return getPriceForSize();
     }
+
     
 }

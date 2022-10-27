@@ -6,6 +6,7 @@ package CakeShopMVC;
 
 import static CakeShopMVC.CalculatePrice.getSubTotalPrice;
 import static CakeShopMVC.OrderingView.detailsDelOrPicComboBox;
+import CalculatingCosts.CalculateCakePrice;
 import java.util.Random;
 import javax.swing.JFrame;
 
@@ -473,7 +474,7 @@ public class ReceiptView extends JFrame {
         //receiptSubTotalTextField.setText(str);
         //CalculateCost c = new PriceForCustomer();
         //receiptSubTotalTextField.setText(Double.toString(PriceForCustomer.getPriceForSize()));
-        receiptSubTotalTextField.setText(Double.toString(CalculatePrice.price()));
+        receiptSubTotalTextField.setText(Double.toString(CalculateCakePrice.getPriceForSize()));
         
         
         receiptTotalLabel.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
