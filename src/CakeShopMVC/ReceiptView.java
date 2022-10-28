@@ -4,10 +4,9 @@
  */
 package CakeShopMVC;
 
-import CalculatingCosts.CalculateCakeFlavour;
 import CalculatingCosts.CalculateCakeSize;
-import CalculatingCosts.CalculateDelOrPic;
-import CalculatingCosts.CalculatePrices;
+import CalculatingCosts.CalculateSubTotal;
+import CalculatingCosts.CalculateTotal;
 import java.util.Random;
 import javax.swing.JFrame;
 
@@ -469,15 +468,9 @@ public class ReceiptView extends JFrame {
         receiptSubTotalTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         receiptSubTotalTextField.setForeground(new java.awt.Color(0, 102, 102));
         
-        // will print cake size price:
-        //receiptSubTotalTextField.setText(Double.toString(CalculateCakeSize.getPriceForSize()));
-        
-        receiptSubTotalTextField.setText(Double.toString(CalculatePrices.getSubTotal()));
-        
-        
-       // receiptSubTotalTextField.setText(Double.toString(CalculatePrices.printSub()));
-       //receiptSubTotalTextField.setText(Double.toString(CalculatePrices.getSubTotal()));
-        
+        // will print subtotal price - cake size + cake shape + cake flavour * quantity
+        receiptSubTotalTextField.setText(Double.toString(CalculateSubTotal.getSubtotal()));
+       
         receiptTotalLabel.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         receiptTotalLabel.setForeground(new java.awt.Color(0, 102, 102));
         receiptTotalLabel.setText("TOTAL:");
@@ -486,8 +479,7 @@ public class ReceiptView extends JFrame {
         receiptTotalTextField.setBackground(new java.awt.Color(255, 255, 255));
         receiptTotalTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         receiptTotalTextField.setForeground(new java.awt.Color(0, 102, 102));
-        //CalculatePrice cp = new CalculatePrice();
-        //receiptTotalTextField.setText(String.valueOf(CalculatePrice.getTotalPrice()));
+        receiptTotalTextField.setText(Double.toString(CalculateTotal.getTotal()));
         
 
         javax.swing.GroupLayout receipTotalPanelLayout = new javax.swing.GroupLayout(receipTotalPanel);
