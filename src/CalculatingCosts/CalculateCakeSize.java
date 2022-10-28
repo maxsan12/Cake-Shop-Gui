@@ -20,26 +20,21 @@ public class CalculateCakeSize extends CalculateCost {
 
     private static double priceForSize;
     
-    /**
-     * @return the priceForSize
-     */
     public static double getPriceForSize() {
         return priceForSize;
     }
-
-    /**
-     * @param aPriceForSize the priceForSize to set
-     */
+    
     public static void setPriceForSize(double aPriceForSize) {
         priceForSize = aPriceForSize;
     }
   
-    public static double cakeSizePrice() {
+    public double cakeSizePrice() {
         
         switch (orderingSizesComboBox.getSelectedIndex()) {
            case 0 -> {
                setPriceForSize(CakeSizes.FOURINCH.getSizeCost()); // should return 45
                break;
+               
            }
            case 1 -> {
                setPriceForSize(CakeSizes.SIXINCH.getSizeCost()); // should return 55
@@ -55,12 +50,12 @@ public class CalculateCakeSize extends CalculateCost {
            }
            case 4 -> {
                setPriceForSize(CakeSizes.TWELVEINCH.getSizeCost()); // should return 95
-               break;
+               break;           
            }
            case 5 -> {
                setPriceForSize(CakeSizes.FOURTEENINCH.getSizeCost());
+               break;
            }
-               
        }
         return getPriceForSize();
     }
@@ -69,5 +64,4 @@ public class CalculateCakeSize extends CalculateCost {
     public double calcPrice() {
         return this.price += getPriceForSize();
     }
-    
 }

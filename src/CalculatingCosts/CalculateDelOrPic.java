@@ -15,16 +15,12 @@ public class CalculateDelOrPic extends CalculateCost {
     
     private static double priceForDelOrPic;
     
-    /**
-     * @return the priceForDelOrPic
-     */
+    
     public static double getPriceForDelOrPic() {
         return priceForDelOrPic;
     }
 
-    /**
-     * @param aPriceForDelOrPic the priceForDelOrPic to set
-     */
+    
     public static void setPriceForDelOrPic(double aPriceForDelOrPic) {
         priceForDelOrPic = aPriceForDelOrPic;
     }
@@ -35,9 +31,11 @@ public class CalculateDelOrPic extends CalculateCost {
         switch(detailsDelOrPicComboBox.getSelectedIndex()) {
             case 0 -> {
                 setPriceForDelOrPic(DeliveryOrPickup.DELIVERY.getDelOrPicPrice());
+                break;
             }
             case 1 -> {
                 setPriceForDelOrPic(DeliveryOrPickup.PICKUP.getDelOrPicPrice());
+                break;
             }
         }
         return getPriceForDelOrPic();

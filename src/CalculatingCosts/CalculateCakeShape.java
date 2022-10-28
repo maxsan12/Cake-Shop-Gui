@@ -20,16 +20,10 @@ public class CalculateCakeShape extends CalculateCost {
     
     private static double priceForShape;
 
-    /**
-     * @return the priceForShape
-     */
     public static double getPriceForShape() {
         return priceForShape;
     }
 
-    /**
-     * @param aPriceForShape the priceForShape to set
-     */
     public static void setPriceForShape(double aPriceForShape) {
         priceForShape = aPriceForShape;
     }
@@ -51,18 +45,23 @@ public class CalculateCakeShape extends CalculateCost {
             }
             case 3 -> {
                 setPriceForShape(CakeShapes.TRIANGLE.getShapeCost());
+                break;
             }
             case 4 -> {
                 setPriceForShape(CakeShapes.HEART.getShapeCost());
+                break;
             }
             case 5 -> {
                 setPriceForShape(CakeShapes.MOON.getShapeCost());
+                break;
             }
             case 6 -> {
                 setPriceForShape(CakeShapes.STAR.getShapeCost());
+                break;
             }
             case 7 -> {
                 setPriceForShape(CakeShapes.FLOWER.getShapeCost());
+                break;
             }
         }
         return getPriceForShape();

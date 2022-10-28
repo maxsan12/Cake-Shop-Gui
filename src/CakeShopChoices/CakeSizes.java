@@ -26,9 +26,9 @@ public enum CakeSizes {
 
     
     private final String sizeName;
-    private final Double sizeCost;
+    private final double sizeCost;
     
-    CakeSizes(String sizeName, Double sizeCost) {
+    CakeSizes(String sizeName, double sizeCost) {
         this.sizeName = sizeName;
         this.sizeCost = sizeCost;
     }
@@ -37,7 +37,7 @@ public enum CakeSizes {
         return this.sizeName;
     }
     
-    public Double getSizeCost() {
+    public double getSizeCost() {
         return this.sizeCost;
     }
     

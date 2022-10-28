@@ -4,6 +4,10 @@
  */
 package CalculatingCosts;
 
+import CakeShopChoices.CakeFlavours;
+import static CakeShopMVC.OrderingView.orderingFlavoursComboBox;
+
+
 /**
  *
  * @author maxin
@@ -12,23 +16,50 @@ public class CalculateCakeFlavour extends CalculateCost {
     
     private static double priceForFlavour; 
 
-    /**
-     * @return the priceForFlavour
-     */
     public static double getPriceForFlavour() {
         return priceForFlavour;
     }
-
-    /**
-     * @param aPriceForFlavour the priceForFlavour to set
-     */
+    
     public static void setPriceForFlavour(double aPriceForFlavour) {
         priceForFlavour = aPriceForFlavour;
     }
     
     public static double cakeFlavourPrice() {
         
-        setPriceForFlavour(2.0); // all cake flavours are 2.0
+        switch(orderingFlavoursComboBox.getSelectedIndex()) {
+            case 0 -> {
+                setPriceForFlavour(CakeFlavours.CHOCOLATE.getFlavourCost());
+                break;
+            }
+            case 1 -> {
+                setPriceForFlavour(CakeFlavours.STRAWBERRY.getFlavourCost());
+                break;
+            }
+            case 2 -> {
+                setPriceForFlavour(CakeFlavours.VANILLA.getFlavourCost());
+                break;
+            }
+            case 3 -> {
+                setPriceForFlavour(CakeFlavours.BANANA.getFlavourCost());
+                break;
+            }
+            case 4 -> {
+                setPriceForFlavour(CakeFlavours.CARROT.getFlavourCost());
+                break;
+            }
+            case 5 -> {
+                setPriceForFlavour(CakeFlavours.TIRAMISU.getFlavourCost());
+                break;
+            }
+            case 6 -> {
+                setPriceForFlavour(CakeFlavours.MANGO.getFlavourCost());
+                break;
+            }
+            case 7 -> {
+                setPriceForFlavour(CakeFlavours.MATCHA.getFlavourCost());
+                break;
+            }
+        }
         
         return getPriceForFlavour();
     }
@@ -37,7 +68,5 @@ public class CalculateCakeFlavour extends CalculateCost {
     public double calcPrice() {
         return this.price += getPriceForFlavour();
     }
-    
-    
-    
+
 }
