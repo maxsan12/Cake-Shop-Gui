@@ -26,5 +26,13 @@ public class Model extends Observable {
         this.db.dbSetUp();
     }
     
+    public void checkUserDetails(String user, String pw) {
+        this.userName = user; // storing username
+        // comparing username and password inside database
+        this.data = this.db.checkCustomerDetails(user, pw);
+        this.setChanged(); 
+        this.notifyObservers(this.data); // go to update() in View class
+    }
+    
     
 }

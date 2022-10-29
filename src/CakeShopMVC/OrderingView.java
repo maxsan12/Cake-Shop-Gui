@@ -12,6 +12,8 @@ import CakeShopChoices.DeliveryOrPickup;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Observable;
+import java.util.Observer;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -29,7 +31,7 @@ import javax.swing.JOptionPane;
  * also cause memory leak
  * 
  */
-public final class OrderingView extends JFrame {
+public class OrderingView extends JFrame implements Observer {
     
     /** COMPONENTS FOR MAIN PAGE GUI 
      * 
@@ -51,6 +53,16 @@ public final class OrderingView extends JFrame {
     private javax.swing.JPanel homePanel;
     private javax.swing.JLabel homeIconLabel;
     public javax.swing.JButton homeContinueBttn;
+    
+    // Components for Login Panel
+    private javax.swing.JPanel loginPanel;
+    private javax.swing.JLabel loginTextLabel;
+    private javax.swing.JLabel loginUsernameLabel;
+    private javax.swing.JLabel loginPasswordLabel;
+    public static javax.swing.JPasswordField loginUserPasswordTextField;
+    public static javax.swing.JTextField loginUserTextField;
+    public javax.swing.JButton loginBackButton;
+    public javax.swing.JButton loginContinueButton;
     
     // Components for Ordering Panel
     private javax.swing.JPanel orderingPanel;
@@ -77,16 +89,6 @@ public final class OrderingView extends JFrame {
     public static javax.swing.JTextField orderingCartQuantityTextField;
     public javax.swing.JButton orderingBackButton;
     public javax.swing.JButton orderingContinueButton;
-    
-    // Components for Login Panel
-    private javax.swing.JPanel loginPanel;
-    private javax.swing.JLabel loginTextLabel;
-    private javax.swing.JLabel loginUsernameLabel;
-    private javax.swing.JLabel loginPasswordLabel;
-    public static javax.swing.JPasswordField loginUserPasswordField;
-    public static javax.swing.JTextField loginUserTextField;
-    public javax.swing.JButton loginBackButton;
-    public javax.swing.JButton loginContinueButton;
     
     // Components for Details Panel
     private javax.swing.JPanel detailsPanel;
@@ -228,32 +230,33 @@ public final class OrderingView extends JFrame {
         loginTextLabel = new javax.swing.JLabel();
         loginUsernameLabel = new javax.swing.JLabel();
         loginPasswordLabel = new javax.swing.JLabel();
-        loginUserPasswordField = new javax.swing.JPasswordField();
+        loginUserPasswordTextField = new javax.swing.JPasswordField();
         loginContinueButton = new javax.swing.JButton();
         loginBackButton = new javax.swing.JButton();
         
         // Setting and adding elements to login components
         loginPanel.setBackground(new java.awt.Color(255, 255, 255));
-        loginUserTextField.setBackground(new java.awt.Color(204, 204, 204));
-        loginUserTextField.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
-        loginUserTextField.setForeground(new java.awt.Color(0, 51, 51));
-
+        
         loginTextLabel.setFont(new java.awt.Font("Corbel", 1, 24)); // NOI18N
         loginTextLabel.setForeground(new java.awt.Color(0, 102, 102));
         loginTextLabel.setText("Login or create an account to proceed:");
-
+        
         loginUsernameLabel.setBackground(new java.awt.Color(255, 255, 255));
         loginUsernameLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
         loginUsernameLabel.setForeground(new java.awt.Color(0, 102, 102));
         loginUsernameLabel.setText("Username:");
+        
+        loginUserTextField.setBackground(new java.awt.Color(204, 204, 204));
+        loginUserTextField.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        loginUserTextField.setForeground(new java.awt.Color(0, 51, 51));
 
         loginPasswordLabel.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
         loginPasswordLabel.setForeground(new java.awt.Color(0, 102, 102));
         loginPasswordLabel.setText("Password:");
 
-        loginUserPasswordField.setBackground(new java.awt.Color(204, 204, 204));
-        loginUserPasswordField.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
-        loginUserPasswordField.setForeground(new java.awt.Color(0, 51, 51));
+        loginUserPasswordTextField.setBackground(new java.awt.Color(204, 204, 204));
+        loginUserPasswordTextField.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        loginUserPasswordTextField.setForeground(new java.awt.Color(0, 51, 51));
 
         loginContinueButton.setBackground(new java.awt.Color(0, 51, 51));
         loginContinueButton.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
@@ -263,7 +266,23 @@ public final class OrderingView extends JFrame {
             @Override
             public void actionPerformed(ActionEvent evt) {
                  // Go to the next Panel which is the ordering panel
-                tabsPanel.setSelectedIndex(2);
+                 
+                Object obj = evt.getSource();
+                String userN = loginUserTextField.getText();
+                String passW = loginUserPasswordTextField.getText();
+
+                if (obj == loginContinueButton) {
+                   // making sure customer logs in before ordering
+                    if (userN.equals("")) {
+                        JOptionPane.showMessageDialog(null, "Need to enter a username");
+                    }
+                    else if (passW.equals("")) {
+                        JOptionPane.showMessageDialog(null, "Need to enter a password");
+                    }
+                    else {
+                        tabsPanel.setSelectedIndex(2);
+                    }
+                }     
             }
         });
 
@@ -295,7 +314,7 @@ public final class OrderingView extends JFrame {
                 .addGap(207, 207, 207)
                 .addComponent(loginPasswordLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
-                .addComponent(loginUserPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(loginUserPasswordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(loginPanelLayout.createSequentialGroup()
                 .addGap(227, 227, 227)
                 .addComponent(loginBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -318,7 +337,7 @@ public final class OrderingView extends JFrame {
                     .addGroup(loginPanelLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(loginPasswordLabel))
-                    .addComponent(loginUserPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(loginUserPasswordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(70, 70, 70)
                 .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(loginBackButton)
@@ -923,5 +942,14 @@ public final class OrderingView extends JFrame {
         tabsPanel.addTab("Customer Details", detailsPanel);
 
         pack();
+    }
+
+    @Override
+    public void update(Observable o, Object o1) {
+        Data data = (Data) o1; // Getting an instance of data
+        
+        if (data.userQuit) {
+            System.exit(0);
+        } 
     }
 }
