@@ -24,7 +24,7 @@ import java.util.logging.Logger;
 public class Database {
     
     Connection conn = null; 
-    String url = "jdbc:derby:CakeShopDB;create=true";
+    String url = "jdbc:derby://localhost:1527/CakeShopDB";
     String username = "pdc";
     String password = "pdc";
     
@@ -35,10 +35,10 @@ public class Database {
         try {
             conn = DriverManager.getConnection(url, username, password);
             Statement statement = conn.createStatement();
-            String tableName = "Customer_Info";
+            String tableName = "logintable";
             
             if (!checkTable(tableName)) {
-                statement.executeUpdate("CREATE TABLE " + tableName + "(USERNAME VARCHAR(30), PASSWORD VARCHAR(30))");
+                statement.executeUpdate("CREATE TABLE " + tableName + "(username VARCHAR(30), password VARCHAR(30))");
             }
             statement.close();
         } catch (SQLException ex) {
@@ -53,6 +53,7 @@ public class Database {
         
         try {
             System.out.println("Checking table...");
+            String[] types = {"TABLE"};
             DatabaseMetaData dbmd = conn.getMetaData();
             ResultSet rsdbmeta = dbmd.getTables(null, null, null, null);
             
@@ -65,35 +66,38 @@ public class Database {
             }
             if (rsdbmeta != null) {
                 rsdbmeta.close();
-            }
+           }
         } catch (SQLException ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+            
         }
         return b;
     }
     
     // Creating a method to check username for login page
     public Data checkCustomerDetails(String user, String pw) {
-        Data data = new Data(); // Instantiate data class
+        Data data = new Data(); // Instantiate data class to get an instance of it
         
         try{ 
             Statement statement = conn.createStatement();
-            ResultSet result = statement.executeQuery("SELECT username, password FROM Customer_Info WHERE username = " + user);
+            ResultSet result = statement.executeQuery("SELECT username, password FROM logintable WHERE username " 
+                    + "WHERE username = '" + user + "'");
             
             if (result.next()) {
                 String userPW = result.getString("password");
-                System.out.println(userPW);
+                System.out.println("***" + userPW);
                 System.out.println("Customer is in system");
                 
                 if (pw.compareTo(userPW) == 0) {
                     data.userLogin = true;
+                } 
+                else {
+                    data.userQuit = false;
                 }
-                data.userQuit = false;
             }
             else {
                 System.out.println("User is not in system, creating new user");
-                statement.executeUpdate("INSERT INTO Customer_Info " + "VALUES(" +
-                        user + ", " + pw + ")");
+                statement.executeUpdate("INSERT INTO logintable " + "VALUES('" +
+                        user + "', '" + pw + "')");
                 data.userLogin = true;
                 
                 data.username = user;
@@ -109,7 +113,7 @@ public class Database {
         try {
             conn = DriverManager.getConnection(url, username, password);
             Statement statement = conn.createStatement();
-            statement.executeUpdate("UPDATE Customer_Info price:" + price + "WHERE username:" + user);
+            statement.executeUpdate("UPDATE logintable price:" + price + "WHERE username:" + user);
         } catch (SQLException ex) {
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
         }

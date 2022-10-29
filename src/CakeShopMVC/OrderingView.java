@@ -168,6 +168,7 @@ public class OrderingView extends JFrame implements Observer {
         tabsPanel.setPreferredSize(new Dimension (700, 559)); // setting tabsPanel/JTabbedPanel to this specific size so that the panel can stay hidden when executed
         
         pack();
+        
     }
     
     private void initHomeComponents() {
@@ -947,6 +948,8 @@ public class OrderingView extends JFrame implements Observer {
     }
     
     public void addActionListener(ActionListener listener) {
+        
+        setVisible(true);
         this.loginButton.addActionListener(listener);
     }
 
