@@ -29,17 +29,18 @@ public class Database {
     String password = "pdc";
     
     
-    
+    // Method to set up the database
     public void dbSetUp() {
         
         try {
             conn = DriverManager.getConnection(url, username, password);
             Statement statement = conn.createStatement();
-            String tableName = "Customer Info";
+            String tableName = "Customer_Info";
             
             if (!checkTable(tableName)) {
-                statement.executeUpdate("CREATE TABLE ");
+                statement.executeUpdate("CREATE TABLE " + tableName + "(USERNAME VARCHAR(30), PASSWORD VARCHAR(30))");
             }
+            statement.close();
         } catch (SQLException ex) {
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -62,11 +63,49 @@ public class Database {
                     b = true;
                 }
             }
+            if (rsdbmeta != null) {
+                rsdbmeta.close();
+            }
         } catch (SQLException ex) {
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
         }
         return b;
     }
+    
+    // Creating a method to check username for login page
+    public Data checkCustomerDetails(String user, String pw) {
+        Data data = new Data(); // Instantiate data class
+        
+        try{ 
+            Statement statement = conn.createStatement();
+            ResultSet result = statement.executeQuery("SELECT username, password FROM Customer_Info WHERE username = " + user);
+            
+            if (result.next()) {
+                String userPW = result.getString("password");
+                System.out.println(userPW);
+                System.out.println("Customer is in system");
+                
+                if (pw.compareTo(userPW) == 0) {
+                    data.userLogin = true;
+                }
+                data.userQuit = false;
+            }
+            else {
+                System.out.println("User is not in system, creating new user");
+                statement.executeUpdate("INSERT INTO Customer_Info " + "VALUES(" +
+                        user + ", " + pw + ")");
+                data.userLogin = true;
+                
+                data.username = user;
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return data; 
+    }
+    
+    
     
     public void closeConnections() {
         if (conn != null) {

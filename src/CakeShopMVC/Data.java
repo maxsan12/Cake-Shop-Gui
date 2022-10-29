@@ -13,12 +13,34 @@ package CakeShopMVC;
  * Data class - needed to store Data
  */
 public class Data {
-    
-    boolean loginTrack = false; // Checks if user logged in after ordering
-    boolean quitTrack = false; // Checks if user quit the system
+
+    boolean userLogin = false; // Checks if user logged in after ordering
+    boolean userQuit = false; // Checks if user quit the system
     
     // Storing data needed for model and view class
-    String username = "";
-    String pasword = "";
+    protected String username = "";
+    protected String pasword = "";
+
+    // 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPasword() {
+        return pasword;
+    }
+
+    public void setPasword(String pasword) {
+        this.pasword = pasword;
+    }
+    
+   
+    
+    
+    
     
 }
