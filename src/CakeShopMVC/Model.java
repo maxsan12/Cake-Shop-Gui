@@ -23,7 +23,7 @@ public class Model extends Observable {
     
     public Model() {
         this.db = new Database();
-        this.db.dbsetup();
+        this.db.dbSetUp();
     }
     
     

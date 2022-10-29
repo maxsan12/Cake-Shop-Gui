@@ -19,5 +19,6 @@ public class Data {
     
     // Storing data needed for model and view class
     String username = "";
+    String pasword = "";
     
 }
