@@ -105,7 +105,15 @@ public class Database {
         return data; 
     }
     
-    
+    public void saveUserInfo(String user, int price) {
+        try {
+            conn = DriverManager.getConnection(url, username, password);
+            Statement statement = conn.createStatement();
+            statement.executeUpdate("UPDATE Customer_Info price:" + price + "WHERE username:" + user);
+        } catch (SQLException ex) {
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
     public void closeConnections() {
         if (conn != null) {

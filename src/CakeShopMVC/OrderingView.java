@@ -948,8 +948,6 @@ public class OrderingView extends JFrame implements Observer {
     public void update(Observable o, Object o1) {
         Data data = (Data) o1; // Getting an instance of data
         
-        if (data.userQuit) {
-            System.exit(0);
-        } 
+        
     }
 }
