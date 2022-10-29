@@ -79,7 +79,7 @@ public class Database {
         
         try{ 
             Statement statement = conn.createStatement();
-            ResultSet result = statement.executeQuery("SELECT username, password FROM logintable WHERE username " 
+            ResultSet result = statement.executeQuery("SELECT username, password FROM logintable " 
                     + "WHERE username = '" + user + "'");
             
             if (result.next()) {
