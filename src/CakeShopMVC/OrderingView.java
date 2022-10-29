@@ -14,6 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.Scanner;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -59,10 +60,10 @@ public class OrderingView extends JFrame implements Observer {
     private javax.swing.JLabel loginTextLabel;
     private javax.swing.JLabel loginUsernameLabel;
     private javax.swing.JLabel loginPasswordLabel;
-    public static javax.swing.JPasswordField loginUserPasswordTextField;
-    public static javax.swing.JTextField loginUserTextField;
+    public javax.swing.JPasswordField loginUserPasswordTextField;
+    public javax.swing.JTextField loginUserTextField;
     public javax.swing.JButton loginBackButton;
-    public javax.swing.JButton loginContinueButton;
+    public javax.swing.JButton loginButton;
     
     // Components for Ordering Panel
     private javax.swing.JPanel orderingPanel;
@@ -231,7 +232,7 @@ public class OrderingView extends JFrame implements Observer {
         loginUsernameLabel = new javax.swing.JLabel();
         loginPasswordLabel = new javax.swing.JLabel();
         loginUserPasswordTextField = new javax.swing.JPasswordField();
-        loginContinueButton = new javax.swing.JButton();
+        loginButton = new javax.swing.JButton();
         loginBackButton = new javax.swing.JButton();
         
         // Setting and adding elements to login components
@@ -257,12 +258,13 @@ public class OrderingView extends JFrame implements Observer {
         loginUserPasswordTextField.setBackground(new java.awt.Color(204, 204, 204));
         loginUserPasswordTextField.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         loginUserPasswordTextField.setForeground(new java.awt.Color(0, 51, 51));
+        
 
-        loginContinueButton.setBackground(new java.awt.Color(0, 51, 51));
-        loginContinueButton.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
-        loginContinueButton.setForeground(new java.awt.Color(255, 255, 255));
-        loginContinueButton.setText("Continue");
-        loginContinueButton.addActionListener(new ActionListener() {
+        loginButton.setBackground(new java.awt.Color(0, 51, 51));
+        loginButton.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        loginButton.setForeground(new java.awt.Color(255, 255, 255));
+        loginButton.setText("Login");
+        loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
                  // Go to the next Panel which is the ordering panel
@@ -271,7 +273,7 @@ public class OrderingView extends JFrame implements Observer {
                 String userN = loginUserTextField.getText();
                 String passW = loginUserPasswordTextField.getText();
 
-                if (obj == loginContinueButton) {
+                if (obj == loginButton) {
                    // making sure customer logs in before ordering
                     if (userN.equals("")) {
                         JOptionPane.showMessageDialog(null, "Need to enter a username");
@@ -319,7 +321,7 @@ public class OrderingView extends JFrame implements Observer {
                 .addGap(227, 227, 227)
                 .addComponent(loginBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(loginContinueButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         loginPanelLayout.setVerticalGroup(
             loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -341,7 +343,7 @@ public class OrderingView extends JFrame implements Observer {
                 .addGap(70, 70, 70)
                 .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(loginBackButton)
-                    .addComponent(loginContinueButton)))
+                    .addComponent(loginButton)))
         );
 
         tabsPanel.addTab("Login", loginPanel);
@@ -943,11 +945,21 @@ public class OrderingView extends JFrame implements Observer {
 
         pack();
     }
+    
+    public void addActionListener(ActionListener listener) {
+        this.loginButton.addActionListener(listener);
+    }
 
     @Override
     public void update(Observable o, Object o1) {
         Data data = (Data) o1; // Getting an instance of data
         
-        
+        if (!data.userLogin) {
+            this.loginUserTextField.setText("");
+            this.loginUserPasswordTextField.setText("");
+        }
+        else if (data.userQuit) {
+            System.exit(0);
+        }
     }
 }

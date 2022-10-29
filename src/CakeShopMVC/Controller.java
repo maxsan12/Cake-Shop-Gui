@@ -26,6 +26,7 @@ public class Controller implements ActionListener {
     public Controller (OrderingView view, Model model) {
         this.view = view;
         this.model = model;
+        this.view.addActionListener(this);
         
     }
 
@@ -33,40 +34,17 @@ public class Controller implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         
-        Object obj = e.getActionCommand(); // using getActionCommand to identify the buttons clicked
+        String command = e.getActionCommand();
         
-        if(obj == this.view.homeContinueBttn.getActionCommand()) {
-            this.view.tabsPanel.setSelectedIndex(1);
-            
-             
-        }
-        else if (obj == this.view.orderingContinueButton.getActionCommand()) {
-            this.view.tabsPanel.setSelectedIndex(2);
-        }
-        
-        else if (obj == this.view.loginContinueButton.getActionCommand()) {
-            this.view.tabsPanel.setSelectedIndex(3);
-        }
-        else if (obj == this.view.detailsContinueButton.getActionCommand()) {
-            this.view.tabsPanel.setSelectedIndex(0);
+        switch(command) {
+            case "Login" -> {
+                String username = this.view.loginUserTextField.getText();
+                String password = this.view.loginUserPasswordTextField.getText();
+                this.model.checkUserDetails(username, password);
+                break;
+            }
         }
     }
-    
-       /* // Method to initialize action listener 
-    public void initActionListener() {
-          // Implement actionlistener here
-        this.homeContinueBttn.addActionListener(this.actionListener);
-        this.orderingQtyAddButton.addActionListener(this.actionListener);
-        this.orderingQtySubtractButton.addActionListener(this.actionListener);
-        this.orderingBackButton.addActionListener(this.actionListener);
-        this.orderingContinueButton.addActionListener(this.actionListener);
-        this.loginBackButton.addActionListener(this.actionListener);
-        this.loginContinueButton.addActionListener(this.actionListener);  
-        this.detailsBackButton.addActionListener(this.actionListener);
-        this.detailsContinueButton.addActionListener(this.actionListener);
-        
-        
-    }*/
     
   
     
