@@ -11,11 +11,10 @@ package CakeShopChoices;
  * COMP603/50 - Group 27
  * Assignment 2
  * 
- * Enum class for cake size and its prices
- * will be used for orderComboBox
+ * Enum class to hold cake size options and its prices
+ * will be used for its assigned jcombobox in OrderingView class
  */
 public enum CakeSizes {
-    
     
     FOURINCH("4 inch cake", 45.0),
     SIXINCH("6 inch cake", 55.0),

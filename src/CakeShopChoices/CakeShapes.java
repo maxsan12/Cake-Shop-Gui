@@ -9,6 +9,8 @@ package CakeShopChoices;
  * @author Maxinne Santico 19084694
  * COMP603/50 - Assignment 2
  * 
+ * Enum class to hold cake shape names and prices
+ * will be used for its assigned jcombobox in OrderingView class
  */
 public enum CakeShapes {
     

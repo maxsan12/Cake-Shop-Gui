@@ -4,11 +4,12 @@
  */
 package CakeShopMVC;
 
-import CalculatingCosts.CalculateCakeSize;
+import CalculatingCosts.CalculateCakeFlavour;
 import CalculatingCosts.CalculateSubTotal;
 import CalculatingCosts.CalculateTotal;
 import java.util.Random;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -16,11 +17,14 @@ import javax.swing.JFrame;
  * @author Maxinne Sanitco 19084694
  * COMP603/50 - Group 27
  * Assignment 2
+ * 
+ * Second jframe class, which will hold the final results and 
+ * display customers order details
+ * 
  */
 public class ReceiptView extends JFrame {
     
     // Full panel
-  
     private javax.swing.JPanel receiptPanel;
     private javax.swing.JLabel receiptLabel;
     // Buttons which prompt user to confirm order and leave the program
@@ -62,25 +66,26 @@ public class ReceiptView extends JFrame {
     public static javax.swing.JTextField receiptDelOrPicTextField;
     
     // Panel and components for subtotal and total
-    private javax.swing.JPanel receipTotalPanel;
+    private javax.swing.JPanel receiptPricesPanel;
     private javax.swing.JLabel receiptSubTotalLabel;
     public static javax.swing.JTextField receiptSubTotalTextField;
     private javax.swing.JLabel receiptTotalLabel;
     public static javax.swing.JTextField receiptTotalTextField;
     
-    
+    // Constructor to initialize methods
     public ReceiptView() {
         initMainComponents();
         initOrderDetailsComponents();
         initCustDetailsComponents();
         initDelOrPicComponents();
-        initTotalComponents();
+        initPricesComponents();
         initEndComponents();
     }
     
     /** 
      * Method to generate a random number that will be customers order number
      *  will be placed inside receiptOrderNoLabel 
+     * 
      * @return 
      */
     public static int orderNumber() {
@@ -93,7 +98,7 @@ public class ReceiptView extends JFrame {
         return num;
     }
     
-    //Method
+    //Method for full frame components
     private void initMainComponents() {
     
         receiptPanel = new javax.swing.JPanel();
@@ -124,6 +129,14 @@ public class ReceiptView extends JFrame {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 
+                int response = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to leave our store?", "Confirm", 
+                        JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                
+                if (response == JOptionPane.YES_OPTION) {
+                    System.out.println("\nThank you for shopping at cc cakes! "
+                            + "We hope you enjoy your order and come back again");
+                    System.exit(0);
+                }
             }
         });
 
@@ -134,14 +147,16 @@ public class ReceiptView extends JFrame {
         receiptOrderAgainButton.addActionListener(new java.awt.event.ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                
+                CakeShop.promptBeginning(); // will allow user to start program again from scratch
+                System.out.println("\nPlacing a new order...\n");
+                dispose(); // dispose current view
             }
         });
 
         pack();
     }
     
-    // 
+    // Method for order details components panel 
     private void initOrderDetailsComponents() {
         
         receiptOrderPanel = new javax.swing.JPanel();
@@ -177,7 +192,6 @@ public class ReceiptView extends JFrame {
         receiptSizeTextField.setBackground(new java.awt.Color(255, 255, 255));
         receiptSizeTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         receiptSizeTextField.setForeground(new java.awt.Color(0, 102, 102));
-        
         
         receiptShapesLabel.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         receiptShapesLabel.setForeground(new java.awt.Color(0, 102, 102));
@@ -273,6 +287,7 @@ public class ReceiptView extends JFrame {
         pack();
     }
     
+    // Method for customer details components/panel
     private void initCustDetailsComponents() {
  
         receiptDetailsPanel = new javax.swing.JPanel();
@@ -408,6 +423,7 @@ public class ReceiptView extends JFrame {
         pack();
     }
     
+    // Method to display delivery or pickup choice inside panel
     private void initDelOrPicComponents() {
         receiptDelOrPicPanel = new javax.swing.JPanel();
         receiptDelOrPicLabel = new javax.swing.JLabel();
@@ -450,14 +466,15 @@ public class ReceiptView extends JFrame {
         pack();
     }
     
-    private void initTotalComponents() {
-        receipTotalPanel = new javax.swing.JPanel();
+    // Method to hold prices components/panel
+    private void initPricesComponents() {
+        receiptPricesPanel = new javax.swing.JPanel();
         receiptSubTotalLabel = new javax.swing.JLabel();
         receiptSubTotalTextField = new javax.swing.JTextField();
         receiptTotalLabel = new javax.swing.JLabel();
         receiptTotalTextField = new javax.swing.JTextField();
         
-        receipTotalPanel.setBackground(new java.awt.Color(255, 255, 255));
+        receiptPricesPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         receiptSubTotalLabel.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         receiptSubTotalLabel.setForeground(new java.awt.Color(0, 102, 102));
@@ -468,8 +485,9 @@ public class ReceiptView extends JFrame {
         receiptSubTotalTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         receiptSubTotalTextField.setForeground(new java.awt.Color(0, 102, 102));
         
+        receiptSubTotalTextField.setText(Double.toString(CalculateCakeFlavour.getPriceForFlavour()));
         // will print subtotal price - cake size + cake shape + cake flavour * quantity
-        receiptSubTotalTextField.setText(Double.toString(CalculateSubTotal.getSubtotal()));
+        //receiptSubTotalTextField.setText(Double.toString(CalculateSubTotal.getSubtotal()));
        
         receiptTotalLabel.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         receiptTotalLabel.setForeground(new java.awt.Color(0, 102, 102));
@@ -482,29 +500,29 @@ public class ReceiptView extends JFrame {
         receiptTotalTextField.setText(Double.toString(CalculateTotal.getTotal()));
         
 
-        javax.swing.GroupLayout receipTotalPanelLayout = new javax.swing.GroupLayout(receipTotalPanel);
-        receipTotalPanel.setLayout(receipTotalPanelLayout);
-        receipTotalPanelLayout.setHorizontalGroup(
-            receipTotalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(receipTotalPanelLayout.createSequentialGroup()
-                .addGroup(receipTotalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, receipTotalPanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout receiptPricesPanelLayout = new javax.swing.GroupLayout(receiptPricesPanel);
+        receiptPricesPanel.setLayout(receiptPricesPanelLayout);
+        receiptPricesPanelLayout.setHorizontalGroup(
+            receiptPricesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(receiptPricesPanelLayout.createSequentialGroup()
+                .addGroup(receiptPricesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, receiptPricesPanelLayout.createSequentialGroup()
                         .addContainerGap(20, Short.MAX_VALUE)
-                        .addGroup(receipTotalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(receiptPricesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(receiptSubTotalLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(receiptSubTotalTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, receipTotalPanelLayout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, receiptPricesPanelLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(receipTotalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, receipTotalPanelLayout.createSequentialGroup()
+                        .addGroup(receiptPricesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, receiptPricesPanelLayout.createSequentialGroup()
                                 .addComponent(receiptTotalLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(92, 92, 92))
                             .addComponent(receiptTotalTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
-        receipTotalPanelLayout.setVerticalGroup(
-            receipTotalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(receipTotalPanelLayout.createSequentialGroup()
+        receiptPricesPanelLayout.setVerticalGroup(
+            receiptPricesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(receiptPricesPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(receiptSubTotalLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -536,7 +554,7 @@ public class ReceiptView extends JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(receiptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(receiptDelOrPicPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(receipTotalPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(receiptPricesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(receiptPanelLayout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addGroup(receiptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -558,7 +576,7 @@ public class ReceiptView extends JFrame {
                             .addGroup(receiptPanelLayout.createSequentialGroup()
                                 .addComponent(receiptDelOrPicPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(receipTotalPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(receiptPricesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(receiptConfirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)

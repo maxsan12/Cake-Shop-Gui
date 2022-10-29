@@ -14,7 +14,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Observable;
 import java.util.Observer;
-import java.util.Scanner;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -117,7 +116,7 @@ public class OrderingView extends JFrame implements Observer {
         initOrderingComponents();
         initDetailsComponents();
         LoadBoxes.loadBoxes();
-        
+  
     }
     
     private void initMainComponents() {
@@ -832,6 +831,7 @@ public class OrderingView extends JFrame implements Observer {
                         ReceiptView.receiptPhTextField.setText(OrderingView.detailsPhNoTextField.getText());
 
                         r.setVisible(true);
+                        dispose(); // dispose this frame after accessing ReceiptView class
                     } 
                 }
             }

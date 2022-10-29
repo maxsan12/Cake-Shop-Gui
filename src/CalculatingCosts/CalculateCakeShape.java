@@ -28,8 +28,15 @@ public class CalculateCakeShape extends CalculateCost {
         priceForShape = aPriceForShape;
     }
     
-    // Method to check what index user selects in the combobox and then apply the appropriate price based on their selection. 
-    public static double cakeShapePrice() {
+    /** 
+     * 
+     * Method to check what index user selects in the combobox and 
+     * then apply the appropriate price based on their selection from the
+     * CakeShapes enum class
+     * 
+     * @return getPriceForShape()
+     */
+    public double cakeShapePrice() {
         switch(orderingShapesComboBox.getSelectedIndex()) {
             case 0 -> {
                 setPriceForShape(CakeShapes.CIRCLE.getShapeCost());

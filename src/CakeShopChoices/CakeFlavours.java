@@ -6,7 +6,12 @@ package CakeShopChoices;
 
 /**
  *
- * @author Maxinne Santico 
+ * @author Maxinne Santico 19084694
+ * COMP603/50 - Group 27
+ * Assignment 2
+ * 
+ * Enum class to hold cake flavours names and prices
+ * will be used in its assigned jcombobox in OrderingView class
  */
 public enum CakeFlavours {
 

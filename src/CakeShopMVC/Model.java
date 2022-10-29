@@ -33,6 +33,4 @@ public class Model extends Observable {
         this.setChanged(); 
         this.notifyObservers(this.data); // go to update() in View class
     }
-    
-    
 }

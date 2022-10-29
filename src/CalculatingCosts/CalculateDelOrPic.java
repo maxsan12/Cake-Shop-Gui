@@ -9,7 +9,9 @@ import static CakeShopMVC.OrderingView.detailsDelOrPicComboBox;
 
 /**
  *
- * @author maxin
+ * @author Maxinne Santico 19084694
+ * COMP603/50 - Group 27
+ * Assignment 2
  */
 public class CalculateDelOrPic extends CalculateCost {
     
@@ -26,7 +28,7 @@ public class CalculateDelOrPic extends CalculateCost {
     }
     
     
-    public static double delOrPicPrice() {
+    public double delOrPicPrice() {
         
         switch(detailsDelOrPicComboBox.getSelectedIndex()) {
             case 0 -> {

@@ -10,7 +10,7 @@ package CakeShopMVC;
  * COMP603/50 - Group 27
  * Assignment 2
  * 
- * Data class - needed to store Data
+ * Data class - needed to store Data for database
  */
 public class Data {
 
@@ -21,7 +21,7 @@ public class Data {
     protected String username = "";
     protected String pasword = "";
 
-    // 
+    // Encapsulating fields 
     public String getUsername() {
         return username;
     }

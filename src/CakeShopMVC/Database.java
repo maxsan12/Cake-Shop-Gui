@@ -24,10 +24,10 @@ import java.util.logging.Logger;
 public class Database {
     
     Connection conn = null; 
-    String url = "jdbc:derby://localhost:1527/CakeShopDB";
+    String url = "jdbc:derby:CakeShopDB;create=true";
+// String url = "jdbc:derby://localhost:1527/CakeShopDB"; - this prevents database from connection without starting the database
     String username = "pdc";
     String password = "pdc";
-    
     
     // Method to set up the database
     public void dbSetUp() {
@@ -44,10 +44,9 @@ public class Database {
         } catch (SQLException ex) {
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
     }
     
-    
+    // Method to check if table exists in database
     private boolean checkTable(String newTableName) {
         boolean b = false;
         
@@ -60,7 +59,7 @@ public class Database {
             while (rsdbmeta.next()) {
                 String tableName = rsdbmeta.getString("TABLE_NAME");
                 if (tableName.compareToIgnoreCase(newTableName) == 0) {
-                    System.out.println(tableName + " is in our system");
+                    System.out.println(tableName + " is in the system");
                     b = true;
                 }
             }
@@ -68,13 +67,14 @@ public class Database {
                 rsdbmeta.close();
            }
         } catch (SQLException ex) {
-            
+            ex.getMessage();
         }
         return b;
     }
     
     // Creating a method to check username for login page
     public Data checkCustomerDetails(String user, String pw) {
+        
         Data data = new Data(); // Instantiate data class to get an instance of it
         
         try{ 
@@ -85,16 +85,14 @@ public class Database {
             if (result.next()) {
                 String userPW = result.getString("password");
                 System.out.println("***" + userPW);
-                System.out.println("Customer is in system");
+                System.out.println("Customer found in system");
                 
                 if (pw.compareTo(userPW) == 0) {
                     data.userLogin = true;
-                } 
-                else {
+                } else {
                     data.userQuit = false;
                 }
-            }
-            else {
+            } else {
                 System.out.println("User is not in system, creating new user");
                 statement.executeUpdate("INSERT INTO logintable " + "VALUES('" +
                         user + "', '" + pw + "')");
@@ -106,9 +104,10 @@ public class Database {
         } catch (SQLException ex) {
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return data; 
+        return data; // woill be returned/used in Model class
     }
     
+    // Method to save new user and price to database
     public void saveUserInfo(String user, int price) {
         try {
             conn = DriverManager.getConnection(url, username, password);
@@ -119,7 +118,8 @@ public class Database {
         }
     }
     
-    public void closeConnections() {
+    // method to close connection
+    public void closeConnection() {
         if (conn != null) {
             try {
                 conn.close();
@@ -128,5 +128,4 @@ public class Database {
             }
         }
     }
-
 }

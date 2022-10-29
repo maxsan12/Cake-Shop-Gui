@@ -10,7 +10,12 @@ import static CakeShopMVC.OrderingView.orderingFlavoursComboBox;
 
 /**
  *
- * @author maxin
+ * @author Maxinne Santico 19084694
+ * COMP603/50 - Group 27
+ * Assignment 2
+ * 
+ * Class to calculate cake flavour, it will extend CalculateCost
+ * which holds the abstract method to calculate the price.
  */
 public class CalculateCakeFlavour extends CalculateCost {
     
@@ -24,7 +29,14 @@ public class CalculateCakeFlavour extends CalculateCost {
         priceForFlavour = aPriceForFlavour;
     }
     
-    public static double cakeFlavourPrice() {
+    /** 
+     * 
+     * Method to place switch case to check what user selects from
+     * orderingFlavoursComboBox and set price from enum class 
+     * 
+     * @return getPriceForFlavours()
+     */
+    public double cakeFlavourPrice() {
         
         switch(orderingFlavoursComboBox.getSelectedIndex()) {
             case 0 -> {
@@ -61,12 +73,12 @@ public class CalculateCakeFlavour extends CalculateCost {
             }
         }
         
-        return getPriceForFlavour();
+        return getPriceForFlavour(); 
     }
 
     @Override
     public double calcPrice() {
-        return this.price += getPriceForFlavour();
+        return this.price += getPriceForFlavour(); 
     }
 
 }

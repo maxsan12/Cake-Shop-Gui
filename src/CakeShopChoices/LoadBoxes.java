@@ -12,7 +12,10 @@ import javax.swing.DefaultComboBoxModel;
 
 /**
  *
- * @author maxin
+ * @author Maxinne Santico 19084694
+ * COMP603/50 - Group 27
+ * Assignment 2
+ * 
  */
 public class LoadBoxes {
     

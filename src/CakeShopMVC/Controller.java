@@ -14,9 +14,9 @@ import java.awt.event.ActionListener;
  * COMP603/50 - 19084694
  * Assignment 2
  * 
- * Contoller class created to intereact with both model and view class, 
- * will update model to update and new values and updates the current
- * view that the user will see
+ * Controller class created to interact with both model and view class, 
+ * will update model and adds new values and then updates the current
+ * view class, which is what that the user will see
  */
 public class Controller implements ActionListener {
     
@@ -30,12 +30,20 @@ public class Controller implements ActionListener {
         
     }
 
-    // creating actionPerformed method - will implement all performances needed when a button is clicked. 
+    /** Creating actionPerformed method - will implement all performances 
+     * needed when login button is clicked. 
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         
         String command = e.getActionCommand();
         
+        /**
+         * 
+         * Checking customer's username and password that they input from the 
+         * Ordering view class 
+         * 
+         */
         switch(command) {
             case "Login" -> {
                 String username = this.view.loginUserTextField.getText();
@@ -45,7 +53,5 @@ public class Controller implements ActionListener {
             }
         }
     }
-    
-  
     
 }

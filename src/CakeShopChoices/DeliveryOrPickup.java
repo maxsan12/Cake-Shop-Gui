@@ -6,7 +6,12 @@ package CakeShopChoices;
 
 /**
  *
- * @author maxin
+ * @author Maxinne Santico 19084694
+ * COMP603/50 - Group 27
+ * Assignment 2
+ * 
+ * Enum class to hold delivery or pick up prices
+ * will be used in its assigned jcombobox in OrderingView class
  */
 public enum DeliveryOrPickup {
     

@@ -28,6 +28,10 @@ public class CalculateCakeSize extends CalculateCost {
         priceForSize = aPriceForSize;
     }
   
+    /**
+     * 
+     * 
+     */
     public double cakeSizePrice() {
         
         switch (orderingSizesComboBox.getSelectedIndex()) {
