@@ -771,7 +771,7 @@ public class OrderingView extends JFrame implements Observer {
             @Override
             public void actionPerformed(ActionEvent evt) {
                 // getting selected option from sizes combobox
-                detailsDelOrPicComboBox.getSelectedItem().toString();
+                detailsDelOrPicComboBox.getSelectedItem();
             }
         });
 
@@ -834,6 +834,13 @@ public class OrderingView extends JFrame implements Observer {
                     
                     else {
                         ReceiptView r = new ReceiptView();
+                        
+                        r.initMainComponents();
+                        r.initOrderDetailsComponents();
+                        r.initCustDetailsComponents();
+                        r.initDelOrPicComponents();
+                        r.initPricesComponents();
+                        r.initEndComponents();
                 
                         ReceiptView.receiptSizeTextField.setText(OrderingView.orderingCartSizesTextField.getText());
                         ReceiptView.receiptShapeTextField.setText(OrderingView.orderingCartShapesTextField.getText());
@@ -845,6 +852,7 @@ public class OrderingView extends JFrame implements Observer {
                         ReceiptView.receiptAddressTextArea.setText(OrderingView.detailsAddressTextArea.getText());
                         ReceiptView.receiptEmailTextField.setText(OrderingView.detailsEmailTextField.getText());
                         ReceiptView.receiptPhTextField.setText(OrderingView.detailsPhNoTextField.getText());
+                        ReceiptView.receiptDelOrPicTextField.setText(OrderingView.detailsDelOrPicComboBox.getSelectedItem().toString());
 
                         r.setVisible(true);
                         dispose(); // dispose this frame after accessing ReceiptView class

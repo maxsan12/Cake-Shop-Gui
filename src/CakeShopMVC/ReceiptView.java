@@ -70,22 +70,13 @@ public class ReceiptView extends JFrame {
     public static javax.swing.JTextField receiptSubTotalTextField;
     private javax.swing.JLabel receiptTotalLabel;
     public static javax.swing.JTextField receiptTotalTextField;
-    
-    // Constructor to initialize methods
-    public ReceiptView() {
-        initMainComponents();
-        initOrderDetailsComponents();
-        initCustDetailsComponents();
-        initDelOrPicComponents();
-        initPricesComponents();
-        initEndComponents();
-    }
+
     
     /** 
      * Method to generate a random number that will be customers order number
      *  will be placed inside receiptOrderNoLabel 
      * 
-     * @return 
+     * @return num
      */
     public static int orderNumber() {
         Random random = new Random();
@@ -98,7 +89,7 @@ public class ReceiptView extends JFrame {
     }
     
     //Method for full frame components
-    private void initMainComponents() {
+    public void initMainComponents() {
     
         receiptPanel = new javax.swing.JPanel();
         receiptLabel = new javax.swing.JLabel();
@@ -156,7 +147,7 @@ public class ReceiptView extends JFrame {
     }
     
     // Method for order details components panel 
-    private void initOrderDetailsComponents() {
+    public void initOrderDetailsComponents() {
         
         receiptOrderPanel = new javax.swing.JPanel();
         receiptOrderNoLabel = new javax.swing.JLabel();
@@ -287,7 +278,7 @@ public class ReceiptView extends JFrame {
     }
     
     // Method for customer details components/panel
-    private void initCustDetailsComponents() {
+    public void initCustDetailsComponents() {
  
         receiptDetailsPanel = new javax.swing.JPanel();
         receiptDetailsLabel = new javax.swing.JLabel();
@@ -423,7 +414,7 @@ public class ReceiptView extends JFrame {
     }
     
     // Method to display delivery or pickup choice inside panel
-    private void initDelOrPicComponents() {
+    public void initDelOrPicComponents() {
         receiptDelOrPicPanel = new javax.swing.JPanel();
         receiptDelOrPicLabel = new javax.swing.JLabel();
         receiptDelOrPicTextField = new javax.swing.JTextField();
@@ -439,7 +430,7 @@ public class ReceiptView extends JFrame {
         receiptDelOrPicTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         receiptDelOrPicTextField.setForeground(new java.awt.Color(0, 102, 102));
         // Setting what user selects in delivery or pick up combo box from OrderingView class
-        receiptDelOrPicTextField.setText(OrderingView.detailsDelOrPicComboBox.getSelectedItem().toString());
+//        receiptDelOrPicTextField.setText(OrderingView.detailsDelOrPicComboBox.getSelectedItem().toString());
 
         javax.swing.GroupLayout receiptDelOrPicPanelLayout = new javax.swing.GroupLayout(receiptDelOrPicPanel);
         receiptDelOrPicPanel.setLayout(receiptDelOrPicPanelLayout);
@@ -466,7 +457,7 @@ public class ReceiptView extends JFrame {
     }
     
     // Method to hold prices components/panel
-    private void initPricesComponents() {
+    public void initPricesComponents() {
         receiptPricesPanel = new javax.swing.JPanel();
         receiptSubTotalLabel = new javax.swing.JLabel();
         receiptSubTotalTextField = new javax.swing.JTextField();
@@ -540,8 +531,9 @@ public class ReceiptView extends JFrame {
         pack();
     }
     
-    private void initEndComponents() {
-         javax.swing.GroupLayout receiptPanelLayout = new javax.swing.GroupLayout(receiptPanel);
+    public void initEndComponents() {
+        
+        javax.swing.GroupLayout receiptPanelLayout = new javax.swing.GroupLayout(receiptPanel);
         receiptPanel.setLayout(receiptPanelLayout);
         receiptPanelLayout.setHorizontalGroup(
             receiptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

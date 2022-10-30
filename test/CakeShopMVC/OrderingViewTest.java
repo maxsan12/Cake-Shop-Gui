@@ -4,18 +4,18 @@
  */
 package CakeShopMVC;
 
-import java.awt.event.ActionListener;
-import java.util.Observable;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
-
 /**
  *
- * @author maxin
+ * @author Maxinne Santico 19084694
+ * COMP603/50 - Group 27 
+ * Assignment 2
+ * 
+ * JUnit test class for reviewing init component methods in OrderingView class
  */
 public class OrderingViewTest {
     
