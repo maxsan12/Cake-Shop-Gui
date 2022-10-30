@@ -133,7 +133,7 @@ public class ReceiptView extends JFrame {
                 
                 if (response == JOptionPane.YES_OPTION) {
                     System.out.println("\nThank you for shopping at cc cakes! "
-                            + "We hope you enjoy your order and come back again");
+                            + "\nWe hope you enjoy your order and come back again");
                     System.exit(0);
                 }
             }

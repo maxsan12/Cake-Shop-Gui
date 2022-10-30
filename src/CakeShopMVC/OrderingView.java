@@ -4,7 +4,6 @@
  */
 package CakeShopMVC;
 
-import CakeShopChoices.LoadBoxes;
 import CakeShopChoices.CakeSizes;
 import CakeShopChoices.CakeShapes;
 import CakeShopChoices.CakeFlavours;
@@ -14,7 +13,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Observable;
 import java.util.Observer;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -48,7 +46,7 @@ public class OrderingView extends JFrame implements Observer {
     private javax.swing.JPanel panelForFrame;
     private javax.swing.JPanel titlePanel;
     private javax.swing.JLabel titleLabel;
-    public javax.swing.JTabbedPane tabsPanel; // tabbed panel for panels below
+    public javax.swing.JTabbedPane tabsPanel = new javax.swing.JTabbedPane(); // tabbed panel for panels below
     
     // Components for Home Panel
     private javax.swing.JPanel homePanel;
@@ -110,23 +108,14 @@ public class OrderingView extends JFrame implements Observer {
     public javax.swing.JButton detailsContinueButton;
     
     // Constructor for invoking methods
-    public OrderingView() {
-        initMainComponents();
-        initHomeComponents();
-        initLoginComponents();
-        initOrderingComponents();
-        initDetailsComponents();
-        LoadBoxes.loadBoxes();
-  
-    }
     
-    private void initMainComponents() {
+    
+    public void initMainComponents() {
         
         // Instantiating Main Page gui components
         panelForFrame = new javax.swing.JPanel();
         titlePanel = new javax.swing.JPanel();
         titleLabel = new javax.swing.JLabel();
-        tabsPanel = new javax.swing.JTabbedPane();
         
         // Setting and adding elements to main page components
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -146,6 +135,32 @@ public class OrderingView extends JFrame implements Observer {
         titleLabel.setForeground(new java.awt.Color(0, 102, 102));
         titleLabel.setText("CC CAKES");
 
+        javax.swing.GroupLayout panelForFrameLayout = new javax.swing.GroupLayout(panelForFrame);
+        panelForFrame.setLayout(panelForFrameLayout);
+        panelForFrameLayout.setHorizontalGroup(
+            panelForFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(titlePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(tabsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        panelForFrameLayout.setVerticalGroup(
+            panelForFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(titlePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(panelForFrameLayout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addComponent(tabsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 555, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panelForFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panelForFrame, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        
         javax.swing.GroupLayout titlePanelLayout = new javax.swing.GroupLayout(titlePanel);
         titlePanel.setLayout(titlePanelLayout);
         titlePanelLayout.setHorizontalGroup(
@@ -171,7 +186,7 @@ public class OrderingView extends JFrame implements Observer {
         
     }
     
-    private void initHomeComponents() {
+    public void initHomeComponents() {
         
         // Instantiating home panel gui components 
         homePanel = new javax.swing.JPanel();
@@ -224,7 +239,7 @@ public class OrderingView extends JFrame implements Observer {
         pack();
     }
     
-    private void initLoginComponents() {
+    public void initLoginComponents() {
         
         // Instantiating login panel gui components
         loginPanel = new javax.swing.JPanel();
@@ -277,10 +292,10 @@ public class OrderingView extends JFrame implements Observer {
                 if (obj == loginButton) {
                    // making sure customer logs in before ordering
                     if (userN.equals("")) {
-                        JOptionPane.showMessageDialog(null, "Need to enter a username");
+                        JOptionPane.showMessageDialog(rootPane, "Need to enter a username");
                     }
                     else if (passW.equals("")) {
-                        JOptionPane.showMessageDialog(null, "Need to enter a password");
+                        JOptionPane.showMessageDialog(rootPane, "Need to enter a password");
                     }
                     else {
                         tabsPanel.setSelectedIndex(2);
@@ -352,7 +367,7 @@ public class OrderingView extends JFrame implements Observer {
         pack();
     }
     
-    private void initOrderingComponents() {
+    public void initOrderingComponents() {
         
         // Instantiating ordering panel gui components
         orderingPanel = new javax.swing.JPanel();
@@ -549,13 +564,13 @@ public class OrderingView extends JFrame implements Observer {
                 if (obj == orderingContinueButton) {
                    
                     if (sizes.equals("")) {
-                        JOptionPane.showMessageDialog(null, "Select a size to continue");
+                        JOptionPane.showMessageDialog(rootPane, "Select a size to continue");
                     }
                     else if (shapes.equals("")) {
-                        JOptionPane.showMessageDialog(null, "Select a shape to continue");
+                        JOptionPane.showMessageDialog(rootPane, "Select a shape to continue");
                     }
                     else if (flavours.equals("")) {
-                        JOptionPane.showMessageDialog(null, "Select a flavour to continue");
+                        JOptionPane.showMessageDialog(rootPane, "Select a flavour to continue");
                     }
                     else 
                         tabsPanel.setSelectedIndex(3);
@@ -683,7 +698,7 @@ public class OrderingView extends JFrame implements Observer {
         pack();
     }
     
-    private void initDetailsComponents() {
+    public void initDetailsComponents() {
         
         // Instantiating details panel gui components
         detailsPanel = new javax.swing.JPanel();
@@ -913,34 +928,6 @@ public class OrderingView extends JFrame implements Observer {
                 .addGroup(detailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(detailsBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(detailsContinueButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
-
-        tabsPanel.addTab("Customer Details", detailsPanel);
-
-        javax.swing.GroupLayout panelForFrameLayout = new javax.swing.GroupLayout(panelForFrame);
-        panelForFrame.setLayout(panelForFrameLayout);
-        panelForFrameLayout.setHorizontalGroup(
-            panelForFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(titlePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(tabsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        panelForFrameLayout.setVerticalGroup(
-            panelForFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(titlePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(panelForFrameLayout.createSequentialGroup()
-                .addGap(100, 100, 100)
-                .addComponent(tabsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 555, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelForFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelForFrame, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         tabsPanel.addTab("Customer Details", detailsPanel);

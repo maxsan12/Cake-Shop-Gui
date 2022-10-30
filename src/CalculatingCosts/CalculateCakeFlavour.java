@@ -73,6 +73,7 @@ public class CalculateCakeFlavour extends CalculateCost {
                 break;
             }
         }
+        
         return getPriceForFlavour(); 
     }
 

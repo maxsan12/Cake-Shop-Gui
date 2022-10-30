@@ -26,5 +26,4 @@ public class LoadBoxes {
         orderingFlavoursComboBox.setModel(new DefaultComboBoxModel<>(CakeFlavours.values()));
         detailsDelOrPicComboBox.setModel(new DefaultComboBoxModel<>(DeliveryOrPickup.values()));
     }
-    
 }

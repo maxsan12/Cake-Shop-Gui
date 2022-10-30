@@ -4,6 +4,8 @@
  */
 package CakeShopMVC;
 
+import CakeShopChoices.LoadBoxes;
+
 /**
  *
  * @author Maxinne Santico
@@ -16,7 +18,23 @@ public class CakeShop {
     
     // Created a method so that it could be invoked in the ReceiptView class to start program again. 
     public static void promptBeginning() {
+
+        /**
+         * Instantiating OrderingView class and getting an instance
+         * of the class to invoke the init Methods 
+         */
         OrderingView view = new OrderingView();
+        view.initMainComponents();
+        view.initHomeComponents();
+        view.initLoginComponents();
+        view.initOrderingComponents();
+        view.initDetailsComponents();
+        /**
+         * Invoking static method from LoadBoxes class so that
+         * enum values can be set to comboboxes
+         */
+        LoadBoxes.loadBoxes(); 
+        
         Model model = new Model();
         Controller controller = new Controller(view, model);
         model.addObserver(view); // Build connection between the view and the model.

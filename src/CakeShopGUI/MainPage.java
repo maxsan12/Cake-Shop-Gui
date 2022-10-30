@@ -7,8 +7,6 @@ import CakeShopChoices.CakeSizes;
 import CakeShopChoices.CakeShapes;
 import CakeShopChoices.CakeFlavours;
 import CakeShopChoices.DeliveryOrPickup;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.DefaultComboBoxModel;
 
 
@@ -29,7 +27,6 @@ public class MainPage extends javax.swing.JFrame {
      */
     public MainPage() {
         initComponents();
-        loadBoxes();
     }
 
     /**
@@ -769,6 +766,7 @@ public class MainPage extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new MainPage().setVisible(true);
             }
@@ -834,12 +832,7 @@ public class MainPage extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
 
-    // Creating test method to test whether jcomboboxes work
-    private void loadBoxes() {
-        orderingSizesComboBox.setModel(new DefaultComboBoxModel<>(CakeSizes.values()));
-        orderingShapesComboBox.setModel(new DefaultComboBoxModel<>(CakeShapes.values()));
-        orderingFlavoursComboBox.setModel(new DefaultComboBoxModel<>(CakeFlavours.values()));
-    }
+  
 
     /*@Override
     public void actionPerformed(ActionEvent e) {
