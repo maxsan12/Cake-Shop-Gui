@@ -109,7 +109,6 @@ public class OrderingView extends JFrame implements Observer {
     
     // Constructor for invoking methods
     
-    
     public void initMainComponents() {
         
         // Instantiating Main Page gui components
@@ -835,6 +834,7 @@ public class OrderingView extends JFrame implements Observer {
                     else {
                         ReceiptView r = new ReceiptView();
                         
+                        // Initializing components for ReceiptView class
                         r.initMainComponents();
                         r.initOrderDetailsComponents();
                         r.initCustDetailsComponents();
@@ -842,6 +842,7 @@ public class OrderingView extends JFrame implements Observer {
                         r.initPricesComponents();
                         r.initEndComponents();
                 
+                        // Setting text to textfields in receipt class by using the data from OrderingView class
                         ReceiptView.receiptSizeTextField.setText(OrderingView.orderingCartSizesTextField.getText());
                         ReceiptView.receiptShapeTextField.setText(OrderingView.orderingCartShapesTextField.getText());
                         ReceiptView.receiptFlavourTextField.setText(OrderingView.orderingCartFlavoursTextField.getText());
@@ -948,7 +949,7 @@ public class OrderingView extends JFrame implements Observer {
         setVisible(true);
         this.loginButton.addActionListener(listener);
     }
-
+  
     // update method for data
     @Override
     public void update(Observable o, Object o1) {
@@ -962,5 +963,4 @@ public class OrderingView extends JFrame implements Observer {
             System.exit(0);
         }
     }
-
 }

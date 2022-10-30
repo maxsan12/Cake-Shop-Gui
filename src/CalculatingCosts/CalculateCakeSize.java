@@ -39,7 +39,9 @@ public class CalculateCakeSize extends CalculateCost {
      */
     public double cakeSizePrice() {
         
-        switch (orderingSizesComboBox.getSelectedIndex()) {
+        int selectedSize = orderingSizesComboBox.getSelectedIndex();
+        
+        switch (selectedSize) {
            case 0 -> {
                setPriceForSize(CakeSizes.FOURINCH.getSizeCost()); // should return 45
                break;

@@ -76,7 +76,7 @@ public class ReceiptView extends JFrame {
      * Method to generate a random number that will be customers order number
      *  will be placed inside receiptOrderNoLabel 
      * 
-     * @return num
+     * @return 
      */
     public static int orderNumber() {
         Random random = new Random();
@@ -532,6 +532,21 @@ public class ReceiptView extends JFrame {
     }
     
     public void initEndComponents() {
+  
+        /** 
+         * 
+         * Need to initialize methods here as well so that the grouplayout
+         * will have access to other components in the other methods
+         * 
+         * Note: must do this so that junit test can pass all cases.
+         * If not, it will query that there is a null exception 
+         * 
+         */
+        initMainComponents();
+        initOrderDetailsComponents();
+        initCustDetailsComponents();
+        initDelOrPicComponents();
+        initPricesComponents();
         
         javax.swing.GroupLayout receiptPanelLayout = new javax.swing.GroupLayout(receiptPanel);
         receiptPanel.setLayout(receiptPanelLayout);

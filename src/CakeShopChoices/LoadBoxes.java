@@ -16,6 +16,8 @@ import javax.swing.DefaultComboBoxModel;
  * COMP603/50 - Group 27
  * Assignment 2
  * 
+ * Class to hold method for loading values from enum class to 
+ * its assigned comboboxes in OrderingView comboboxes
  */
 public class LoadBoxes {
     
