@@ -14,14 +14,14 @@ package CakeShopChoices;
  */
 public enum CakeShapes {
     
-    CIRCLE("Circle", 2.00),
-    SQUARE("Square", 2.00),
-    RECTANGLE("Rectangle", 2.00),
-    TRIANGLE("Triangle", 2.00),
-    HEART("Heart", 3.00),
-    MOON("Moon", 3.00),
-    STAR("Star", 4.00),
-    FLOWER("Flower", 4.00);
+    CIRCLE("Circle", 2.0),
+    SQUARE("Square", 2.0),
+    RECTANGLE("Rectangle", 2.0),
+    TRIANGLE("Triangle", 2.0),
+    HEART("Heart", 3.0),
+    MOON("Moon", 3.0),
+    STAR("Star", 4.0),
+    FLOWER("Flower", 4.0);
    
     private final String shapeName;
     private final double shapeCost;

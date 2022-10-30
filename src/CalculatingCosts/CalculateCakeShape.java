@@ -20,6 +20,7 @@ public class CalculateCakeShape extends CalculateCost {
     
     private static double priceForShape;
 
+    // Encapsulating field
     public static double getPriceForShape() {
         return priceForShape;
     }
@@ -36,10 +37,14 @@ public class CalculateCakeShape extends CalculateCost {
      * 
      * @return getPriceForShape()
      */
-    public double cakeShapePrice() {
+    public double cakeShapePrice() { 
+        
+        CalculateCost cc = new CalculateCakeShape();
+        
         switch(orderingShapesComboBox.getSelectedIndex()) {
             case 0 -> {
                 setPriceForShape(CakeShapes.CIRCLE.getShapeCost());
+                cc.printPrice(getPriceForShape()); // allows price to print with 2 0's.
                 break;
             }
             case 1 -> {
@@ -74,6 +79,7 @@ public class CalculateCakeShape extends CalculateCost {
         return getPriceForShape();
     }
 
+    // Abstract method to save priceForShape
     @Override
     public double calcPrice() {
         return this.price += getPriceForShape();

@@ -37,10 +37,4 @@ public class Data {
     public void setPasword(String pasword) {
         this.pasword = pasword;
     }
-    
-   
-    
-    
-    
-    
 }

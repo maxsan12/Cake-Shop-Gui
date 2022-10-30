@@ -14,12 +14,14 @@ import static CakeShopMVC.OrderingView.orderingSizesComboBox;
  * COMP603/50 - Group 27
  * Assignment 2 
  * 
- * class to calculate cake size price based on what user selects from combobox's in OrderingView class. 
+ * class to calculate cake size price based on what user selects from 
+ * combobox in OrderingView class. 
  */
 public class CalculateCakeSize extends CalculateCost {
 
     private static double priceForSize;
     
+    // Encapsulating field
     public static double getPriceForSize() {
         return priceForSize;
     }
@@ -29,8 +31,11 @@ public class CalculateCakeSize extends CalculateCost {
     }
   
     /**
+     * Method to set price for size depending on what user selects in combobbox
+     * using get SelectedIndex, which will help locate what user selected
+     * and where we can set the price depending on their selection
      * 
-     * 
+     * @return getPriceForSize()
      */
     public double cakeSizePrice() {
         
@@ -64,6 +69,7 @@ public class CalculateCakeSize extends CalculateCost {
         return getPriceForSize();
     }
 
+    // Abstract method to save priceForSize()
     @Override
     public double calcPrice() {
         return this.price += getPriceForSize();

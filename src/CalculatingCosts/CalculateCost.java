@@ -6,12 +6,15 @@ package CalculatingCosts;
 
 /**
  *
- * @author maxin
+ * @author Maxinne Santico 19084694
+ * COMP603/50 - Group 27
+ * Assignment 2
+ * 
+ * Abstract class which holds abstract method to calculate price
  */
 public abstract class CalculateCost {
  
-    public double price = 0.0;
-    //public double totalPrice = 0.0;
+    public double price;
     
     public double getPrice() {
         return price;
@@ -21,8 +24,8 @@ public abstract class CalculateCost {
         this.price = price;
     }
 
-    public void printPrice(double total){
-        System.out.print(String.format("$%.2f", total));
+    public void printPrice(double price){
+        System.out.print(String.format("$%.2f", price));
     }
     
     public abstract double calcPrice(); // method to calculate and save prices.

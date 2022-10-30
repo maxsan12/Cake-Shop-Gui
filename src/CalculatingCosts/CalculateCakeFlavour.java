@@ -21,6 +21,7 @@ public class CalculateCakeFlavour extends CalculateCost {
     
     private static double priceForFlavour; 
 
+    // Encapsulating field
     public static double getPriceForFlavour() {
         return priceForFlavour;
     }
@@ -72,10 +73,10 @@ public class CalculateCakeFlavour extends CalculateCost {
                 break;
             }
         }
-        
         return getPriceForFlavour(); 
     }
 
+    // Abstract method to save priceForFlavour
     @Override
     public double calcPrice() {
         return this.price += getPriceForFlavour(); 

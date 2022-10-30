@@ -14,6 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Observable;
 import java.util.Observer;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -953,6 +954,7 @@ public class OrderingView extends JFrame implements Observer {
         this.loginButton.addActionListener(listener);
     }
 
+    // update method for data
     @Override
     public void update(Observable o, Object o1) {
         Data data = (Data) o1; // Getting an instance of data
@@ -965,4 +967,5 @@ public class OrderingView extends JFrame implements Observer {
             System.exit(0);
         }
     }
+
 }

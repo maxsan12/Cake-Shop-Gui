@@ -4,30 +4,32 @@
  */
 package CalculatingCosts;
 
-import CakeShopMVC.OrderingView;
 
 /**
  *
- * @author maxin
+ * @author Maxinne Santico 19084694
+ * COMP603/50 - Group 27
+ * Assignment 2 
+ * 
+ * Class to add total price together. Should add sub total price from
+ * CalculateSubTotal class with getPriceForDelOrPic from 
+ * CalculateDelOrPic class
+ * 
  */
 public class CalculateTotal extends CalculateCost {
     
     private static double total;
 
-    /**
-     * @return the total
-     */
+    // Encapsulating total variable
     public static double getTotal() {
         return total;
     }
 
-    /**
-     * @param aTotal the total to set
-     */
     public static void setTotal(double aTotal) {
         total = aTotal;
     }
     
+    // Method to set total price
     public double settingTotal() {
         CalculateCost ccTotal = new CalculateTotal();
         setTotal(ccTotal.calcPrice());
@@ -35,9 +37,13 @@ public class CalculateTotal extends CalculateCost {
         return getTotal();
     }
     
+    
+    // Abstract method to save price for total
     @Override
     public double calcPrice() {
-        return this.price = CalculateSubTotal.getSubtotal() + OrderingView.orderingQuantity;
+        // Add subtotal and delivery or pick up option user chooses to get total
+        return this.price = CalculateSubTotal.getSubtotal() + 
+                CalculateDelOrPic.getPriceForDelOrPic();
        
     }
     

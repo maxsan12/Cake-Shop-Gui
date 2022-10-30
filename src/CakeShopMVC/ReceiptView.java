@@ -4,7 +4,6 @@
  */
 package CakeShopMVC;
 
-import CalculatingCosts.CalculateCakeFlavour;
 import CalculatingCosts.CalculateSubTotal;
 import CalculatingCosts.CalculateTotal;
 import java.util.Random;
@@ -485,9 +484,13 @@ public class ReceiptView extends JFrame {
         receiptSubTotalTextField.setFont(new java.awt.Font("Corbel", 0, 16)); // NOI18N
         receiptSubTotalTextField.setForeground(new java.awt.Color(0, 102, 102));
         
-        receiptSubTotalTextField.setText(Double.toString(CalculateCakeFlavour.getPriceForFlavour()));
+        //double price = CalculateCakeShape.getPriceForShape() + CalculateCakeShape.getPriceForShape() 
+                   // + CalculateCakeFlavour.getPriceForFlavour();
+                
+                //receiptSubTotalTextField.setText(Double.toString(price * OrderingView.orderingQuantity));
+     
         // will print subtotal price - cake size + cake shape + cake flavour * quantity
-        //receiptSubTotalTextField.setText(Double.toString(CalculateSubTotal.getSubtotal()));
+        receiptSubTotalTextField.setText(Double.toString(CalculateSubTotal.getSubtotal()));
        
         receiptTotalLabel.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         receiptTotalLabel.setForeground(new java.awt.Color(0, 102, 102));

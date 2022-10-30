@@ -8,33 +8,37 @@ import CakeShopMVC.OrderingView;
 
 /**
  *
- * @author maxin
+ * @author Maxinne Santico 19084694
+ * COMP603/50 - Group 27
+ * Assignment 2
+ * 
+ * Class to calculate subtotal 
+ * Should add together size + shape + flavour prices and multiply
+ * by quantity in Ordering View class
+ * 
  */
 public class CalculateSubTotal extends CalculateCost {
 
     private static double subtotal; 
-   
-    /**
-     * @return the subtotal
-     */
+
+    // Encapsulating field
     public static double getSubtotal() {
         return subtotal;
     }
 
-    /**
-     * @param aSubtotal the subtotal to set
-     */
     public static void setSubtotal(double aSubtotal) {
         subtotal = aSubtotal;
     }
 
+    // Method to set sub price
     public double settingSubPrice() {
         CalculateCost cc = new CalculateSubTotal();
-        setSubtotal(cc.calcPrice());
+        setSubtotal(cc.calcPrice()); // setting sub total price using the abstract method
         
         return getSubtotal();
     }
     
+    // Abstract method to save sub price
     @Override
     public double calcPrice() {
      
@@ -45,6 +49,4 @@ public class CalculateSubTotal extends CalculateCost {
         
         return this.price = calcSub * OrderingView.orderingQuantity;
     }
-
-    
 }  
